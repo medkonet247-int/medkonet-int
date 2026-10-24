@@ -25,7 +25,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
   const [err, setErr] = useState<string | null>(null);
-  const [fieldErr, setFieldErr] = useState<{ email?: string; password?: string }>({});
+  const [fieldErr, setFieldErr] = useState<{ email?: string | undefined; password?: string | undefined }>({});
   const [busy, setBusy] = useState(false);
   const inFlight = useRef(false);
 
