@@ -14,16 +14,287 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admin_allowlist: {
+        Row: {
+          created_at: string
+          email: string
+          granted_by: string | null
+          is_protected: boolean
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          granted_by?: string | null
+          is_protected?: boolean
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          granted_by?: string | null
+          is_protected?: boolean
+        }
+        Relationships: []
+      }
+      applications: {
+        Row: {
+          application_status: Database["public"]["Enums"]["application_status"]
+          course: string
+          current_level: string
+          email: string
+          full_name: string
+          id: string
+          reason_for_joining: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          state: string
+          submitted_at: string
+          university: string
+          university_type: Database["public"]["Enums"]["university_type"]
+          user_id: string
+          whatsapp_number: string
+        }
+        Insert: {
+          application_status?: Database["public"]["Enums"]["application_status"]
+          course: string
+          current_level: string
+          email: string
+          full_name: string
+          id?: string
+          reason_for_joining: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          state: string
+          submitted_at?: string
+          university: string
+          university_type: Database["public"]["Enums"]["university_type"]
+          user_id: string
+          whatsapp_number: string
+        }
+        Update: {
+          application_status?: Database["public"]["Enums"]["application_status"]
+          course?: string
+          current_level?: string
+          email?: string
+          full_name?: string
+          id?: string
+          reason_for_joining?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          state?: string
+          submitted_at?: string
+          university?: string
+          university_type?: Database["public"]["Enums"]["university_type"]
+          user_id?: string
+          whatsapp_number?: string
+        }
+        Relationships: []
+      }
+      audit_log: {
+        Row: {
+          action: string
+          actor_id: string | null
+          created_at: string
+          details: Json
+          id: string
+          target_id: string | null
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          created_at?: string
+          details?: Json
+          id?: string
+          target_id?: string | null
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          created_at?: string
+          details?: Json
+          id?: string
+          target_id?: string | null
+        }
+        Relationships: []
+      }
+      member_pages: {
+        Row: {
+          intro: string
+          sections: Json
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          intro: string
+          sections?: Json
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          intro?: string
+          sections?: Json
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      pending_registrations: {
+        Row: {
+          created_at: string
+          data: Json
+          email: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          data: Json
+          email: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          data?: Json
+          email?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      rate_events: {
+        Row: {
+          created_at: string
+          id: number
+          key: string
+          kind: string
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          key: string
+          kind: string
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          key?: string
+          kind?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      verification_codes: {
+        Row: {
+          attempts: number
+          code_hash: string
+          consumed_at: string | null
+          created_at: string
+          email: string
+          expires_at: string
+          id: string
+          invalidated_at: string | null
+          request_ip: string | null
+          token_hash: string
+          user_id: string
+        }
+        Insert: {
+          attempts?: number
+          code_hash: string
+          consumed_at?: string | null
+          created_at?: string
+          email: string
+          expires_at: string
+          id?: string
+          invalidated_at?: string | null
+          request_ip?: string | null
+          token_hash: string
+          user_id: string
+        }
+        Update: {
+          attempts?: number
+          code_hash?: string
+          consumed_at?: string | null
+          created_at?: string
+          email?: string
+          expires_at?: string
+          id?: string
+          invalidated_at?: string | null
+          request_ip?: string | null
+          token_hash?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      auth_user_status: {
+        Args: { _email: string }
+        Returns: {
+          confirmed: boolean
+          user_id: string
+        }[]
+      }
+      complete_registration: {
+        Args: { _dev_mode: boolean; _user_id: string }
+        Returns: string
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      is_approved_member: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "member"
+      application_status: "Pending" | "Approved" | "Rejected"
+      university_type: "Federal" | "State" | "Private"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +421,10 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "member"],
+      application_status: ["Pending", "Approved", "Rejected"],
+      university_type: ["Federal", "State", "Private"],
+    },
   },
 } as const
