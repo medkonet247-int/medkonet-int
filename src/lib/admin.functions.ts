@@ -21,12 +21,16 @@ export const getAdminData = createServerFn({ method: "GET" })
       .order("submitted_at", { ascending: false })
       .limit(500);
     if (error) throw new Error("Could not load applications");
-    const rows = data ?? [];
-    const count = (s: string) => rows.filter((r) => r.application_status === s).length;
-    const { count: total } = await context.supabase.from("applications").select("id", { count: "exact", head: true });
+    const head = () => context.supabase.from("applications").select("id", { count: "exact", head: true });
+    const [t, p, a, r] = await Promise.all([
+      head(),
+      head().eq("application_status", "Pending"),
+      head().eq("application_status", "Approved"),
+      head().eq("application_status", "Rejected"),
+    ]);
     return {
-      counts: { total: total ?? rows.length, pending: count("Pending"), approved: count("Approved"), rejected: count("Rejected") },
-      applications: rows,
+      counts: { total: t.count ?? 0, pending: p.count ?? 0, approved: a.count ?? 0, rejected: r.count ?? 0 },
+      applications: data ?? [],
     };
   });
 
