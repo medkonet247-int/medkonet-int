@@ -10,24 +10,47 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteRouteImport } from './routes/_admin/route'
+import { Route as MembersRouteRouteImport } from './routes/_members/route'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccessDeniedRouteImport } from './routes/access-denied'
 import { Route as CommunityRulesRouteImport } from './routes/community-rules'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as VerifyEmailRouteImport } from './routes/verify-email'
+import { Route as AdminAdminRouteImport } from './routes/_admin/admin'
+import { Route as MembersCommunityRouteImport } from './routes/_members/community'
+import { Route as MembersEventsRouteImport } from './routes/_members/events'
+import { Route as MembersMentorshipRouteImport } from './routes/_members/mentorship'
+import { Route as MembersRepresentativesRouteImport } from './routes/_members/representatives'
+import { Route as MembersResourcesRouteImport } from './routes/_members/resources'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRouteRoute = AdminRouteRouteImport.update({
+  id: '/_admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembersRouteRoute = MembersRouteRouteImport.update({
+  id: '/_members',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessDeniedRoute = AccessDeniedRouteImport.update({
+  id: '/access-denied',
+  path: '/access-denied',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CommunityRulesRoute = CommunityRulesRouteImport.update({
@@ -38,6 +61,11 @@ const CommunityRulesRoute = CommunityRulesRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
@@ -70,88 +98,174 @@ const VerifyEmailRoute = VerifyEmailRouteImport.update({
   path: '/verify-email',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminAdminRoute = AdminAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const MembersCommunityRoute = MembersCommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => MembersRouteRoute,
+} as any)
+const MembersEventsRoute = MembersEventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => MembersRouteRoute,
+} as any)
+const MembersMentorshipRoute = MembersMentorshipRouteImport.update({
+  id: '/mentorship',
+  path: '/mentorship',
+  getParentRoute: () => MembersRouteRoute,
+} as any)
+const MembersRepresentativesRoute = MembersRepresentativesRouteImport.update({
+  id: '/representatives',
+  path: '/representatives',
+  getParentRoute: () => MembersRouteRoute,
+} as any)
+const MembersResourcesRoute = MembersResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => MembersRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
   '/community-rules': typeof CommunityRulesRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/verify-email': typeof VerifyEmailRoute
+  '/admin': typeof AdminAdminRoute
+  '/community': typeof MembersCommunityRoute
+  '/events': typeof MembersEventsRoute
+  '/mentorship': typeof MembersMentorshipRoute
+  '/representatives': typeof MembersRepresentativesRoute
+  '/resources': typeof MembersResourcesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
   '/community-rules': typeof CommunityRulesRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/verify-email': typeof VerifyEmailRoute
+  '/admin': typeof AdminAdminRoute
+  '/community': typeof MembersCommunityRoute
+  '/events': typeof MembersEventsRoute
+  '/mentorship': typeof MembersMentorshipRoute
+  '/representatives': typeof MembersRepresentativesRoute
+  '/resources': typeof MembersResourcesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_admin': typeof AdminRouteRouteWithChildren
+  '/_members': typeof MembersRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
   '/community-rules': typeof CommunityRulesRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/verify-email': typeof VerifyEmailRoute
+  '/_admin/admin': typeof AdminAdminRoute
+  '/_members/community': typeof MembersCommunityRoute
+  '/_members/events': typeof MembersEventsRoute
+  '/_members/mentorship': typeof MembersMentorshipRoute
+  '/_members/representatives': typeof MembersRepresentativesRoute
+  '/_members/resources': typeof MembersResourcesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/access-denied'
     | '/community-rules'
     | '/contact'
+    | '/dashboard'
     | '/forgot-password'
     | '/join'
     | '/login'
     | '/privacy'
     | '/reset-password'
     | '/verify-email'
+    | '/admin'
+    | '/community'
+    | '/events'
+    | '/mentorship'
+    | '/representatives'
+    | '/resources'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/access-denied'
     | '/community-rules'
     | '/contact'
+    | '/dashboard'
     | '/forgot-password'
     | '/join'
     | '/login'
     | '/privacy'
     | '/reset-password'
     | '/verify-email'
+    | '/admin'
+    | '/community'
+    | '/events'
+    | '/mentorship'
+    | '/representatives'
+    | '/resources'
   id:
     | '__root__'
     | '/'
+    | '/_admin'
+    | '/_members'
     | '/about'
+    | '/access-denied'
     | '/community-rules'
     | '/contact'
+    | '/dashboard'
     | '/forgot-password'
     | '/join'
     | '/login'
     | '/privacy'
     | '/reset-password'
     | '/verify-email'
+    | '/_admin/admin'
+    | '/_members/community'
+    | '/_members/events'
+    | '/_members/mentorship'
+    | '/_members/representatives'
+    | '/_members/resources'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRouteRoute: typeof AdminRouteRouteWithChildren
+  MembersRouteRoute: typeof MembersRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
+  AccessDeniedRoute: typeof AccessDeniedRoute
   CommunityRulesRoute: typeof CommunityRulesRoute
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   JoinRoute: typeof JoinRoute
   LoginRoute: typeof LoginRoute
@@ -169,11 +283,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_admin': {
+      id: '/_admin'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AdminRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_members': {
+      id: '/_members'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof MembersRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/access-denied': {
+      id: '/access-denied'
+      path: '/access-denied'
+      fullPath: '/access-denied'
+      preLoaderRoute: typeof AccessDeniedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/community-rules': {
@@ -188,6 +323,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/forgot-password': {
@@ -232,14 +374,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VerifyEmailRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_admin/admin': {
+      id: '/_admin/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminAdminRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/_members/community': {
+      id: '/_members/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof MembersCommunityRouteImport
+      parentRoute: typeof MembersRouteRoute
+    }
+    '/_members/events': {
+      id: '/_members/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof MembersEventsRouteImport
+      parentRoute: typeof MembersRouteRoute
+    }
+    '/_members/mentorship': {
+      id: '/_members/mentorship'
+      path: '/mentorship'
+      fullPath: '/mentorship'
+      preLoaderRoute: typeof MembersMentorshipRouteImport
+      parentRoute: typeof MembersRouteRoute
+    }
+    '/_members/representatives': {
+      id: '/_members/representatives'
+      path: '/representatives'
+      fullPath: '/representatives'
+      preLoaderRoute: typeof MembersRepresentativesRouteImport
+      parentRoute: typeof MembersRouteRoute
+    }
+    '/_members/resources': {
+      id: '/_members/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof MembersResourcesRouteImport
+      parentRoute: typeof MembersRouteRoute
+    }
   }
 }
 
+interface AdminRouteRouteChildren {
+  AdminAdminRoute: typeof AdminAdminRoute
+}
+
+const AdminRouteRouteChildren: AdminRouteRouteChildren = {
+  AdminAdminRoute: AdminAdminRoute,
+}
+
+const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
+  AdminRouteRouteChildren,
+)
+
+interface MembersRouteRouteChildren {
+  MembersCommunityRoute: typeof MembersCommunityRoute
+  MembersEventsRoute: typeof MembersEventsRoute
+  MembersMentorshipRoute: typeof MembersMentorshipRoute
+  MembersRepresentativesRoute: typeof MembersRepresentativesRoute
+  MembersResourcesRoute: typeof MembersResourcesRoute
+}
+
+const MembersRouteRouteChildren: MembersRouteRouteChildren = {
+  MembersCommunityRoute: MembersCommunityRoute,
+  MembersEventsRoute: MembersEventsRoute,
+  MembersMentorshipRoute: MembersMentorshipRoute,
+  MembersRepresentativesRoute: MembersRepresentativesRoute,
+  MembersResourcesRoute: MembersResourcesRoute,
+}
+
+const MembersRouteRouteWithChildren = MembersRouteRoute._addFileChildren(
+  MembersRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRouteRoute: AdminRouteRouteWithChildren,
+  MembersRouteRoute: MembersRouteRouteWithChildren,
   AboutRoute: AboutRoute,
+  AccessDeniedRoute: AccessDeniedRoute,
   CommunityRulesRoute: CommunityRulesRoute,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
   JoinRoute: JoinRoute,
   LoginRoute: LoginRoute,

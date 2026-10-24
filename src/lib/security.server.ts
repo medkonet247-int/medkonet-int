@@ -31,7 +31,7 @@ export function randomCode(): string {
   // rejection sampling for uniform 0..9999
   do {
     crypto.getRandomValues(buf);
-    n = buf[0];
+    n = buf[0] ?? 0;
   } while (n >= 4294960000);
   return String(n % 10000).padStart(4, "0");
 }

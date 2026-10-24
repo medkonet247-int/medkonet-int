@@ -66,7 +66,7 @@ export function SiteHeader() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="gap-2">
-                  <span className="max-w-40 truncate">{user?.user_metadata?.full_name ?? "My account"}</span>
+                  <span className="max-w-40 truncate">{user?.user_metadata?.["full_name"] ?? "My account"}</span>
                   <ChevronDown className="size-4" aria-hidden />
                 </Button>
               </DropdownMenuTrigger>

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/dashboard")({
 
 function Dashboard() {
   const { state, application, user } = useSession();
-  const name = application?.full_name ?? user?.user_metadata?.full_name ?? "there";
+  const name = application?.full_name ?? user?.user_metadata?.["full_name"] ?? "there";
   return (
     <>
       <PageHeader eyebrow="Student Dashboard" title={`Hello, ${name}`} />

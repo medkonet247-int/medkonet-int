@@ -64,8 +64,8 @@ const text = (label: string, min: number, max: number) =>
     .string()
     .trim()
     .min(1, `Enter your ${label}`)
-    .min(min, `${label[0].toUpperCase() + label.slice(1)} is too short`)
-    .max(max, `${label[0].toUpperCase() + label.slice(1)} is too long`);
+    .min(min, `${label.charAt(0).toUpperCase() + label.slice(1)} is too short`)
+    .max(max, `${label.charAt(0).toUpperCase() + label.slice(1)} is too long`);
 
 export const registrationSchema = z
   .object({
@@ -110,9 +110,9 @@ export function passwordStrength(pw: string): { score: number; label: string } {
 }
 
 export function maskEmail(email: string): string {
-  const [user, domain] = email.split("@");
+  const [user = "", domain] = email.split("@");
   if (!domain) return email;
-  const shown = user.length <= 2 ? user[0] : user.slice(0, 2);
+  const shown = user.length <= 2 ? user.slice(0, 1) : user.slice(0, 2);
   return `${shown}${"•".repeat(Math.max(2, user.length - shown.length))}@${domain}`;
 }
 
