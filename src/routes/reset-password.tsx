@@ -36,7 +36,7 @@ function ResetPassword() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     const p = passwordSchema.safeParse(pw);
-    if (!p.success) { setErr(p.error.issues[0].message); return; }
+    if (!p.success) { setErr(p.error.issues[0]?.message ?? "Invalid value"); return; }
     if (pw !== pw2) { setErr("Passwords do not match"); return; }
     setBusy(true);
     const { error } = await supabase.auth.updateUser({ password: pw });

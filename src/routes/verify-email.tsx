@@ -148,7 +148,7 @@ function VerifyEmail() {
 
   function useEmail() {
     const p = emailSchema.safeParse(emailInput);
-    if (!p.success) { setEmailErr(p.error.issues[0].message); return; }
+    if (!p.success) { setEmailErr(p.error.issues[0]?.message ?? "Invalid value"); return; }
     const h = { email: p.data };
     setHandoff(h);
     saveVerify(h);

@@ -24,7 +24,7 @@ function Forgot() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     const p = emailSchema.safeParse(email);
-    if (!p.success) { setErr(p.error.issues[0].message); return; }
+    if (!p.success) { setErr(p.error.issues[0]?.message ?? "Invalid email"); return; }
     setBusy(true);
     try {
       setDone(await reset({ data: { email: p.data } }));

@@ -34,7 +34,7 @@ function Login() {
     if (inFlight.current) return;
     setErr(null);
     const em = emailSchema.safeParse(email);
-    const fe = { email: em.success ? undefined : em.error.issues[0].message, password: password ? undefined : "Enter your password" };
+    const fe = { email: em.success ? undefined : em.error.issues[0]?.message ?? "Invalid value", password: password ? undefined : "Enter your password" };
     setFieldErr(fe);
     if (fe.email || fe.password) return;
     inFlight.current = true;

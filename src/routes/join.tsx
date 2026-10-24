@@ -56,7 +56,7 @@ function Join() {
       for (const i of parsed.error.issues) errs[i.path[0] as keyof Form] ??= i.message;
       setErrors(errs);
       const first = Object.keys(errs)[0];
-      document.getElementById(first)?.focus();
+      if (first) document.getElementById(first)?.focus();
       return;
     }
     inFlight.current = true;

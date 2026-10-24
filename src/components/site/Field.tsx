@@ -6,7 +6,7 @@ export const inputCls =
 
 export function Field({
   id, label, error, hint, children, className,
-}: { id: string; label: string; error?: string; hint?: ReactNode; children: ReactNode; className?: string }) {
+}: { id: string; label: string; error?: string | undefined; hint?: ReactNode; children: ReactNode; className?: string | undefined }) {
   return (
     <div className={cn("space-y-1.5", className)}>
       <label htmlFor={id} className="block text-sm font-semibold">{label}</label>

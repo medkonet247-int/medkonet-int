@@ -1,10 +1,10 @@
 // Client-side handoff between Join/Login and Verify Email (same tab only).
 export type VerifyHandoff = {
   email: string;
-  status?: "sent" | "not_configured" | "send_failed" | "rate_limited";
-  cooldownSeconds?: number;
-  devCode?: string;
-  message?: string;
+  status?: "sent" | "not_configured" | "send_failed" | "rate_limited" | undefined;
+  cooldownSeconds?: number | undefined;
+  devCode?: string | undefined;
+  message?: string | undefined;
 };
 const KEY = "mk_verify";
 
