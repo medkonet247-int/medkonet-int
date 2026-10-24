@@ -5,7 +5,7 @@ import { Eye, EyeOff, Loader2, ShieldCheck, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container, PageHeader, Card } from "@/components/site/Page";
 import { Field, inputCls, describedBy } from "@/components/site/Field";
-import { PrivacySummary } from "./privacy";
+import { PrivacySummary } from "@/components/site/Shared";
 import {
   ACADEMIC_LEVELS, NIGERIAN_STATES, REASON_MAX, REASON_MIN, UNIVERSITY_TYPES, passwordStrength, registrationSchema,
 } from "@/lib/validation";

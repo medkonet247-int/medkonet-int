@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CommunityRulesRouteImport } from './routes/community-rules'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as JoinRouteImport } from './routes/join'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/community-rules': typeof CommunityRulesRoute
   '/contact': typeof ContactRoute
+  '/join': typeof JoinRoute
   '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/community-rules': typeof CommunityRulesRoute
   '/contact': typeof ContactRoute
+  '/join': typeof JoinRoute
   '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,23 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/community-rules': typeof CommunityRulesRoute
   '/contact': typeof ContactRoute
+  '/join': typeof JoinRoute
   '/privacy': typeof PrivacyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/community-rules' | '/contact' | '/privacy'
+  fullPaths:
+    '/' | '/about' | '/community-rules' | '/contact' | '/join' | '/privacy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/community-rules' | '/contact' | '/privacy'
-  id: '__root__' | '/' | '/about' | '/community-rules' | '/contact' | '/privacy'
+  to: '/' | '/about' | '/community-rules' | '/contact' | '/join' | '/privacy'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/community-rules'
+    | '/contact'
+    | '/join'
+    | '/privacy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +93,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CommunityRulesRoute: typeof CommunityRulesRoute
   ContactRoute: typeof ContactRoute
+  JoinRoute: typeof JoinRoute
   PrivacyRoute: typeof PrivacyRoute
 }
 
@@ -109,6 +127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -124,6 +149,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CommunityRulesRoute: CommunityRulesRoute,
   ContactRoute: ContactRoute,
+  JoinRoute: JoinRoute,
   PrivacyRoute: PrivacyRoute,
 }
 export const routeTree = rootRouteImport

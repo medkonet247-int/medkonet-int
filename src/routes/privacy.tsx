@@ -2,21 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader } from "@/components/site/Page";
 import { CONTACT } from "@/lib/contact";
 import { seo } from "@/lib/seo";
+import { PrivacySummary } from "@/components/site/Shared";
 
 export const Route = createFileRoute("/privacy")({
   head: () => seo("Privacy Notice", "How MedKonet Nigeria collects, uses and protects applicant information."),
   component: Privacy,
 });
-
-export function PrivacySummary() {
-  return (
-    <ul className="list-disc space-y-1 pl-5">
-      <li><strong>Why we collect it:</strong> to review your membership application and, if approved, invite you to the MedKonet WhatsApp community.</li>
-      <li><strong>Who can see it:</strong> only you and MedKonet administrators.</li>
-      <li><strong>Never published:</strong> your WhatsApp number and email address are never shown publicly or shared with other members.</li>
-    </ul>
-  );
-}
 
 function Privacy() {
   return (
