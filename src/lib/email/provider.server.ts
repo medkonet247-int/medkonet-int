@@ -3,28 +3,49 @@
  * email service. To change providers, rewrite `deliver()` and keep the
  * `sendEmail` signature.
  *
+ * Current provider: Brevo transactional email (https://api.brevo.com/v3/smtp/email).
+ *
  * Secrets (server-side only):
- *   EMAIL_PROVIDER_API_KEY  – provider API key (default implementation: Resend)
- *   EMAIL_FROM              – sender, e.g. "MedKonet Nigeria <noreply@yourdomain>"
+ *   EMAIL_PROVIDER_API_KEY  – Brevo API key (sent as the `api-key` header)
+ *   EMAIL_FROM              – verified sender, e.g. "MedKonet Nigeria <noreply@yourdomain>"
  */
 export type EmailMessage = { to: string; subject: string; html: string; text: string };
-export type EmailResult = { configured: false } | { configured: true; sent: boolean };
+export type EmailResult =
+  | { configured: false }
+  | { configured: true; sent: true }
+  | { configured: true; sent: false; error: string };
 
 export function isEmailConfigured(): boolean {
   return Boolean(process.env["EMAIL_PROVIDER_API_KEY"] && process.env["EMAIL_FROM"]);
 }
 
-async function deliver(msg: EmailMessage, apiKey: string, from: string): Promise<boolean> {
-  const res = await fetch("https://api.resend.com/emails", {
+function parseSender(from: string): { email: string; name?: string } {
+  const m = /^\s*(.*?)\s*<([^<>]+)>\s*$/.exec(from);
+  if (m) return { email: m[2].trim(), ...(m[1].trim() ? { name: m[1].trim() } : {}) };
+  return { email: from.trim() };
+}
+
+type DeliverOutcome = { sent: true } | { sent: false; error: string };
+
+async function deliver(msg: EmailMessage, apiKey: string, from: string): Promise<DeliverOutcome> {
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
-    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from, to: [msg.to], subject: msg.subject, html: msg.html, text: msg.text }),
+    headers: { "api-key": apiKey, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      sender: parseSender(from),
+      to: [{ email: msg.to }],
+      subject: msg.subject,
+      htmlContent: msg.html,
+      textContent: msg.text,
+    }),
   });
-  if (!res.ok) {
-    // Never log message bodies: they may contain verification codes.
-    console.error("[email] provider rejected message", res.status);
-  }
-  return res.ok;
+  if (res.ok) return { sent: true };
+  // Brevo error bodies ({"code","message"}) never contain the email content,
+  // so it is safe to log and surface them. Never log the message itself: it
+  // may contain verification codes.
+  const body = await res.text().catch(() => "");
+  console.error(`[email] Brevo rejected message [${res.status}]: ${body}`);
+  return { sent: false, error: `Brevo ${res.status}: ${body || res.statusText}` };
 }
 
 export async function sendEmail(msg: EmailMessage): Promise<EmailResult> {
@@ -32,10 +53,12 @@ export async function sendEmail(msg: EmailMessage): Promise<EmailResult> {
   const from = process.env["EMAIL_FROM"];
   if (!apiKey || !from) return { configured: false };
   try {
-    return { configured: true, sent: await deliver(msg, apiKey, from) };
-  } catch {
-    console.error("[email] provider request failed");
-    return { configured: true, sent: false };
+    const out = await deliver(msg, apiKey, from);
+    return out.sent ? { configured: true, sent: true } : { configured: true, sent: false, error: out.error };
+  } catch (e) {
+    const detail = e instanceof Error ? e.message : "request failed";
+    console.error(`[email] Brevo request failed: ${detail}`);
+    return { configured: true, sent: false, error: `Brevo request failed: ${detail}` };
   }
 }
 
