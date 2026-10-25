@@ -27,7 +27,7 @@ export function useAdminOverview() {
 export function useAdminAction() {
   const execute = useServerFn(manageMembership);
   const qc = useQueryClient();
-  return async (data: Parameters<typeof execute>[0]["data"]) => {
+  return async (data: { action: "review" | "invited" | "onboarded" | "settings" | "grant" | "revoke"; target?: string; data: Record<string, string | boolean> }) => {
     try { await execute({ data }); await qc.invalidateQueries({ queryKey: ["admin"] }); toast.success("Saved successfully."); return true; }
     catch (e) { toast.error(e instanceof Error ? e.message : "Could not save. Please try again."); return false; }
   };
