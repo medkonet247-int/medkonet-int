@@ -21,11 +21,11 @@ export async function loadMemberState(): Promise<{ user: User | null; state: Mem
   const user = data.user;
   if (!user) return { user: null, state: "visitor", application: null };
   if (!user.email_confirmed_at) return { user, state: "unverified", application: null };
-  const [{ data: roles }, { data: app }] = await Promise.all([
-    supabase.from("user_roles").select("role").eq("user_id", user.id),
+  const [{ data: isAdmin }, { data: app }] = await Promise.all([
+    supabase.rpc("has_role", { _user_id: user.id, _role: "admin" }),
     supabase.from("applications").select("*").eq("user_id", user.id).maybeSingle(),
   ]);
-  if (roles?.some((r) => r.role === "admin")) return { user, state: "admin", application: app ?? null };
+  if (isAdmin) return { user, state: "admin", application: app ?? null };
   if (!app) return { user, state: "unverified", application: null };
   const state = app.application_status === "Approved" ? "approved" : app.application_status === "Rejected" ? "rejected" : "pending";
   return { user, state, application: app };
