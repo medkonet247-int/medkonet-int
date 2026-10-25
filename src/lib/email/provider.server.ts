@@ -21,7 +21,9 @@ export function isEmailConfigured(): boolean {
 
 function parseSender(from: string): { email: string; name?: string } {
   const m = /^\s*(.*?)\s*<([^<>]+)>\s*$/.exec(from);
-  if (m) return { email: m[2].trim(), ...(m[1].trim() ? { name: m[1].trim() } : {}) };
+  const name = m?.[1]?.trim();
+  const email = m?.[2]?.trim();
+  if (email) return name ? { email, name } : { email };
   return { email: from.trim() };
 }
 
