@@ -15,6 +15,13 @@
       "when": 1792894787695,
       "tag": "0001_membership_management_phase_two",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792894831908,
+      "tag": "0002_membership_statistics_registration_gate",
+      "breakpoints": true
     }
   ]
 }

@@ -333,6 +333,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_membership_summary: { Args: never; Returns: Json }
       auth_user_status: {
         Args: { _email: string }
         Returns: {

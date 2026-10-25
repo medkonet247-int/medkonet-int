@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Phase 2 administrator mutations use authenticated server functions and an atomic database RPC; role checks require a verified allowlisted account to prevent stale-role access.
+- Internal rejection reasons and invitation metadata live separately from applicant-readable applications; student onboarding reads only a self-scoped boolean.
+- Administrator routes remain in the existing client-gated _admin subtree; new management pages share an administrator navigation shell without changing Phase 1 routes.
