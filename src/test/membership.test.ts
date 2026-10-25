@@ -1,0 +1,11 @@
+import { describe, expect, it } from "vitest";
+import { canRevoke, DEFAULT_INVITATION, invitationMessage, membershipGroup, settingsSchema, whatsappUrl } from "@/lib/membership";
+describe("Phase 2 membership rules", () => {
+  it("encodes the editable invitation and strips plus and spaces from the international number", () => { expect(whatsappUrl("+234 803 123 4567", "Hello Ada,\nA & B")).toBe("https://wa.me/2348031234567?text=Hello%20Ada%2C%0AA%20%26%20B"); });
+  it("rejects malformed WhatsApp numbers", () => { expect(() => whatsappUrl("08031234567", "Hello")).toThrow(); expect(() => whatsappUrl("abc", "Hello")).toThrow(); });
+  it("uses actual applicant name and configured link without inventing a link", () => { expect(invitationMessage(DEFAULT_INVITATION, "Ada", "https://chat.whatsapp.com/official")).toContain("Hello Ada,"); expect(invitationMessage(DEFAULT_INVITATION, "Ada", "")).not.toContain("https://"); });
+  it("requires invitation and onboarding confirmations for onboarded membership", () => { expect(membershipGroup("Approved", false, true)).toBe("awaiting"); expect(membershipGroup("Approved", true, false)).toBe("awaiting"); expect(membershipGroup("Approved", true, true)).toBe("onboarded"); });
+  it("separates pending and rejected applicants", () => { expect(membershipGroup("Pending", false, false)).toBe("applicants"); expect(membershipGroup("Rejected", true, true)).toBe("applicants"); });
+  it("protects the first administrator and self-revocation", () => { expect(canRevoke("bionicz115@gmail.com", "other@example.com", false)).toBe(false); expect(canRevoke("me@example.com", "ME@example.com", false)).toBe(false); expect(canRevoke("other@example.com", "me@example.com", false)).toBe(true); });
+  it("validates private link and both template placeholders while accepting closed registration", () => { expect(settingsSchema.safeParse({ whatsapp_link: "not a URL", invitation_template: DEFAULT_INVITATION, registration_open: false }).success).toBe(false); expect(settingsSchema.safeParse({ whatsapp_link: "", invitation_template: "No placeholders", registration_open: true }).success).toBe(false); expect(settingsSchema.parse({ whatsapp_link: "", invitation_template: DEFAULT_INVITATION, registration_open: false }).registration_open).toBe(false); });
+});

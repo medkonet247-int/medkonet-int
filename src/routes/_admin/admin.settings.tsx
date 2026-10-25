@@ -1,0 +1,17 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { AdminShell, QueryState, useAdminOverview, useAdminAction } from "@/components/admin/AdminShell";
+import { Field, inputCls } from "@/components/site/Field";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { DEFAULT_INVITATION, settingsSchema } from "@/lib/membership";
+import { seo } from "@/lib/seo";
+export const Route = createFileRoute("/_admin/admin/settings")({ head: () => seo("Administrator Settings", "Private MedKonet invitation and registration settings.", { noindex: true }), component: Settings });
+function Settings() {
+  const overview = useAdminOverview(); const save = useAdminAction();
+  const [form, setForm] = useState({ whatsapp_link: "", invitation_template: DEFAULT_INVITATION, registration_open: true });
+  const [busy, setBusy] = useState(false); const [error, setError] = useState("");
+  useEffect(() => { if (overview.data) { const s = overview.data.settings; setForm({ whatsapp_link: s.whatsapp_link, invitation_template: s.invitation_template || DEFAULT_INVITATION, registration_open: s.registration_open }); } }, [overview.data]);
+  async function submit(e: React.FormEvent) { e.preventDefault(); if (busy) return; const parsed = settingsSchema.safeParse(form); if (!parsed.success) { setError(parsed.error.issues[0]?.message ?? "Check settings."); return; } setError(""); setBusy(true); await save({ action: "settings", data: parsed.data }); setBusy(false); }
+  return <AdminShell title="Settings"><QueryState loading={overview.isLoading} error={overview.error} />{overview.data && <form className="max-w-3xl space-y-8" onSubmit={e => void submit(e)}><section className="space-y-5"><h2 className="text-lg font-semibold">WhatsApp invitations</h2><Field id="official-link" label="Official WhatsApp community invitation link" hint="Private. Used only in administrator invitation messages."><input id="official-link" type="url" autoComplete="off" className={inputCls} placeholder="https://" value={form.whatsapp_link} onChange={e => setForm(p => ({ ...p, whatsapp_link: e.target.value }))} /></Field><Field id="message-template" label="Invitation message template" hint="Keep [Applicant Name] and [Insert Official WhatsApp Invitation Link] in the message."><textarea id="message-template" rows={14} maxLength={5000} className={inputCls} value={form.invitation_template} onChange={e => setForm(p => ({ ...p, invitation_template: e.target.value }))} /></Field></section><section className="flex items-center justify-between gap-4 border-y py-6"><div><label htmlFor="registration-open" className="font-semibold">Registration {form.registration_open ? "open" : "closed"}</label><p className="mt-1 text-sm text-muted-foreground">Existing members can still log in when registration is closed.</p></div><Switch id="registration-open" checked={form.registration_open} onCheckedChange={v => setForm(p => ({ ...p, registration_open: v }))} /></section>{error && <p role="alert" className="text-sm text-destructive">{error}</p>}<Button disabled={busy} type="submit">{busy ? "Saving…" : "Save settings"}</Button></form>}</AdminShell>;
+}

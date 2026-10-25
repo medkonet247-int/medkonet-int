@@ -29,6 +29,11 @@ import { Route as MembersEventsRouteImport } from './routes/_members/events'
 import { Route as MembersMentorshipRouteImport } from './routes/_members/mentorship'
 import { Route as MembersRepresentativesRouteImport } from './routes/_members/representatives'
 import { Route as MembersResourcesRouteImport } from './routes/_members/resources'
+import { Route as AdminAdminAdministratorsRouteImport } from './routes/_admin/admin.administrators'
+import { Route as AdminAdminApplicationsRouteImport } from './routes/_admin/admin.applications'
+import { Route as AdminAdminAuditRouteImport } from './routes/_admin/admin.audit'
+import { Route as AdminAdminMembersRouteImport } from './routes/_admin/admin.members'
+import { Route as AdminAdminSettingsRouteImport } from './routes/_admin/admin.settings'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -128,6 +133,32 @@ const MembersResourcesRoute = MembersResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => MembersRouteRoute,
 } as any)
+const AdminAdminAdministratorsRoute =
+  AdminAdminAdministratorsRouteImport.update({
+    id: '/administrators',
+    path: '/administrators',
+    getParentRoute: () => AdminAdminRoute,
+  } as any)
+const AdminAdminApplicationsRoute = AdminAdminApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminAuditRoute = AdminAdminAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminMembersRoute = AdminAdminMembersRouteImport.update({
+  id: '/members',
+  path: '/members',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminSettingsRoute = AdminAdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -142,12 +173,17 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/verify-email': typeof VerifyEmailRoute
-  '/admin': typeof AdminAdminRoute
+  '/admin': typeof AdminAdminRouteWithChildren
   '/community': typeof MembersCommunityRoute
   '/events': typeof MembersEventsRoute
   '/mentorship': typeof MembersMentorshipRoute
   '/representatives': typeof MembersRepresentativesRoute
   '/resources': typeof MembersResourcesRoute
+  '/admin/administrators': typeof AdminAdminAdministratorsRoute
+  '/admin/applications': typeof AdminAdminApplicationsRoute
+  '/admin/audit': typeof AdminAdminAuditRoute
+  '/admin/members': typeof AdminAdminMembersRoute
+  '/admin/settings': typeof AdminAdminSettingsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -162,12 +198,17 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/verify-email': typeof VerifyEmailRoute
-  '/admin': typeof AdminAdminRoute
+  '/admin': typeof AdminAdminRouteWithChildren
   '/community': typeof MembersCommunityRoute
   '/events': typeof MembersEventsRoute
   '/mentorship': typeof MembersMentorshipRoute
   '/representatives': typeof MembersRepresentativesRoute
   '/resources': typeof MembersResourcesRoute
+  '/admin/administrators': typeof AdminAdminAdministratorsRoute
+  '/admin/applications': typeof AdminAdminApplicationsRoute
+  '/admin/audit': typeof AdminAdminAuditRoute
+  '/admin/members': typeof AdminAdminMembersRoute
+  '/admin/settings': typeof AdminAdminSettingsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -185,12 +226,17 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/verify-email': typeof VerifyEmailRoute
-  '/_admin/admin': typeof AdminAdminRoute
+  '/_admin/admin': typeof AdminAdminRouteWithChildren
   '/_members/community': typeof MembersCommunityRoute
   '/_members/events': typeof MembersEventsRoute
   '/_members/mentorship': typeof MembersMentorshipRoute
   '/_members/representatives': typeof MembersRepresentativesRoute
   '/_members/resources': typeof MembersResourcesRoute
+  '/_admin/admin/administrators': typeof AdminAdminAdministratorsRoute
+  '/_admin/admin/applications': typeof AdminAdminApplicationsRoute
+  '/_admin/admin/audit': typeof AdminAdminAuditRoute
+  '/_admin/admin/members': typeof AdminAdminMembersRoute
+  '/_admin/admin/settings': typeof AdminAdminSettingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -213,6 +259,11 @@ export interface FileRouteTypes {
     | '/mentorship'
     | '/representatives'
     | '/resources'
+    | '/admin/administrators'
+    | '/admin/applications'
+    | '/admin/audit'
+    | '/admin/members'
+    | '/admin/settings'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -233,6 +284,11 @@ export interface FileRouteTypes {
     | '/mentorship'
     | '/representatives'
     | '/resources'
+    | '/admin/administrators'
+    | '/admin/applications'
+    | '/admin/audit'
+    | '/admin/members'
+    | '/admin/settings'
   id:
     | '__root__'
     | '/'
@@ -255,6 +311,11 @@ export interface FileRouteTypes {
     | '/_members/mentorship'
     | '/_members/representatives'
     | '/_members/resources'
+    | '/_admin/admin/administrators'
+    | '/_admin/admin/applications'
+    | '/_admin/admin/audit'
+    | '/_admin/admin/members'
+    | '/_admin/admin/settings'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -416,15 +477,70 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MembersResourcesRouteImport
       parentRoute: typeof MembersRouteRoute
     }
+    '/_admin/admin/administrators': {
+      id: '/_admin/admin/administrators'
+      path: '/administrators'
+      fullPath: '/admin/administrators'
+      preLoaderRoute: typeof AdminAdminAdministratorsRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/applications': {
+      id: '/_admin/admin/applications'
+      path: '/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AdminAdminApplicationsRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/audit': {
+      id: '/_admin/admin/audit'
+      path: '/audit'
+      fullPath: '/admin/audit'
+      preLoaderRoute: typeof AdminAdminAuditRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/members': {
+      id: '/_admin/admin/members'
+      path: '/members'
+      fullPath: '/admin/members'
+      preLoaderRoute: typeof AdminAdminMembersRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/settings': {
+      id: '/_admin/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminAdminSettingsRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
   }
 }
 
+interface AdminAdminRouteChildren {
+  AdminAdminAdministratorsRoute: typeof AdminAdminAdministratorsRoute
+  AdminAdminApplicationsRoute: typeof AdminAdminApplicationsRoute
+  AdminAdminAuditRoute: typeof AdminAdminAuditRoute
+  AdminAdminMembersRoute: typeof AdminAdminMembersRoute
+  AdminAdminSettingsRoute: typeof AdminAdminSettingsRoute
+}
+
+const AdminAdminRouteChildren: AdminAdminRouteChildren = {
+  AdminAdminAdministratorsRoute: AdminAdminAdministratorsRoute,
+  AdminAdminApplicationsRoute: AdminAdminApplicationsRoute,
+  AdminAdminAuditRoute: AdminAdminAuditRoute,
+  AdminAdminMembersRoute: AdminAdminMembersRoute,
+  AdminAdminSettingsRoute: AdminAdminSettingsRoute,
+}
+
+const AdminAdminRouteWithChildren = AdminAdminRoute._addFileChildren(
+  AdminAdminRouteChildren,
+)
+
 interface AdminRouteRouteChildren {
-  AdminAdminRoute: typeof AdminAdminRoute
+  AdminAdminRoute: typeof AdminAdminRouteWithChildren
 }
 
 const AdminRouteRouteChildren: AdminRouteRouteChildren = {
-  AdminAdminRoute: AdminAdminRoute,
+  AdminAdminRoute: AdminAdminRouteWithChildren,
 }
 
 const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(

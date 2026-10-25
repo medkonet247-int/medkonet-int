@@ -1,20 +1,23 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
+import { useSuspenseQuery, queryOptions } from "@tanstack/react-query";
 import { useRef, useState, type FormEvent } from "react";
 import { Eye, EyeOff, Loader2, ShieldCheck, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container, PageHeader, Card } from "@/components/site/Page";
 import { Field, inputCls, describedBy } from "@/components/site/Field";
-import { PrivacySummary } from "@/components/site/Shared";
+import { PrivacySummary, ContactOptions } from "@/components/site/Shared";
 import {
   ACADEMIC_LEVELS, NIGERIAN_STATES, REASON_MAX, REASON_MIN, UNIVERSITY_TYPES, passwordStrength, registrationSchema,
 } from "@/lib/validation";
-import { registerApplicant } from "@/lib/auth.functions";
+import { registerApplicant, getRegistrationStatus } from "@/lib/auth.functions";
 import { saveVerify } from "@/lib/verify-state";
 import { seo } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
+const registrationOptions = queryOptions({ queryKey: ["registration-status"], queryFn: () => getRegistrationStatus(), staleTime: 0 });
 export const Route = createFileRoute("/join")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(registrationOptions),
   head: () => seo("Join MedKonet", "Apply to join MedKonet Nigeria, the community for Medicine and Surgery students across Nigerian universities."),
   component: Join,
 });
@@ -30,6 +33,7 @@ const EMPTY: Form = {
 };
 
 function Join() {
+  const { data: registration } = useSuspenseQuery(registrationOptions);
   const navigate = useNavigate();
   const register = useServerFn(registerApplicant);
   const [f, setF] = useState<Form>(EMPTY);
@@ -113,6 +117,8 @@ function Join() {
       {options.map((o) => <option key={o} value={o}>{o}</option>)}
     </select>
   );
+
+  if (!registration.open) return <><PageHeader eyebrow="Membership" title="Join MedKonet" /><Container className="max-w-4xl space-y-6 py-12"><h2 className="text-xl font-semibold">Registration is currently closed</h2><p className="text-muted-foreground">Thank you for your interest. Please contact the MedKonet team for updates. Existing members can still log in.</p><ContactOptions /><Button asChild variant="outline"><Link to="/login">Login</Link></Button></Container></>;
 
   return (
     <>

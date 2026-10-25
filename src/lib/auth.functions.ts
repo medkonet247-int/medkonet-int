@@ -21,6 +21,12 @@ export const getPublicConfig = createServerFn({ method: "GET" }).handler(async (
   devMode: isDevMode(),
 }));
 
+export const getRegistrationStatus = createServerFn({ method: "GET" }).handler(async () => {
+  const { data, error } = await publicClient().rpc("registration_is_open");
+  if (error) throw new Error("Could not check registration availability.");
+  return { open: data };
+});
+
 export type RegisterResult =
   | { result: "already_verified" }
   | ({ result: "verify"; email: string } & IssueResult)
@@ -29,6 +35,8 @@ export type RegisterResult =
 export const registerApplicant = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => d)
   .handler(async ({ data }): Promise<RegisterResult> => {
+    const { data: open, error: configError } = await publicClient().rpc("registration_is_open");
+    if (configError || !open) return { result: "error", message: "Registration is currently closed. Please contact the MedKonet team." };
     const parsed = registrationSchema.safeParse(data);
     if (!parsed.success) {
       const fieldErrors: Record<string, string> = {};

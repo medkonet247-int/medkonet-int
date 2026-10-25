@@ -140,6 +140,68 @@ export type Database = {
         }
         Relationships: []
       }
+      membership_management: {
+        Row: {
+          application_id: string
+          invited_at: string | null
+          invited_by: string | null
+          onboarded_at: string | null
+          onboarded_by: string | null
+          rejection_reason: string
+        }
+        Insert: {
+          application_id: string
+          invited_at?: string | null
+          invited_by?: string | null
+          onboarded_at?: string | null
+          onboarded_by?: string | null
+          rejection_reason?: string
+        }
+        Update: {
+          application_id?: string
+          invited_at?: string | null
+          invited_by?: string | null
+          onboarded_at?: string | null
+          onboarded_by?: string | null
+          rejection_reason?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "membership_management_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: true
+            referencedRelation: "applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      membership_settings: {
+        Row: {
+          id: boolean
+          invitation_template: string
+          registration_open: boolean
+          updated_at: string
+          updated_by: string | null
+          whatsapp_link: string
+        }
+        Insert: {
+          id?: boolean
+          invitation_template?: string
+          registration_open?: boolean
+          updated_at?: string
+          updated_by?: string | null
+          whatsapp_link?: string
+        }
+        Update: {
+          id?: boolean
+          invitation_template?: string
+          registration_open?: boolean
+          updated_at?: string
+          updated_by?: string | null
+          whatsapp_link?: string
+        }
+        Relationships: []
+      }
       pending_registrations: {
         Row: {
           created_at: string
@@ -271,6 +333,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_membership_summary: { Args: never; Returns: Json }
       auth_user_status: {
         Args: { _email: string }
         Returns: {
@@ -290,6 +353,12 @@ export type Database = {
         Returns: boolean
       }
       is_approved_member: { Args: { _user_id: string }; Returns: boolean }
+      manage_membership: {
+        Args: { _action: string; _data?: Json; _target?: string }
+        Returns: undefined
+      }
+      member_onboarding_status: { Args: never; Returns: boolean }
+      registration_is_open: { Args: never; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "member"

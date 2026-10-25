@@ -1,0 +1,20 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { UserPlus, ShieldCheck } from "lucide-react";
+import { getAdministrators } from "@/lib/admin.functions";
+import { canRevoke } from "@/lib/membership";
+import { useSession } from "@/lib/session";
+import { AdminShell, QueryState, useAdminAction, dateTime, useAdminOverview } from "@/components/admin/AdminShell";
+import { Button } from "@/components/ui/button";
+import { Field, inputCls } from "@/components/site/Field";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { seo } from "@/lib/seo";
+export const Route = createFileRoute("/_admin/admin/administrators")({ head: () => seo("Administrator Management", "Private MedKonet allowlist grants and revocations.", { noindex: true }), component: Administrators });
+function Administrators() {
+  const fetch = useServerFn(getAdministrators); const list = useQuery({ queryKey: ["admin", "administrators"], queryFn: () => fetch() }); const overview = useAdminOverview(); const save = useAdminAction(); const { user } = useSession();
+  const [email, setEmail] = useState(""); const [pending, setPending] = useState<{ action: "grant" | "revoke"; email: string } | null>(null); const [busy, setBusy] = useState(false);
+  async function confirm() { if (!pending || busy) return; setBusy(true); const ok = await save({ action: pending.action, data: { email: pending.email.trim().toLowerCase() } }); setBusy(false); if (ok) { setPending(null); setEmail(""); } }
+  return <AdminShell title="Administrators"><form className="mb-8 flex max-w-xl flex-wrap items-end gap-3" onSubmit={e => { e.preventDefault(); setPending({ action: "grant", email }); }}><Field id="administrator-email" label="Grant access by email" className="min-w-0 flex-1"><input id="administrator-email" required type="email" className={inputCls} value={email} onChange={e => setEmail(e.target.value)} /></Field><Button type="submit"><UserPlus className="size-4" />Grant access</Button><p className="w-full text-sm text-muted-foreground">Access starts only after this email has been verified.</p></form><QueryState loading={list.isLoading} error={list.error} /><div className="grid gap-3">{list.data?.administrators.map(a => <article key={a.email} className="flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-card p-4"><div className="min-w-0"><p className="break-all font-semibold">{a.email}</p><p className="mt-1 text-xs text-muted-foreground">Added {dateTime(a.created_at)}</p><p className="mt-1 text-xs text-muted-foreground">Granted by {overview.data?.profiles.find(p => p.id === a.granted_by)?.full_name ?? (a.is_protected ? "Initial allowlist" : a.granted_by ?? "—")}</p></div>{canRevoke(a.email, user?.email ?? "", a.is_protected) ? <Button variant="outline" size="sm" onClick={() => setPending({ action: "revoke", email: a.email })}>Revoke access</Button> : <span className="flex items-center gap-1 text-xs text-muted-foreground"><ShieldCheck className="size-4" />{a.is_protected ? "Protected first administrator" : "Your account"}</span>}</article>)}</div>{list.data?.administrators.length === 0 && <p className="py-10 text-muted-foreground">No administrators to display.</p>}<Dialog open={!!pending} onOpenChange={o => !o && !busy && setPending(null)}><DialogContent className="w-[calc(100%-2rem)] rounded-lg"><DialogHeader><DialogTitle>{pending?.action === "grant" ? "Grant" : "Revoke"} administrator access?</DialogTitle><DialogDescription className="break-all">{pending?.email}. This change will be recorded in the audit log.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" disabled={busy} onClick={() => setPending(null)}>Cancel</Button><Button disabled={busy} onClick={() => void confirm()}>{busy ? "Saving…" : "Confirm"}</Button></DialogFooter></DialogContent></Dialog></AdminShell>;
+}
