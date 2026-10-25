@@ -138,7 +138,7 @@ function VerifyEmail() {
       setCode("");
       if (r.status === "rate_limited") setInfo(r.message ?? "Please wait before requesting another code.");
       else if (r.status === "sent") setInfo("A new code has been sent. Earlier codes no longer work.");
-      else if (r.status === "send_failed") setInfo("We couldn't send the email. Please try again shortly.");
+      else if (r.status === "send_failed") setInfo(`We couldn't send the email. ${r.message ?? "Please try again shortly."}`);
     } catch {
       setError({ text: "Something went wrong. Please try again." });
     } finally {

@@ -77,7 +77,9 @@ export async function issueCode(userId: string, email: string, ip: string): Prom
   const res = await sendEmail({ to: email, ...mail });
   const devCode = isDevMode() ? code : undefined;
   const status: SendStatus = !res.configured ? "not_configured" : res.sent ? "sent" : "send_failed";
-  return { status, cooldownSeconds: RESEND_COOLDOWN_S, ...(devCode ? { devCode } : {}) };
+  // Surface the provider's exact error so delivery problems are diagnosable.
+  const message = !res.configured || res.sent ? undefined : res.error;
+  return { status, cooldownSeconds: RESEND_COOLDOWN_S, ...(devCode ? { devCode } : {}), ...(message ? { message } : {}) };
 }
 
 export type VerifyOutcome =
