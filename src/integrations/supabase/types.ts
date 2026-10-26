@@ -359,6 +359,8 @@ export type Database = {
       }
       member_onboarding_status: { Args: never; Returns: boolean }
       registration_is_open: { Args: never; Returns: boolean }
+      show_limit: { Args: never; Returns: number }
+      show_trgm: { Args: { "": string }; Returns: string[] }
     }
     Enums: {
       app_role: "admin" | "member"

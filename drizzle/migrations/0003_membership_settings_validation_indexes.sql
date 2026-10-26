@@ -1,0 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA public;
+CREATE INDEX applications_name_trigram ON public.applications USING gin (full_name public.gin_trgm_ops);
+CREATE INDEX applications_email_trigram ON public.applications USING gin (email public.gin_trgm_ops);
+CREATE FUNCTION public.validate_membership_settings() RETURNS trigger LANGUAGE plpgsql SET search_path=public AS $$ BEGIN IF NEW.whatsapp_link<>'' AND NEW.whatsapp_link !~ '^https://[A-Za-z0-9.-]+(:[0-9]+)?([/?#][^[:space:]]*)?$' THEN RAISE EXCEPTION 'Enter a valid HTTPS invitation URL'; END IF; IF position('[Applicant Name]' in NEW.invitation_template)=0 OR position('[Insert Official WhatsApp Invitation Link]' in NEW.invitation_template)=0 THEN RAISE EXCEPTION 'Keep both invitation placeholders'; END IF; RETURN NEW; END $$;
+CREATE TRIGGER validate_membership_settings BEFORE INSERT OR UPDATE ON public.membership_settings FOR EACH ROW EXECUTE FUNCTION public.validate_membership_settings();
