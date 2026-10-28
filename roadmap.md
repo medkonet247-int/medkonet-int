@@ -1,7 +1,9 @@
 # Phase 3
-- [ ] Add private published content, storage access and audited administrator actions.
-- [ ] Replace member placeholders and add administrator Content tabs and WhatsApp visibility setting.
-- [ ] Test content rules, access, uploads, management and 360px layouts; report limits and remaining checks.
+- [x] Add private published content, storage access and audited administrator actions.
+- [x] Replace member placeholders and add administrator Content tabs and WhatsApp visibility setting.
+- [x] Test content rules, uploads, administrator management and 360px layouts; report limits and remaining checks.
+- [ ] Complete live member-state/direct-query access matrix. Blocker: no approved non-admin testing session or unverified/Pending/Rejected testing accounts authorized for this turn.
+- [ ] Verify enabled community-link delivery. Blocker: official WhatsApp invitation link is not configured.
 
 ## Earlier verification blockers
 - [x] Add private membership settings, management records, secure actions and audit history.

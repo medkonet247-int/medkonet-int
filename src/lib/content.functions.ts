@@ -61,7 +61,7 @@ export const changeContent = createServerFn({ method: "POST" }).middleware([requ
 export const resourceUrl = createServerFn({ method: "POST" }).middleware([requireSupabaseAuth]).inputValidator((v: unknown) => z.string().uuid().parse(v)).handler(async ({ data, context }) => {
   const item = await context.supabase.from("content_items").select("file_path").eq("id", data).eq("kind", "resources").single(); if (item.error || !item.data.file_path) throw new Error("Resource unavailable.");
   const result = await context.supabase.storage.from("academic-resources").createSignedUrl(item.data.file_path, SIGNED_SECONDS); if (result.error) throw new Error("Could not open this file.");
-  const browserBase = import.meta.env.VITE_SUPABASE_URL;
+  const browserBase = import.meta.env['VITE_SUPABASE_URL'];
   if (!browserBase) throw new Error("File delivery is unavailable.");
   const signed = new URL(result.data.signedUrl);
   return { url: `${browserBase.replace(/\/$/, "")}${signed.pathname}${signed.search}` };
