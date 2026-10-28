@@ -396,6 +396,7 @@ export type Database = {
           user_id: string
         }[]
       }
+      can_read_academic_content: { Args: never; Returns: boolean }
       complete_registration: {
         Args: { _dev_mode: boolean; _user_id: string }
         Returns: string

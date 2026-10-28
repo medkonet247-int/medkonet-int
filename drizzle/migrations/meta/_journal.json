@@ -36,6 +36,13 @@
       "when": 1793166569960,
       "tag": "0004_private_academic_content",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793166777016,
+      "tag": "0005_verified_content_access_validation",
+      "breakpoints": true
     }
   ]
 }
