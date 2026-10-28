@@ -29,6 +29,13 @@
       "when": 1792996874851,
       "tag": "0003_membership_settings_validation_indexes",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793166569960,
+      "tag": "0004_private_academic_content",
+      "breakpoints": true
     }
   ]
 }
