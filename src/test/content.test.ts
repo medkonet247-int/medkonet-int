@@ -1,0 +1,14 @@
+import { describe, expect, it } from "vitest";
+import { contentSchema, detailsOf, eventIsPast, filterContent, httpsUrl, validateFileMeta, FILE_LIMIT, SIGNED_SECONDS, watDate } from "@/lib/content";
+describe("Phase 3 academic content rules", () => {
+  it("permits HTTPS links only without credentials", () => { expect(httpsUrl.safeParse("https://example.org/learning").success).toBe(true); for (const v of ["javascript:alert(1)","http://example.org","https://user:password@example.org"]) expect(httpsUrl.safeParse(v).success).toBe(false); });
+  it("accepts allowed file types and rejects executables", () => { expect(validateFileMeta("guide.pdf",100,"application/pdf").ext).toBe("pdf"); expect(validateFileMeta("slides.pptx",100,"application/vnd.openxmlformats-officedocument.presentationml.presentation").ext).toBe("pptx"); expect(() => validateFileMeta("guide.exe",100,"application/octet-stream")).toThrow(); });
+  it("rejects oversized files and MIME mismatches", () => { expect(FILE_LIMIT).toBe(10485760); expect(() => validateFileMeta("guide.pdf",10485761,"application/pdf")).toThrow(); expect(() => validateFileMeta("guide.pdf",100,"text/html")).toThrow(); });
+  it("uses short-lived signed access", () => { expect(SIGNED_SECONDS).toBe(60); });
+  it("searches titles and descriptions with combined category and type filters", () => { const rows = [{title:"Study",description:"Anatomy revision",details:{category:"Anatomy",type:"PDF"}},{title:"Anatomy",description:"Other",details:{category:"Other",type:"Website link"}}]; expect(filterContent(rows,"revision","Anatomy","PDF",true)).toEqual([rows[0]]); expect(filterContent(rows,"revision","Other","PDF",true)).toEqual([]); });
+  it("separates upcoming and past events at actual time", () => { expect(eventIsPast("2026-10-28T12:00:00Z",Date.parse("2026-10-28T13:00:00Z"))).toBe(true); expect(eventIsPast("2026-10-29T12:00:00Z",Date.parse("2026-10-28T13:00:00Z"))).toBe(false); });
+  it("shows dates in Nigerian WAT", () => { expect(watDate("2026-10-28T12:00:00Z")).toContain("13:00"); });
+  it("rejects invalid event dates", () => { expect(contentSchema.safeParse({kind:"events",title:"Event",description:"Study",published:false,details:{type:"Webinar",starts_at:"invalid"}}).success).toBe(false); });
+  it("permits open and closed mentorship only", () => { expect(contentSchema.parse({kind:"mentorship",title:"Guidance",description:"Support",published:false,details:{status:"Closed"}}).details.status).toBe("Closed"); expect(contentSchema.safeParse({kind:"mentorship",title:"Guidance",description:"Support",published:false,details:{status:"Scheduled"}}).success).toBe(false); });
+  it("announcements default to unpinned", () => { expect(detailsOf({}).pinned).toBe(false); });
+});
