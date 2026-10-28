@@ -116,6 +116,45 @@ export type Database = {
         }
         Relationships: []
       }
+      content_items: {
+        Row: {
+          created_at: string
+          description: string
+          details: Json
+          file_path: string | null
+          id: string
+          kind: string
+          published: boolean
+          published_at: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          details?: Json
+          file_path?: string | null
+          id?: string
+          kind: string
+          published?: boolean
+          published_at?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          details?: Json
+          file_path?: string | null
+          id?: string
+          kind?: string
+          published?: boolean
+          published_at?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       member_pages: {
         Row: {
           intro: string
@@ -180,6 +219,7 @@ export type Database = {
           id: boolean
           invitation_template: string
           registration_open: boolean
+          show_whatsapp_to_members: boolean
           updated_at: string
           updated_by: string | null
           whatsapp_link: string
@@ -188,6 +228,7 @@ export type Database = {
           id?: boolean
           invitation_template?: string
           registration_open?: boolean
+          show_whatsapp_to_members?: boolean
           updated_at?: string
           updated_by?: string | null
           whatsapp_link?: string
@@ -196,6 +237,7 @@ export type Database = {
           id?: boolean
           invitation_template?: string
           registration_open?: boolean
+          show_whatsapp_to_members?: boolean
           updated_at?: string
           updated_by?: string | null
           whatsapp_link?: string
@@ -262,6 +304,18 @@ export type Database = {
           id?: number
           key?: string
           kind?: string
+        }
+        Relationships: []
+      }
+      resource_categories: {
+        Row: {
+          name: string
+        }
+        Insert: {
+          name: string
+        }
+        Update: {
+          name?: string
         }
         Relationships: []
       }
@@ -334,6 +388,7 @@ export type Database = {
     }
     Functions: {
       admin_membership_summary: { Args: never; Returns: Json }
+      approved_whatsapp_link: { Args: never; Returns: string }
       auth_user_status: {
         Args: { _email: string }
         Returns: {
@@ -341,6 +396,7 @@ export type Database = {
           user_id: string
         }[]
       }
+      can_read_academic_content: { Args: never; Returns: boolean }
       complete_registration: {
         Args: { _dev_mode: boolean; _user_id: string }
         Returns: string
@@ -359,6 +415,10 @@ export type Database = {
       }
       member_onboarding_status: { Args: never; Returns: boolean }
       registration_is_open: { Args: never; Returns: boolean }
+      set_member_whatsapp_visibility: {
+        Args: { _show: boolean }
+        Returns: undefined
+      }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
     }

@@ -32,6 +32,7 @@ import { Route as MembersResourcesRouteImport } from './routes/_members/resource
 import { Route as AdminAdminAdministratorsRouteImport } from './routes/_admin/admin.administrators'
 import { Route as AdminAdminApplicationsRouteImport } from './routes/_admin/admin.applications'
 import { Route as AdminAdminAuditRouteImport } from './routes/_admin/admin.audit'
+import { Route as AdminAdminContentRouteImport } from './routes/_admin/admin.content'
 import { Route as AdminAdminMembersRouteImport } from './routes/_admin/admin.members'
 import { Route as AdminAdminSettingsRouteImport } from './routes/_admin/admin.settings'
 
@@ -149,6 +150,11 @@ const AdminAdminAuditRoute = AdminAdminAuditRouteImport.update({
   path: '/audit',
   getParentRoute: () => AdminAdminRoute,
 } as any)
+const AdminAdminContentRoute = AdminAdminContentRouteImport.update({
+  id: '/content',
+  path: '/content',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
 const AdminAdminMembersRoute = AdminAdminMembersRouteImport.update({
   id: '/members',
   path: '/members',
@@ -182,6 +188,7 @@ export interface FileRoutesByFullPath {
   '/admin/administrators': typeof AdminAdminAdministratorsRoute
   '/admin/applications': typeof AdminAdminApplicationsRoute
   '/admin/audit': typeof AdminAdminAuditRoute
+  '/admin/content': typeof AdminAdminContentRoute
   '/admin/members': typeof AdminAdminMembersRoute
   '/admin/settings': typeof AdminAdminSettingsRoute
 }
@@ -207,6 +214,7 @@ export interface FileRoutesByTo {
   '/admin/administrators': typeof AdminAdminAdministratorsRoute
   '/admin/applications': typeof AdminAdminApplicationsRoute
   '/admin/audit': typeof AdminAdminAuditRoute
+  '/admin/content': typeof AdminAdminContentRoute
   '/admin/members': typeof AdminAdminMembersRoute
   '/admin/settings': typeof AdminAdminSettingsRoute
 }
@@ -235,6 +243,7 @@ export interface FileRoutesById {
   '/_admin/admin/administrators': typeof AdminAdminAdministratorsRoute
   '/_admin/admin/applications': typeof AdminAdminApplicationsRoute
   '/_admin/admin/audit': typeof AdminAdminAuditRoute
+  '/_admin/admin/content': typeof AdminAdminContentRoute
   '/_admin/admin/members': typeof AdminAdminMembersRoute
   '/_admin/admin/settings': typeof AdminAdminSettingsRoute
 }
@@ -262,6 +271,7 @@ export interface FileRouteTypes {
     | '/admin/administrators'
     | '/admin/applications'
     | '/admin/audit'
+    | '/admin/content'
     | '/admin/members'
     | '/admin/settings'
   fileRoutesByTo: FileRoutesByTo
@@ -287,6 +297,7 @@ export interface FileRouteTypes {
     | '/admin/administrators'
     | '/admin/applications'
     | '/admin/audit'
+    | '/admin/content'
     | '/admin/members'
     | '/admin/settings'
   id:
@@ -314,6 +325,7 @@ export interface FileRouteTypes {
     | '/_admin/admin/administrators'
     | '/_admin/admin/applications'
     | '/_admin/admin/audit'
+    | '/_admin/admin/content'
     | '/_admin/admin/members'
     | '/_admin/admin/settings'
   fileRoutesById: FileRoutesById
@@ -498,6 +510,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminAdminAuditRouteImport
       parentRoute: typeof AdminAdminRoute
     }
+    '/_admin/admin/content': {
+      id: '/_admin/admin/content'
+      path: '/content'
+      fullPath: '/admin/content'
+      preLoaderRoute: typeof AdminAdminContentRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
     '/_admin/admin/members': {
       id: '/_admin/admin/members'
       path: '/members'
@@ -519,6 +538,7 @@ interface AdminAdminRouteChildren {
   AdminAdminAdministratorsRoute: typeof AdminAdminAdministratorsRoute
   AdminAdminApplicationsRoute: typeof AdminAdminApplicationsRoute
   AdminAdminAuditRoute: typeof AdminAdminAuditRoute
+  AdminAdminContentRoute: typeof AdminAdminContentRoute
   AdminAdminMembersRoute: typeof AdminAdminMembersRoute
   AdminAdminSettingsRoute: typeof AdminAdminSettingsRoute
 }
@@ -527,6 +547,7 @@ const AdminAdminRouteChildren: AdminAdminRouteChildren = {
   AdminAdminAdministratorsRoute: AdminAdminAdministratorsRoute,
   AdminAdminApplicationsRoute: AdminAdminApplicationsRoute,
   AdminAdminAuditRoute: AdminAdminAuditRoute,
+  AdminAdminContentRoute: AdminAdminContentRoute,
   AdminAdminMembersRoute: AdminAdminMembersRoute,
   AdminAdminSettingsRoute: AdminAdminSettingsRoute,
 }

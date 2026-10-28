@@ -6,6 +6,7 @@ import { loadMemberState, useSession } from "@/lib/session";
 import { seo } from "@/lib/seo";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { Announcements } from "@/components/site/ContentLibrary";
 
 export const Route = createFileRoute("/dashboard")({
   ssr: false,
@@ -30,6 +31,7 @@ function Dashboard() {
         {state === "rejected" && <><Card><h2 className="text-xl font-semibold">Application update</h2><p className="mt-2 text-muted-foreground">Thank you for your interest in MedKonet. We are unable to approve your application at this time. If you have questions, please reach out to us.</p></Card><ContactOptions /></>}
         {(state === "approved" || state === "admin") && <Card><h2 className="text-xl font-semibold">Welcome to MedKonet</h2><p className="mt-2 text-muted-foreground">{onboarding.data === true ? "Your application is approved and the MedKonet team has confirmed your onboarding. Welcome to our medical family." : "Your application has been approved. The MedKonet team will send you an invitation to our WhatsApp community using the number you provided. Approval does not mean you have joined WhatsApp yet; please watch for the invitation."}</p>
           <div className="mt-5 flex flex-wrap gap-2">{[["/community","Community"],["/resources","Academic Resources"],["/mentorship","Mentorship"],["/events","Events"],["/representatives","Representatives"]].map(([to,l]) => <Button key={to} variant="outline" asChild><Link to={to as "/community"}>{l}</Link></Button>)}</div></Card>}
+        {(state === "approved" || state === "admin") && <Announcements compact />}
       </Container></section>
     </>
   );
