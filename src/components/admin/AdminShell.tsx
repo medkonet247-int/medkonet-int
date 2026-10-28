@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { LayoutDashboard, Users, ClipboardList, Settings, ShieldCheck, History, Loader2 } from "lucide-react";
+import { LayoutDashboard, Users, ClipboardList, Settings, ShieldCheck, History, Loader2, BookOpen } from "lucide-react";
 import { Container } from "@/components/site/Page";
 import { Button } from "@/components/ui/button";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -12,6 +12,7 @@ const links = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard },
   { to: "/admin/applications", label: "Applications", icon: ClipboardList },
   { to: "/admin/members", label: "Members", icon: Users },
+  { to: "/admin/content", label: "Content", icon: BookOpen },
   { to: "/admin/settings", label: "Settings", icon: Settings },
   { to: "/admin/administrators", label: "Administrators", icon: ShieldCheck },
   { to: "/admin/audit", label: "Audit log", icon: History },
