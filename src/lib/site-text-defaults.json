@@ -1070,16 +1070,6 @@
     "max_length": 300
   },
   {
-    "key": "join.wording.instead",
-    "page": "join",
-    "section": "wording",
-    "label": "instead.",
-    "default_value": " instead.",
-    "visibility": "public",
-    "route": "/join",
-    "max_length": 300
-  },
-  {
     "key": "join.wording.submitting",
     "page": "join",
     "section": "wording",
@@ -1140,6 +1130,36 @@
     "max_length": 300
   },
   {
+    "key": "join.placeholder.select.type",
+    "page": "join",
+    "section": "placeholder",
+    "label": "Select type",
+    "default_value": "Select type",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.placeholder.select.state",
+    "page": "join",
+    "section": "placeholder",
+    "label": "Select state",
+    "default_value": "Select state",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.placeholder.select.level",
+    "page": "join",
+    "section": "placeholder",
+    "label": "Select level",
+    "default_value": "Select level",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
     "key": "login.wording.welcome.back",
     "page": "login",
     "section": "wording",
@@ -1175,26 +1195,6 @@
     "section": "label",
     "label": "Password",
     "default_value": "Password",
-    "visibility": "public",
-    "route": "/login",
-    "max_length": 300
-  },
-  {
-    "key": "login.wording.text",
-    "page": "login",
-    "section": "wording",
-    "label": "text",
-    "default_value": "text",
-    "visibility": "public",
-    "route": "/login",
-    "max_length": 300
-  },
-  {
-    "key": "login.wording.password",
-    "page": "login",
-    "section": "wording",
-    "label": "password",
-    "default_value": "password",
     "visibility": "public",
     "route": "/login",
     "max_length": 300
