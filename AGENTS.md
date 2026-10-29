@@ -15,3 +15,4 @@
 - Academic content uses typed kind-specific payloads in one RLS-protected content store; shared member and administrator views preserve the existing routes while database triggers audit every content write.
 - Resource uploads use server-side metadata and signature validation with privileged storage writes only after verified administrator authorization; object read policies require a currently published readable resource and file links are short-lived.
 - Member WhatsApp visibility is managed separately from invitation settings so existing membership mutations cannot reset its explicit opt-in state.
+- Site wording uses a fixed catalog and one identity-scoped cached bundle with original defaults; RLS limits member rows and immutable definitions plus a database trigger enforce audited text-only administrator edits.

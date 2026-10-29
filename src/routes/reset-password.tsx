@@ -1,3 +1,4 @@
+import { useSiteText } from "@/lib/site-text-context";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import { Loader2 } from "lucide-react";
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/reset-password")({
 });
 
 function ResetPassword() {
+  const t = useSiteText("reset-password");
   const navigate = useNavigate();
   const [ready, setReady] = useState<boolean | null>(null);
   const [pw, setPw] = useState("");
@@ -49,20 +51,20 @@ function ResetPassword() {
     <section className="py-12 sm:py-20">
       <Container className="max-w-md">
         <Card className="p-6 sm:p-8">
-          <h1 className="text-2xl font-bold">Set a new password</h1>
+          <h1 className="text-2xl font-bold">{t("Set a new password")}</h1>
           {ready === null ? (
-            <Loader2 className="mt-6 size-6 animate-spin text-primary" aria-label="Loading" />
+            <Loader2 className="mt-6 size-6 animate-spin text-primary" aria-label={t("Loading")} />
           ) : !ready ? (
-            <p className="mt-4 text-sm">This reset link is invalid or has expired. <Link to="/forgot-password" className="text-primary underline">Request a new one</Link>.</p>
+            <p className="mt-4 text-sm">This reset link is invalid or has expired. <Link to="/forgot-password" className="text-primary underline">{t("Request a new one")}</Link>.</p>
           ) : (
             <form noValidate onSubmit={onSubmit} className="mt-6 space-y-5">
-              <Field id="pw" label="New password" error={err}>
+              <Field id="pw" label={t("New password")} error={err}>
                 <input id="pw" type="password" autoComplete="new-password" value={pw} onChange={(e) => setPw(e.target.value)} className={inputCls} />
               </Field>
-              <Field id="pw2" label="Confirm new password">
+              <Field id="pw2" label={t("Confirm new password")}>
                 <input id="pw2" type="password" autoComplete="new-password" value={pw2} onChange={(e) => setPw2(e.target.value)} className={inputCls} />
               </Field>
-              <Button type="submit" className="h-12 w-full" disabled={busy}>{busy ? <Loader2 className="size-4 animate-spin" /> : "Update password"}</Button>
+              <Button type="submit" className="h-12 w-full" disabled={busy}>{busy ? <Loader2 className="size-4 animate-spin" /> : t("Update password")}</Button>
             </form>
           )}
         </Card>

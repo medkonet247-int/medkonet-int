@@ -16,6 +16,7 @@ import { SessionProvider } from "@/lib/session";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
+import { SiteTextProvider } from "@/lib/site-text-context";
 
 function NotFoundComponent() {
   return (
@@ -127,6 +128,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider>
+        <SiteTextProvider>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main id="main" className="flex-1">
@@ -136,6 +138,7 @@ function RootComponent() {
           <SiteFooter />
         </div>
         <Toaster richColors position="top-center" />
+        </SiteTextProvider>
       </SessionProvider>
     </QueryClientProvider>
   );

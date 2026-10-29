@@ -35,6 +35,7 @@ import { Route as AdminAdminAuditRouteImport } from './routes/_admin/admin.audit
 import { Route as AdminAdminContentRouteImport } from './routes/_admin/admin.content'
 import { Route as AdminAdminMembersRouteImport } from './routes/_admin/admin.members'
 import { Route as AdminAdminSettingsRouteImport } from './routes/_admin/admin.settings'
+import { Route as AdminAdminSiteTextRouteImport } from './routes/_admin/admin.site-text'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -165,6 +166,11 @@ const AdminAdminSettingsRoute = AdminAdminSettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => AdminAdminRoute,
 } as any)
+const AdminAdminSiteTextRoute = AdminAdminSiteTextRouteImport.update({
+  id: '/site-text',
+  path: '/site-text',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -191,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/admin/content': typeof AdminAdminContentRoute
   '/admin/members': typeof AdminAdminMembersRoute
   '/admin/settings': typeof AdminAdminSettingsRoute
+  '/admin/site-text': typeof AdminAdminSiteTextRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -217,6 +224,7 @@ export interface FileRoutesByTo {
   '/admin/content': typeof AdminAdminContentRoute
   '/admin/members': typeof AdminAdminMembersRoute
   '/admin/settings': typeof AdminAdminSettingsRoute
+  '/admin/site-text': typeof AdminAdminSiteTextRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -246,6 +254,7 @@ export interface FileRoutesById {
   '/_admin/admin/content': typeof AdminAdminContentRoute
   '/_admin/admin/members': typeof AdminAdminMembersRoute
   '/_admin/admin/settings': typeof AdminAdminSettingsRoute
+  '/_admin/admin/site-text': typeof AdminAdminSiteTextRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -274,6 +283,7 @@ export interface FileRouteTypes {
     | '/admin/content'
     | '/admin/members'
     | '/admin/settings'
+    | '/admin/site-text'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -300,6 +310,7 @@ export interface FileRouteTypes {
     | '/admin/content'
     | '/admin/members'
     | '/admin/settings'
+    | '/admin/site-text'
   id:
     | '__root__'
     | '/'
@@ -328,6 +339,7 @@ export interface FileRouteTypes {
     | '/_admin/admin/content'
     | '/_admin/admin/members'
     | '/_admin/admin/settings'
+    | '/_admin/admin/site-text'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -531,6 +543,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminAdminSettingsRouteImport
       parentRoute: typeof AdminAdminRoute
     }
+    '/_admin/admin/site-text': {
+      id: '/_admin/admin/site-text'
+      path: '/site-text'
+      fullPath: '/admin/site-text'
+      preLoaderRoute: typeof AdminAdminSiteTextRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
   }
 }
 
@@ -541,6 +560,7 @@ interface AdminAdminRouteChildren {
   AdminAdminContentRoute: typeof AdminAdminContentRoute
   AdminAdminMembersRoute: typeof AdminAdminMembersRoute
   AdminAdminSettingsRoute: typeof AdminAdminSettingsRoute
+  AdminAdminSiteTextRoute: typeof AdminAdminSiteTextRoute
 }
 
 const AdminAdminRouteChildren: AdminAdminRouteChildren = {
@@ -550,6 +570,7 @@ const AdminAdminRouteChildren: AdminAdminRouteChildren = {
   AdminAdminContentRoute: AdminAdminContentRoute,
   AdminAdminMembersRoute: AdminAdminMembersRoute,
   AdminAdminSettingsRoute: AdminAdminSettingsRoute,
+  AdminAdminSiteTextRoute: AdminAdminSiteTextRoute,
 }
 
 const AdminAdminRouteWithChildren = AdminAdminRoute._addFileChildren(
