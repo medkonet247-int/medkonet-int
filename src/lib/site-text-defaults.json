@@ -1,0 +1,2542 @@
+[
+  {
+    "key": "home.wording.connecting.medical.minds.building.better.futures",
+    "page": "home",
+    "section": "wording",
+    "label": "Connecting Medical Minds, Building Better Futures.",
+    "default_value": "Connecting Medical Minds, Building Better Futures.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.hero.headline",
+    "page": "home",
+    "section": "hero",
+    "label": "Headline",
+    "default_value": "Your Medical Journey, Stronger Together.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.connect.with.medicine.and.surgery.students.across",
+    "page": "home",
+    "section": "wording",
+    "label": "Connect with Medicine and Surgery students across Nigerian universi…",
+    "default_value": "Connect with Medicine and Surgery students across Nigerian universities, exchange knowledge, discover opportunities, and grow alongside people who understand your journey.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 2000
+  },
+  {
+    "key": "home.wording.become.a.member",
+    "page": "home",
+    "section": "wording",
+    "label": "Become a Member",
+    "default_value": "Become a Member ",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.explore.our.community",
+    "page": "home",
+    "section": "wording",
+    "label": "Explore Our Community",
+    "default_value": "Explore Our Community",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.eyebrow.our.mission",
+    "page": "home",
+    "section": "eyebrow",
+    "label": "Our mission",
+    "default_value": "Our mission",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.title.different.universities.one.medical.family",
+    "page": "home",
+    "section": "title",
+    "label": "Different Universities. One Medical Family.",
+    "default_value": "Different Universities. One Medical Family.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.medical.school.can.feel.isolating.but.students",
+    "page": "home",
+    "section": "wording",
+    "label": "Medical school can feel isolating, but students across Nigeria are …",
+    "default_value": "Medical school can feel isolating, but students across Nigeria are facing the same questions, the same exams and the same doubts. MedKonet brings them together.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.we.connect.students.so.they.can.share",
+    "page": "home",
+    "section": "wording",
+    "label": "We connect students so they can share resources, discuss difficult …",
+    "default_value": "We connect students so they can share resources, discuss difficult concepts, find study partners, support one another and build meaningful academic relationships that last beyond graduation.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 2000
+  },
+  {
+    "key": "home.eyebrow.what.we.offer",
+    "page": "home",
+    "section": "eyebrow",
+    "label": "What we offer",
+    "default_value": "What we offer",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.title.built.around.collaboration",
+    "page": "home",
+    "section": "title",
+    "label": "Built around collaboration",
+    "default_value": "Built around collaboration",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.eyebrow.community.benefits",
+    "page": "home",
+    "section": "eyebrow",
+    "label": "Community benefits",
+    "default_value": "Community benefits",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.title.what.members.gain",
+    "page": "home",
+    "section": "title",
+    "label": "What members gain",
+    "default_value": "What members gain",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.intro.medkonet.is.a.place.to.grow.not",
+    "page": "home",
+    "section": "intro",
+    "label": "MedKonet is a place to grow, not to compete.",
+    "default_value": "MedKonet is a place to grow, not to compete.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.you.don.t.have.to.figure.it",
+    "page": "home",
+    "section": "wording",
+    "label": "You Don't Have to Figure It All Out Alone.",
+    "default_value": "You Don't Have to Figure It All Out Alone.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.whether.you.feel.uncertain.overwhelmed.or.unsure",
+    "page": "home",
+    "section": "wording",
+    "label": "Whether you feel uncertain, overwhelmed or unsure how to reach your…",
+    "default_value": "Whether you feel uncertain, overwhelmed or unsure how to reach your medical dreams, you belong here. Find encouragement, ask questions, share your challenges and learn alongside peers without fear of unhealthy competition.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 2000
+  },
+  {
+    "key": "home.eyebrow.where.we.re.heading",
+    "page": "home",
+    "section": "eyebrow",
+    "label": "Where we're heading",
+    "default_value": "Where we're heading",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.title.our.growth.vision",
+    "page": "home",
+    "section": "title",
+    "label": "Our growth vision",
+    "default_value": "Our growth vision",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.intro.these.are.ambitions.we.are.working.towards",
+    "page": "home",
+    "section": "intro",
+    "label": "These are ambitions we are working towards as the community grows. …",
+    "default_value": "These are ambitions we are working towards as the community grows. They are not yet in place.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.your.journey.matters.let.s.grow.together",
+    "page": "home",
+    "section": "wording",
+    "label": "Your Journey Matters. Let's Grow Together.",
+    "default_value": "Your Journey Matters. Let's Grow Together.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.wording.apply.to.join.medkonet",
+    "page": "home",
+    "section": "wording",
+    "label": "Apply to Join MedKonet",
+    "default_value": "Apply to Join MedKonet",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.student.networking",
+    "page": "home",
+    "section": "offers",
+    "label": "Student Networking",
+    "default_value": "Student Networking",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.meet.medical.students.from.federal.state.and",
+    "page": "home",
+    "section": "offers",
+    "label": "Meet medical students from federal, state and private universities …",
+    "default_value": "Meet medical students from federal, state and private universities across Nigeria.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.academic.resource.sharing",
+    "page": "home",
+    "section": "offers",
+    "label": "Academic Resource Sharing",
+    "default_value": "Academic Resource Sharing",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.exchange.notes.references.and.study.materials.with",
+    "page": "home",
+    "section": "offers",
+    "label": "Exchange notes, references and study materials with peers who under…",
+    "default_value": "Exchange notes, references and study materials with peers who understand your curriculum.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.peer.learning",
+    "page": "home",
+    "section": "offers",
+    "label": "Peer Learning",
+    "default_value": "Peer Learning",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.talk.through.difficult.concepts.together.and.learn",
+    "page": "home",
+    "section": "offers",
+    "label": "Talk through difficult concepts together and learn from how others …",
+    "default_value": "Talk through difficult concepts together and learn from how others approach them.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.mentorship.and.guidance",
+    "page": "home",
+    "section": "offers",
+    "label": "Mentorship and Guidance",
+    "default_value": "Mentorship and Guidance",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.learn.from.students.further.along.the.journey",
+    "page": "home",
+    "section": "offers",
+    "label": "Learn from students further along the journey as our mentorship vis…",
+    "default_value": "Learn from students further along the journey as our mentorship vision grows.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.study.partnerships",
+    "page": "home",
+    "section": "offers",
+    "label": "Study Partnerships",
+    "default_value": "Study Partnerships",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.find.supportive.study.partners.who.keep.you",
+    "page": "home",
+    "section": "offers",
+    "label": "Find supportive study partners who keep you accountable and encoura…",
+    "default_value": "Find supportive study partners who keep you accountable and encouraged.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.events.and.academic.collaboration",
+    "page": "home",
+    "section": "offers",
+    "label": "Events and Academic Collaboration",
+    "default_value": "Events and Academic Collaboration",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.offers.collaborate.on.academic.initiatives.with.members.from",
+    "page": "home",
+    "section": "offers",
+    "label": "Collaborate on academic initiatives with members from other schools.",
+    "default_value": "Collaborate on academic initiatives with members from other schools.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.benefits.build.connections.across.universities",
+    "page": "home",
+    "section": "benefits",
+    "label": "Build connections across universities",
+    "default_value": "Build connections across universities",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.benefits.access.shared.academic.resources",
+    "page": "home",
+    "section": "benefits",
+    "label": "Access shared academic resources",
+    "default_value": "Access shared academic resources",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.benefits.learn.from.fellow.medical.students",
+    "page": "home",
+    "section": "benefits",
+    "label": "Learn from fellow medical students",
+    "default_value": "Learn from fellow medical students",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.benefits.find.supportive.study.partners",
+    "page": "home",
+    "section": "benefits",
+    "label": "Find supportive study partners",
+    "default_value": "Find supportive study partners",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.benefits.discover.mentorship.opportunities",
+    "page": "home",
+    "section": "benefits",
+    "label": "Discover mentorship opportunities",
+    "default_value": "Discover mentorship opportunities",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.benefits.stay.encouraged.throughout.medical.school",
+    "page": "home",
+    "section": "benefits",
+    "label": "Stay encouraged throughout medical school",
+    "default_value": "Stay encouraged throughout medical school",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.benefits.develop.professional.relationships",
+    "page": "home",
+    "section": "benefits",
+    "label": "Develop professional relationships",
+    "default_value": "Develop professional relationships",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.university.chapters",
+    "page": "home",
+    "section": "vision",
+    "label": "University chapters",
+    "default_value": "University chapters",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.local.chapters.in.medical.schools.across.the",
+    "page": "home",
+    "section": "vision",
+    "label": "Local chapters in medical schools across the country.",
+    "default_value": "Local chapters in medical schools across the country.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.mentorship.initiatives",
+    "page": "home",
+    "section": "vision",
+    "label": "Mentorship initiatives",
+    "default_value": "Mentorship initiatives",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.structured.guidance.from.senior.students.and.professionals",
+    "page": "home",
+    "section": "vision",
+    "label": "Structured guidance from senior students and professionals.",
+    "default_value": "Structured guidance from senior students and professionals.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.academic.resources",
+    "page": "home",
+    "section": "vision",
+    "label": "Academic resources",
+    "default_value": "Academic resources",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.a.growing.member.contributed.library.of.study",
+    "page": "home",
+    "section": "vision",
+    "label": "A growing, member-contributed library of study materials.",
+    "default_value": "A growing, member-contributed library of study materials.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.events.and.collaborations",
+    "page": "home",
+    "section": "vision",
+    "label": "Events and collaborations",
+    "default_value": "Events and collaborations",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "home.vision.academic.sessions.and.partnerships.that.bring.members",
+    "page": "home",
+    "section": "vision",
+    "label": "Academic sessions and partnerships that bring members together.",
+    "default_value": "Academic sessions and partnerships that bring members together.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "about.eyebrow.about.medkonet",
+    "page": "about",
+    "section": "eyebrow",
+    "label": "About MedKonet",
+    "default_value": "About MedKonet",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.title.different.universities.one.medical.family",
+    "page": "about",
+    "section": "title",
+    "label": "Different Universities. One Medical Family.",
+    "default_value": "Different Universities. One Medical Family.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.intro.medkonet.nigeria.is.a.growing.community.connecting",
+    "page": "about",
+    "section": "intro",
+    "label": "MedKonet Nigeria is a growing community connecting Medicine and Sur…",
+    "default_value": "MedKonet Nigeria is a growing community connecting Medicine and Surgery students across federal, state and private universities in Nigeria.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.who.we.are",
+    "page": "about",
+    "section": "wording",
+    "label": "Who we are",
+    "default_value": "Who we are",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.we.are.medical.students.who.believe.the",
+    "page": "about",
+    "section": "wording",
+    "label": "We are medical students who believe the journey through medical sch…",
+    "default_value": "We are medical students who believe the journey through medical school is better shared. MedKonet brings students together for academic collaboration, peer learning, resource sharing, mentorship and friendship.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 2000
+  },
+  {
+    "key": "about.wording.our.mission",
+    "page": "about",
+    "section": "wording",
+    "label": "Our mission",
+    "default_value": "Our mission",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.to.connect.medical.students.across.nigeria.so",
+    "page": "about",
+    "section": "wording",
+    "label": "To connect medical students across Nigeria so they can learn togeth…",
+    "default_value": "To connect medical students across Nigeria so they can learn together, support one another and grow into compassionate, competent doctors.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.our.vision",
+    "page": "about",
+    "section": "wording",
+    "label": "Our vision",
+    "default_value": "Our vision",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.a.nationwide.medical.student.network.where.no",
+    "page": "about",
+    "section": "wording",
+    "label": "A nationwide medical student network where no student feels alone a…",
+    "default_value": "A nationwide medical student network where no student feels alone and every student has access to peers, guidance and opportunities.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.why.medkonet.exists",
+    "page": "about",
+    "section": "wording",
+    "label": "Why MedKonet exists",
+    "default_value": "Why MedKonet exists",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.many.students.feel.uncertain.overwhelmed.or.afraid",
+    "page": "about",
+    "section": "wording",
+    "label": "Many students feel uncertain, overwhelmed or afraid of how to achie…",
+    "default_value": "Many students feel uncertain, overwhelmed or afraid of how to achieve their medical dreams. Too often, the environment rewards competition over cooperation. We exist to offer a different path: one built on encouragement and shared effort.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 2000
+  },
+  {
+    "key": "about.eyebrow.core.values",
+    "page": "about",
+    "section": "eyebrow",
+    "label": "Core values",
+    "default_value": "Core values",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.title.what.guides.us",
+    "page": "about",
+    "section": "title",
+    "label": "What guides us",
+    "default_value": "What guides us",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.our.commitment.to.collaboration.and.belonging",
+    "page": "about",
+    "section": "wording",
+    "label": "Our commitment to collaboration and belonging",
+    "default_value": "Our commitment to collaboration and belonging",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.we.commit.to.keeping.medkonet.a.respectful",
+    "page": "about",
+    "section": "wording",
+    "label": "We commit to keeping MedKonet a respectful, welcoming and supportiv…",
+    "default_value": "We commit to keeping MedKonet a respectful, welcoming and supportive space where members share generously, ask freely and celebrate each other's progress.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.wording.apply.to.join.medkonet",
+    "page": "about",
+    "section": "wording",
+    "label": "Apply to Join MedKonet",
+    "default_value": "Apply to Join MedKonet",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.collaboration",
+    "page": "about",
+    "section": "values",
+    "label": "Collaboration",
+    "default_value": "Collaboration",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.we.learn.more.together.than.alone",
+    "page": "about",
+    "section": "values",
+    "label": "We learn more together than alone.",
+    "default_value": "We learn more together than alone.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.compassion",
+    "page": "about",
+    "section": "values",
+    "label": "Compassion",
+    "default_value": "Compassion",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.we.treat.each.other.with.kindness.as",
+    "page": "about",
+    "section": "values",
+    "label": "We treat each other with kindness, as future doctors should.",
+    "default_value": "We treat each other with kindness, as future doctors should.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.academic.excellence",
+    "page": "about",
+    "section": "values",
+    "label": "Academic excellence",
+    "default_value": "Academic excellence",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.we.pursue.high.standards.and.help.each",
+    "page": "about",
+    "section": "values",
+    "label": "We pursue high standards and help each other reach them.",
+    "default_value": "We pursue high standards and help each other reach them.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.belonging",
+    "page": "about",
+    "section": "values",
+    "label": "Belonging",
+    "default_value": "Belonging",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.every.medical.student.has.a.place.here",
+    "page": "about",
+    "section": "values",
+    "label": "Every medical student has a place here, whatever their university.",
+    "default_value": "Every medical student has a place here, whatever their university.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.integrity",
+    "page": "about",
+    "section": "values",
+    "label": "Integrity",
+    "default_value": "Integrity",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.we.are.honest.credit.others.and.respect",
+    "page": "about",
+    "section": "values",
+    "label": "We are honest, credit others and respect privacy.",
+    "default_value": "We are honest, credit others and respect privacy.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.growth",
+    "page": "about",
+    "section": "values",
+    "label": "Growth",
+    "default_value": "Growth",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "about.values.we.support.each.other.s.academic.and",
+    "page": "about",
+    "section": "values",
+    "label": "We support each other's academic and personal development.",
+    "default_value": "We support each other's academic and personal development.",
+    "visibility": "public",
+    "route": "/about",
+    "max_length": 300
+  },
+  {
+    "key": "contact.eyebrow.contact",
+    "page": "contact",
+    "section": "eyebrow",
+    "label": "Contact",
+    "default_value": "Contact",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "contact.title.we.d.love.to.hear.from.you",
+    "page": "contact",
+    "section": "title",
+    "label": "We'd love to hear from you",
+    "default_value": "We'd love to hear from you",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "contact.intro.questions.about.medkonet.or.your.application.reach",
+    "page": "contact",
+    "section": "intro",
+    "label": "Questions about MedKonet or your application? Reach us through What…",
+    "default_value": "Questions about MedKonet or your application? Reach us through WhatsApp or email.",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "join.eyebrow.membership",
+    "page": "join",
+    "section": "eyebrow",
+    "label": "Membership",
+    "default_value": "Membership",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.title.join.medkonet",
+    "page": "join",
+    "section": "title",
+    "label": "Join MedKonet",
+    "default_value": "Join MedKonet",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.registration.is.currently.closed",
+    "page": "join",
+    "section": "wording",
+    "label": "Registration is currently closed",
+    "default_value": "Registration is currently closed",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.thank.you.for.your.interest.please.contact",
+    "page": "join",
+    "section": "wording",
+    "label": "Thank you for your interest. Please contact the MedKonet team for u…",
+    "default_value": "Thank you for your interest. Please contact the MedKonet team for updates. Existing members can still log in.",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.login",
+    "page": "join",
+    "section": "wording",
+    "label": "Login",
+    "default_value": "Login",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.eyebrow.membership.application",
+    "page": "join",
+    "section": "eyebrow",
+    "label": "Membership application",
+    "default_value": "Membership application",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.intro.tell.us.a.little.about.yourself.applications",
+    "page": "join",
+    "section": "intro",
+    "label": "Tell us a little about yourself. Applications are reviewed by the M…",
+    "default_value": "Tell us a little about yourself. Applications are reviewed by the MedKonet team.",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.your.account",
+    "page": "join",
+    "section": "wording",
+    "label": "Your account",
+    "default_value": "Your account",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.full.name",
+    "page": "join",
+    "section": "label",
+    "label": "Full name",
+    "default_value": "Full name",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.email.address",
+    "page": "join",
+    "section": "label",
+    "label": "Email address",
+    "default_value": "Email address",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.password",
+    "page": "join",
+    "section": "label",
+    "label": "Password",
+    "default_value": "Password",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.hide.password",
+    "page": "join",
+    "section": "wording",
+    "label": "Hide password",
+    "default_value": "Hide password",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.show.password",
+    "page": "join",
+    "section": "wording",
+    "label": "Show password",
+    "default_value": "Show password",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.confirm.password",
+    "page": "join",
+    "section": "label",
+    "label": "Confirm password",
+    "default_value": "Confirm password",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.whatsapp.number.required",
+    "page": "join",
+    "section": "label",
+    "label": "WhatsApp number (required)",
+    "default_value": "WhatsApp number (required)",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.hint.e.g.0803.123.4567.or.234",
+    "page": "join",
+    "section": "hint",
+    "label": "e.g. 0803 123 4567 or +234 803 123 4567. International numbers: inc…",
+    "default_value": "e.g. 0803 123 4567 or +234 803 123 4567. International numbers: include the country code.",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.your.studies",
+    "page": "join",
+    "section": "wording",
+    "label": "Your studies",
+    "default_value": "Your studies",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.university",
+    "page": "join",
+    "section": "label",
+    "label": "University",
+    "default_value": "University",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.university.type",
+    "page": "join",
+    "section": "label",
+    "label": "University type",
+    "default_value": "University type",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.state",
+    "page": "join",
+    "section": "label",
+    "label": "State",
+    "default_value": "State",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.course",
+    "page": "join",
+    "section": "label",
+    "label": "Course",
+    "default_value": "Course",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.current.academic.level",
+    "page": "join",
+    "section": "label",
+    "label": "Current academic level",
+    "default_value": "Current academic level",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.label.why.do.you.want.to.join.medkonet",
+    "page": "join",
+    "section": "label",
+    "label": "Why do you want to join MedKonet?",
+    "default_value": "Why do you want to join MedKonet?",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.i.agree.to.the",
+    "page": "join",
+    "section": "wording",
+    "label": "I agree to the",
+    "default_value": "I agree to the",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.community.rules",
+    "page": "join",
+    "section": "wording",
+    "label": "community rules",
+    "default_value": "community rules",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.and",
+    "page": "join",
+    "section": "wording",
+    "label": "and",
+    "default_value": " and",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.privacy.notice",
+    "page": "join",
+    "section": "wording",
+    "label": "privacy notice",
+    "default_value": "privacy notice",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.log.in",
+    "page": "join",
+    "section": "wording",
+    "label": "log in",
+    "default_value": "log in",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.instead",
+    "page": "join",
+    "section": "wording",
+    "label": "instead.",
+    "default_value": " instead.",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.submitting",
+    "page": "join",
+    "section": "wording",
+    "label": "Submitting…",
+    "default_value": " Submitting…",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.submit.application",
+    "page": "join",
+    "section": "wording",
+    "label": "Submit application",
+    "default_value": "Submit application",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.already.a.member",
+    "page": "join",
+    "section": "wording",
+    "label": "Already a member?",
+    "default_value": "Already a member? ",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.log.in.2",
+    "page": "join",
+    "section": "wording",
+    "label": "Log in",
+    "default_value": "Log in",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.privacy.notice.2",
+    "page": "join",
+    "section": "wording",
+    "label": "Privacy notice",
+    "default_value": "Privacy notice",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "join.wording.read.the.full.notice",
+    "page": "join",
+    "section": "wording",
+    "label": "Read the full notice",
+    "default_value": "Read the full notice",
+    "visibility": "public",
+    "route": "/join",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.welcome.back",
+    "page": "login",
+    "section": "wording",
+    "label": "Welcome back",
+    "default_value": "Welcome back",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.log.in.to.your.medkonet.account",
+    "page": "login",
+    "section": "wording",
+    "label": "Log in to your MedKonet account.",
+    "default_value": "Log in to your MedKonet account.",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.label.email.address",
+    "page": "login",
+    "section": "label",
+    "label": "Email address",
+    "default_value": "Email address",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.label.password",
+    "page": "login",
+    "section": "label",
+    "label": "Password",
+    "default_value": "Password",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.text",
+    "page": "login",
+    "section": "wording",
+    "label": "text",
+    "default_value": "text",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.password",
+    "page": "login",
+    "section": "wording",
+    "label": "password",
+    "default_value": "password",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.hide.password",
+    "page": "login",
+    "section": "wording",
+    "label": "Hide password",
+    "default_value": "Hide password",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.show.password",
+    "page": "login",
+    "section": "wording",
+    "label": "Show password",
+    "default_value": "Show password",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.logging.in",
+    "page": "login",
+    "section": "wording",
+    "label": "Logging in…",
+    "default_value": " Logging in…",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.log.in",
+    "page": "login",
+    "section": "wording",
+    "label": "Log in",
+    "default_value": "Log in",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.forgot.password",
+    "page": "login",
+    "section": "wording",
+    "label": "Forgot password?",
+    "default_value": "Forgot password?",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.new.here",
+    "page": "login",
+    "section": "wording",
+    "label": "New here?",
+    "default_value": "New here? ",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "login.wording.join.medkonet",
+    "page": "login",
+    "section": "wording",
+    "label": "Join MedKonet",
+    "default_value": "Join MedKonet",
+    "visibility": "public",
+    "route": "/login",
+    "max_length": 300
+  },
+  {
+    "key": "verify-email.wording.verify.your.email",
+    "page": "verify-email",
+    "section": "wording",
+    "label": "Verify your email",
+    "default_value": "Verify your email",
+    "visibility": "public",
+    "route": "/verify-email",
+    "max_length": 300
+  },
+  {
+    "key": "verify-email.wording.enter.the.email.address.you.applied.with",
+    "page": "verify-email",
+    "section": "wording",
+    "label": "Enter the email address you applied with.",
+    "default_value": "Enter the email address you applied with.",
+    "visibility": "public",
+    "route": "/verify-email",
+    "max_length": 300
+  },
+  {
+    "key": "verify-email.label.email.address",
+    "page": "verify-email",
+    "section": "label",
+    "label": "Email address",
+    "default_value": "Email address",
+    "visibility": "public",
+    "route": "/verify-email",
+    "max_length": 300
+  },
+  {
+    "key": "verify-email.wording.continue",
+    "page": "verify-email",
+    "section": "wording",
+    "label": "Continue",
+    "default_value": "Continue",
+    "visibility": "public",
+    "route": "/verify-email",
+    "max_length": 300
+  },
+  {
+    "key": "verify-email.wording.verify.email",
+    "page": "verify-email",
+    "section": "wording",
+    "label": "Verify Email",
+    "default_value": "Verify Email",
+    "visibility": "public",
+    "route": "/verify-email",
+    "max_length": 300
+  },
+  {
+    "key": "verify-email.wording.resend.code",
+    "page": "verify-email",
+    "section": "wording",
+    "label": "Resend code",
+    "default_value": "Resend code",
+    "visibility": "public",
+    "route": "/verify-email",
+    "max_length": 300
+  },
+  {
+    "key": "verify-email.wording.wrong.email.register.again",
+    "page": "verify-email",
+    "section": "wording",
+    "label": "Wrong email? Register again",
+    "default_value": "Wrong email? Register again",
+    "visibility": "public",
+    "route": "/verify-email",
+    "max_length": 300
+  },
+  {
+    "key": "privacy.eyebrow.privacy",
+    "page": "privacy",
+    "section": "eyebrow",
+    "label": "Privacy",
+    "default_value": "Privacy",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 300
+  },
+  {
+    "key": "privacy.title.privacy.notice",
+    "page": "privacy",
+    "section": "title",
+    "label": "Privacy Notice",
+    "default_value": "Privacy Notice",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 300
+  },
+  {
+    "key": "privacy.wording.what.we.collect",
+    "page": "privacy",
+    "section": "wording",
+    "label": "What we collect",
+    "default_value": "What we collect",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 300
+  },
+  {
+    "key": "privacy.wording.your.name.email.password.stored.securely.by",
+    "page": "privacy",
+    "section": "wording",
+    "label": "Your name, email, password (stored securely by our authentication s…",
+    "default_value": "Your name, email, password (stored securely by our authentication service, never visible to anyone), WhatsApp number, university, university type, state, course, academic level and your reason for joining.",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 2000
+  },
+  {
+    "key": "privacy.wording.how.we.protect.it",
+    "page": "privacy",
+    "section": "wording",
+    "label": "How we protect it",
+    "default_value": "How we protect it",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 300
+  },
+  {
+    "key": "privacy.wording.access.is.restricted.at.the.database.level",
+    "page": "privacy",
+    "section": "wording",
+    "label": "Access is restricted at the database level. Applicants can only see…",
+    "default_value": "Access is restricted at the database level. Applicants can only see their own application. Only administrators can view all applications.",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 300
+  },
+  {
+    "key": "privacy.wording.your.choices",
+    "page": "privacy",
+    "section": "wording",
+    "label": "Your choices",
+    "default_value": "Your choices",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 300
+  },
+  {
+    "key": "privacy.wording.to.ask.about.correct.or.delete.your",
+    "page": "privacy",
+    "section": "wording",
+    "label": "To ask about, correct or delete your information, email",
+    "default_value": "To ask about, correct or delete your information, email ",
+    "visibility": "public",
+    "route": "/privacy",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.eyebrow.community",
+    "page": "community-rules",
+    "section": "eyebrow",
+    "label": "Community",
+    "default_value": "Community",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.title.community.rules",
+    "page": "community-rules",
+    "section": "title",
+    "label": "Community Rules",
+    "default_value": "Community Rules",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.treat.every.member.with.respect.and.kindness",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "Treat every member with respect and kindness, regardless of univers…",
+    "default_value": "Treat every member with respect and kindness, regardless of university, level or background.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.collaborate.rather.than.compete.share.knowledge.generously",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "Collaborate rather than compete. Share knowledge generously and cel…",
+    "default_value": "Collaborate rather than compete. Share knowledge generously and celebrate others' progress.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.do.not.share.other.members.personal.details",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "Do not share other members' personal details, including phone numbe…",
+    "default_value": "Do not share other members' personal details, including phone numbers and emails, outside the community.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.only.share.academic.materials.you.have.the",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "Only share academic materials you have the right to share, and cred…",
+    "default_value": "Only share academic materials you have the right to share, and credit original authors.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.no.harassment.discrimination.hate.speech.spam.or",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "No harassment, discrimination, hate speech, spam or commercial prom…",
+    "default_value": "No harassment, discrimination, hate speech, spam or commercial promotion.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.do.not.give.medical.advice.to.the",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "Do not give medical advice to the public on behalf of MedKonet.",
+    "default_value": "Do not give medical advice to the public on behalf of MedKonet.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.be.honest.do.not.impersonate.others.or",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "Be honest. Do not impersonate others or misrepresent your student s…",
+    "default_value": "Be honest. Do not impersonate others or misrepresent your student status.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "community-rules.rules.administrators.may.remove.members.who.repeatedly.break",
+    "page": "community-rules",
+    "section": "rules",
+    "label": "Administrators may remove members who repeatedly break these rules.",
+    "default_value": "Administrators may remove members who repeatedly break these rules.",
+    "visibility": "public",
+    "route": "/community-rules",
+    "max_length": 300
+  },
+  {
+    "key": "forgot-password.wording.forgot.your.password",
+    "page": "forgot-password",
+    "section": "wording",
+    "label": "Forgot your password?",
+    "default_value": "Forgot your password?",
+    "visibility": "public",
+    "route": "/forgot-password",
+    "max_length": 300
+  },
+  {
+    "key": "forgot-password.wording.back.to.login",
+    "page": "forgot-password",
+    "section": "wording",
+    "label": "Back to login",
+    "default_value": "Back to login",
+    "visibility": "public",
+    "route": "/forgot-password",
+    "max_length": 300
+  },
+  {
+    "key": "forgot-password.label.email.address",
+    "page": "forgot-password",
+    "section": "label",
+    "label": "Email address",
+    "default_value": "Email address",
+    "visibility": "public",
+    "route": "/forgot-password",
+    "max_length": 300
+  },
+  {
+    "key": "forgot-password.wording.send.reset.link",
+    "page": "forgot-password",
+    "section": "wording",
+    "label": "Send reset link",
+    "default_value": "Send reset link",
+    "visibility": "public",
+    "route": "/forgot-password",
+    "max_length": 300
+  },
+  {
+    "key": "reset-password.wording.set.a.new.password",
+    "page": "reset-password",
+    "section": "wording",
+    "label": "Set a new password",
+    "default_value": "Set a new password",
+    "visibility": "public",
+    "route": "/reset-password",
+    "max_length": 300
+  },
+  {
+    "key": "reset-password.aria-label.loading",
+    "page": "reset-password",
+    "section": "aria-label",
+    "label": "Loading",
+    "default_value": "Loading",
+    "visibility": "public",
+    "route": "/reset-password",
+    "max_length": 300
+  },
+  {
+    "key": "reset-password.wording.request.a.new.one",
+    "page": "reset-password",
+    "section": "wording",
+    "label": "Request a new one",
+    "default_value": "Request a new one",
+    "visibility": "public",
+    "route": "/reset-password",
+    "max_length": 300
+  },
+  {
+    "key": "reset-password.label.new.password",
+    "page": "reset-password",
+    "section": "label",
+    "label": "New password",
+    "default_value": "New password",
+    "visibility": "public",
+    "route": "/reset-password",
+    "max_length": 300
+  },
+  {
+    "key": "reset-password.label.confirm.new.password",
+    "page": "reset-password",
+    "section": "label",
+    "label": "Confirm new password",
+    "default_value": "Confirm new password",
+    "visibility": "public",
+    "route": "/reset-password",
+    "max_length": 300
+  },
+  {
+    "key": "reset-password.wording.update.password",
+    "page": "reset-password",
+    "section": "wording",
+    "label": "Update password",
+    "default_value": "Update password",
+    "visibility": "public",
+    "route": "/reset-password",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.skip.to.content",
+    "page": "header",
+    "section": "wording",
+    "label": "Skip to content",
+    "default_value": "Skip to content",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.aria-label.main",
+    "page": "header",
+    "section": "aria-label",
+    "label": "Main",
+    "default_value": "Main",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.admin",
+    "page": "header",
+    "section": "wording",
+    "label": "Admin",
+    "default_value": "Admin",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.student.dashboard",
+    "page": "header",
+    "section": "wording",
+    "label": "Student Dashboard",
+    "default_value": " Student Dashboard",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.admin.dashboard",
+    "page": "header",
+    "section": "wording",
+    "label": "Admin Dashboard",
+    "default_value": " Admin Dashboard",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.log.out",
+    "page": "header",
+    "section": "wording",
+    "label": "Log out",
+    "default_value": " Log out",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.login",
+    "page": "header",
+    "section": "wording",
+    "label": "Login",
+    "default_value": "Login",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.join.medkonet",
+    "page": "header",
+    "section": "wording",
+    "label": "Join MedKonet",
+    "default_value": "Join MedKonet",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.aria-label.open.menu",
+    "page": "header",
+    "section": "aria-label",
+    "label": "Open menu",
+    "default_value": "Open menu",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.menu",
+    "page": "header",
+    "section": "wording",
+    "label": "Menu",
+    "default_value": "Menu",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.aria-label.mobile",
+    "page": "header",
+    "section": "aria-label",
+    "label": "Mobile",
+    "default_value": "Mobile",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.student.dashboard.2",
+    "page": "header",
+    "section": "wording",
+    "label": "Student Dashboard",
+    "default_value": "Student Dashboard",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.wording.log.out.2",
+    "page": "header",
+    "section": "wording",
+    "label": "Log out",
+    "default_value": "Log out",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.navigation.home",
+    "page": "header",
+    "section": "navigation",
+    "label": "Home",
+    "default_value": "Home",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.navigation.about",
+    "page": "header",
+    "section": "navigation",
+    "label": "About",
+    "default_value": "About",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.navigation.community",
+    "page": "header",
+    "section": "navigation",
+    "label": "Community",
+    "default_value": "Community",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.navigation.resources",
+    "page": "header",
+    "section": "navigation",
+    "label": "Resources",
+    "default_value": "Resources",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.navigation.mentorship",
+    "page": "header",
+    "section": "navigation",
+    "label": "Mentorship",
+    "default_value": "Mentorship",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.navigation.events",
+    "page": "header",
+    "section": "navigation",
+    "label": "Events",
+    "default_value": "Events",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "header.navigation.contact",
+    "page": "header",
+    "section": "navigation",
+    "label": "Contact",
+    "default_value": "Contact",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.a.growing.community.connecting.medicine.and.surgery",
+    "page": "footer",
+    "section": "wording",
+    "label": "A growing community connecting Medicine and Surgery students across…",
+    "default_value": "A growing community connecting Medicine and Surgery students across Nigerian universities. Different Universities. One Medical Family.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.explore",
+    "page": "footer",
+    "section": "wording",
+    "label": "Explore",
+    "default_value": "Explore",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.home",
+    "page": "footer",
+    "section": "wording",
+    "label": "Home",
+    "default_value": "Home",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.about",
+    "page": "footer",
+    "section": "wording",
+    "label": "About",
+    "default_value": "About",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.contact",
+    "page": "footer",
+    "section": "wording",
+    "label": "Contact",
+    "default_value": "Contact",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.join.medkonet",
+    "page": "footer",
+    "section": "wording",
+    "label": "Join MedKonet",
+    "default_value": "Join MedKonet",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.login",
+    "page": "footer",
+    "section": "wording",
+    "label": "Login",
+    "default_value": "Login",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.community",
+    "page": "footer",
+    "section": "wording",
+    "label": "Community",
+    "default_value": "Community",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.academic.resources",
+    "page": "footer",
+    "section": "wording",
+    "label": "Academic Resources",
+    "default_value": "Academic Resources",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.mentorship",
+    "page": "footer",
+    "section": "wording",
+    "label": "Mentorship",
+    "default_value": "Mentorship",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.events.and.programmes",
+    "page": "footer",
+    "section": "wording",
+    "label": "Events and Programmes",
+    "default_value": "Events and Programmes",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.university.representatives",
+    "page": "footer",
+    "section": "wording",
+    "label": "University Representatives",
+    "default_value": "University Representatives",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.community.rules",
+    "page": "footer",
+    "section": "wording",
+    "label": "Community Rules",
+    "default_value": "Community Rules",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.privacy.notice",
+    "page": "footer",
+    "section": "wording",
+    "label": "Privacy Notice",
+    "default_value": "Privacy Notice",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.whatsapp.line.1",
+    "page": "footer",
+    "section": "wording",
+    "label": "WhatsApp (line 1)",
+    "default_value": "WhatsApp (line 1)",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.whatsapp.line.2",
+    "page": "footer",
+    "section": "wording",
+    "label": "WhatsApp (line 2)",
+    "default_value": "WhatsApp (line 2)",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "footer.wording.medkonet.nigeria.connecting.medical.minds.building.better",
+    "page": "footer",
+    "section": "wording",
+    "label": "MedKonet Nigeria. Connecting Medical Minds, Building Better Futures.",
+    "default_value": " MedKonet Nigeria. Connecting Medical Minds, Building Better Futures.",
+    "visibility": "public",
+    "route": "/",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.why.we.collect.it",
+    "page": "shared",
+    "section": "wording",
+    "label": "Why we collect it:",
+    "default_value": "Why we collect it:",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.to.review.your.membership.application.and.if",
+    "page": "shared",
+    "section": "wording",
+    "label": "to review your membership application and, if approved, invite you …",
+    "default_value": " to review your membership application and, if approved, invite you to the MedKonet WhatsApp community.",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.who.can.see.it",
+    "page": "shared",
+    "section": "wording",
+    "label": "Who can see it:",
+    "default_value": "Who can see it:",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.only.you.and.medkonet.administrators",
+    "page": "shared",
+    "section": "wording",
+    "label": "only you and MedKonet administrators.",
+    "default_value": " only you and MedKonet administrators.",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.never.published",
+    "page": "shared",
+    "section": "wording",
+    "label": "Never published:",
+    "default_value": "Never published:",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.your.whatsapp.number.and.email.address.are",
+    "page": "shared",
+    "section": "wording",
+    "label": "your WhatsApp number and email address are never shown publicly or …",
+    "default_value": " your WhatsApp number and email address are never shown publicly or shared with other members.",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.whatsapp",
+    "page": "shared",
+    "section": "wording",
+    "label": "WhatsApp",
+    "default_value": "WhatsApp",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.chat.with.the.medkonet.team.on.either",
+    "page": "shared",
+    "section": "wording",
+    "label": "Chat with the MedKonet team on either line.",
+    "default_value": "Chat with the MedKonet team on either line.",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.whatsapp.line.1",
+    "page": "shared",
+    "section": "wording",
+    "label": "WhatsApp line 1",
+    "default_value": "WhatsApp line 1",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.whatsapp.line.2",
+    "page": "shared",
+    "section": "wording",
+    "label": "WhatsApp line 2",
+    "default_value": "WhatsApp line 2",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.email",
+    "page": "shared",
+    "section": "wording",
+    "label": "Email",
+    "default_value": "Email",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "shared.wording.send.an.email",
+    "page": "shared",
+    "section": "wording",
+    "label": "Send an email",
+    "default_value": "Send an email",
+    "visibility": "public",
+    "route": "/contact",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.latest.announcements",
+    "page": "members",
+    "section": "announcements",
+    "label": "Latest announcements",
+    "default_value": "Latest announcements",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.announcements",
+    "page": "members",
+    "section": "announcements",
+    "label": "Announcements",
+    "default_value": "Announcements",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.no.announcements.have.been.published.yet",
+    "page": "members",
+    "section": "announcements",
+    "label": "No announcements have been published yet.",
+    "default_value": "No announcements have been published yet.",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.aria-label.pinned",
+    "page": "members",
+    "section": "announcements",
+    "label": "Pinned",
+    "default_value": "Pinned",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.open.resource",
+    "page": "members",
+    "section": "resources",
+    "label": "Open resource",
+    "default_value": "Open resource",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.preparing",
+    "page": "members",
+    "section": "community",
+    "label": "Preparing…",
+    "default_value": "Preparing…",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.get.file.link",
+    "page": "members",
+    "section": "resources",
+    "label": "Get file link",
+    "default_value": "Get file link",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.open.download.file",
+    "page": "members",
+    "section": "resources",
+    "label": "Open / download file",
+    "default_value": "Open / download file",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.eyebrow.approved.members",
+    "page": "members",
+    "section": "community",
+    "label": "Approved members",
+    "default_value": "Approved members",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.academic.resources",
+    "page": "members",
+    "section": "resources",
+    "label": "Academic Resources",
+    "default_value": "Academic Resources",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.events.and.programmes",
+    "page": "members",
+    "section": "events",
+    "label": "Events and Programmes",
+    "default_value": "Events and Programmes",
+    "visibility": "members",
+    "route": "/events",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.mentorship",
+    "page": "members",
+    "section": "mentorship",
+    "label": "Mentorship",
+    "default_value": "Mentorship",
+    "visibility": "members",
+    "route": "/mentorship",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.a.developing.initiative.for.guidance.encouragement.and",
+    "page": "members",
+    "section": "mentorship",
+    "label": "A developing initiative for guidance, encouragement and shared lear…",
+    "default_value": "A developing initiative for guidance, encouragement and shared learning.",
+    "visibility": "members",
+    "route": "/mentorship",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.learn.together.build.understanding.across.every.stage",
+    "page": "members",
+    "section": "resources",
+    "label": "Learn together. Build understanding across every stage of medical s…",
+    "default_value": "Learn together. Build understanding across every stage of medical school.",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.opportunities.to.learn.connect.and.grow.together",
+    "page": "members",
+    "section": "events",
+    "label": "Opportunities to learn, connect and grow together.",
+    "default_value": "Opportunities to learn, connect and grow together.",
+    "visibility": "members",
+    "route": "/events",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.guidance.that.grows.with.our.community",
+    "page": "members",
+    "section": "mentorship",
+    "label": "Guidance that grows with our community",
+    "default_value": "Guidance that grows with our community",
+    "visibility": "members",
+    "route": "/mentorship",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.medkonet.intends.to.develop.peer.guidance.and",
+    "page": "members",
+    "section": "mentorship",
+    "label": "MedKonet intends to develop peer guidance and structured or informa…",
+    "default_value": "MedKonet intends to develop peer guidance and structured or informal support. Mentors would share experience, encourage thoughtful learning and respect boundaries; mentees would bring questions, participate actively and take responsibility for their progress. This initiative is developing; published opportunities below will explain any available support and how to express interest.",
+    "visibility": "members",
+    "route": "/mentorship",
+    "max_length": 2000
+  },
+  {
+    "key": "members.wording.upcoming",
+    "page": "members",
+    "section": "events",
+    "label": "Upcoming",
+    "default_value": "Upcoming",
+    "visibility": "members",
+    "route": "/events",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.past",
+    "page": "members",
+    "section": "events",
+    "label": "Past",
+    "default_value": "Past",
+    "visibility": "members",
+    "route": "/events",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.search",
+    "page": "members",
+    "section": "community",
+    "label": "Search",
+    "default_value": "Search ",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.placeholder.search.titles",
+    "page": "members",
+    "section": "community",
+    "label": "Search titles…",
+    "default_value": "Search titles…",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.aria-label.category",
+    "page": "members",
+    "section": "resources",
+    "label": "Category",
+    "default_value": "Category",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.all.categories",
+    "page": "members",
+    "section": "resources",
+    "label": "All categories",
+    "default_value": "All categories",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.aria-label.type",
+    "page": "members",
+    "section": "community",
+    "label": "Type",
+    "default_value": "Type",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.all.types",
+    "page": "members",
+    "section": "community",
+    "label": "All types",
+    "default_value": "All types",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.no.matching.items.try.another.search.or",
+    "page": "members",
+    "section": "community",
+    "label": "No matching items. Try another search or filter.",
+    "default_value": "No matching items. Try another search or filter.",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.resources.will.appear.here.as.our.community",
+    "page": "members",
+    "section": "resources",
+    "label": "Resources will appear here as our community grows. Your next learni…",
+    "default_value": "Resources will appear here as our community grows. Your next learning opportunity is ahead.",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.no.events.have.been.published.yet.check",
+    "page": "members",
+    "section": "events",
+    "label": "No events have been published yet. Check back soon.",
+    "default_value": "No events have been published yet. Check back soon.",
+    "visibility": "members",
+    "route": "/events",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.mentorship.opportunities.will.be.announced.here.when",
+    "page": "members",
+    "section": "mentorship",
+    "label": "Mentorship opportunities will be announced here when they become av…",
+    "default_value": "Mentorship opportunities will be announced here when they become available.",
+    "visibility": "members",
+    "route": "/mentorship",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.published",
+    "page": "members",
+    "section": "resources",
+    "label": "Published",
+    "default_value": "Published ",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.online.meeting",
+    "page": "members",
+    "section": "events",
+    "label": "Online meeting",
+    "default_value": "Online meeting",
+    "visibility": "members",
+    "route": "/events",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.who.it.is.for",
+    "page": "members",
+    "section": "mentorship",
+    "label": "Who it is for:",
+    "default_value": "Who it is for:",
+    "visibility": "members",
+    "route": "/mentorship",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.express.interest",
+    "page": "members",
+    "section": "mentorship",
+    "label": "Express interest:",
+    "default_value": "Express interest:",
+    "visibility": "members",
+    "route": "/mentorship",
+    "max_length": 300
+  },
+  {
+    "key": "members.title.our.community",
+    "page": "members",
+    "section": "community",
+    "label": "Our Community",
+    "default_value": "Our Community",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.intro.different.universities.one.medical.family",
+    "page": "members",
+    "section": "community",
+    "label": "Different Universities. One Medical Family.",
+    "default_value": "Different Universities. One Medical Family.",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.learning.with.care.growing.together",
+    "page": "members",
+    "section": "community",
+    "label": "Learning with care, growing together",
+    "default_value": "Learning with care, growing together",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.medkonet.connects.medicine.and.surgery.students.through",
+    "page": "members",
+    "section": "community",
+    "label": "MedKonet connects Medicine and Surgery students through academic co…",
+    "default_value": "MedKonet connects Medicine and Surgery students through academic collaboration, encouragement and belonging. WhatsApp remains our primary space for group communication.",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 2000
+  },
+  {
+    "key": "members.wording.participate.respectfully.listen.welcome.different.perspectives.and",
+    "page": "members",
+    "section": "community",
+    "label": "Participate respectfully. Listen, welcome different perspectives an…",
+    "default_value": "Participate respectfully. Listen, welcome different perspectives and avoid harassment or unhealthy competition.",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.collaborate.honestly.exchange.explanations.ask.questions.and",
+    "page": "members",
+    "section": "resources",
+    "label": "Collaborate honestly: exchange explanations, ask questions and ackn…",
+    "default_value": "Collaborate honestly: exchange explanations, ask questions and acknowledge contributors.",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.share.resources.you.have.permission.to.distribute",
+    "page": "members",
+    "section": "resources",
+    "label": "Share resources you have permission to distribute. Respect copyrigh…",
+    "default_value": "Share resources you have permission to distribute. Respect copyright, patient confidentiality and academic integrity.",
+    "visibility": "members",
+    "route": "/resources",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.do.not.publish.another.member.s.email",
+    "page": "members",
+    "section": "community",
+    "label": "Do not publish another member’s email, WhatsApp number or private i…",
+    "default_value": "Do not publish another member’s email, WhatsApp number or private information.",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.community.rules",
+    "page": "members",
+    "section": "community",
+    "label": "Community rules",
+    "default_value": "Community rules",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  },
+  {
+    "key": "members.wording.join.the.whatsapp.community",
+    "page": "members",
+    "section": "community",
+    "label": "Join the WhatsApp community",
+    "default_value": "Join the WhatsApp community",
+    "visibility": "members",
+    "route": "/community",
+    "max_length": 300
+  }
+]
