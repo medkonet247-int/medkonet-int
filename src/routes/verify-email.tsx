@@ -47,7 +47,7 @@ function messageFor(r: Exclude<VerifyResult, { ok: true }>): { text: string; exp
 }
 
 function VerifyEmail() {
-  const t = useSiteText("verify-email");
+  const text = useSiteTextext("verify-email");
   const { t } = Route.useSearch();
   const navigate = useNavigate();
   const verifyCode = useServerFn(verifyEmailCode);
@@ -170,16 +170,16 @@ function VerifyEmail() {
   return (
     <Shell>
       <MailCheck className="mx-auto size-10 text-primary" aria-hidden />
-      <h1 className="mt-4 text-center text-2xl font-bold">{t("Verify your email")}</h1>
+      <h1 className="mt-4 text-center text-2xl font-bold">{text("Verify your email")}</h1>
 
       {!email ? (
         <div className="mt-6 space-y-4">
           {error && <p role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">{error.text}</p>}
-          <p className="text-center text-sm text-muted-foreground">{t("Enter the email address you applied with.")}</p>
-          <Field id="verify-email" label={t("Email address")} error={emailErr}>
+          <p className="text-center text-sm text-muted-foreground">{text("Enter the email address you applied with.")}</p>
+          <Field id="verify-email" label={text("Email address")} error={emailErr}>
             <input id="verify-email" type="email" inputMode="email" autoComplete="email" value={emailInput} onChange={(e) => { setEmailInput(e.target.value); setEmailErr(undefined); }} className={inputCls} />
           </Field>
-          <Button className="w-full" onClick={useEmail}>{t("Continue")}</Button>
+          <Button className="w-full" onClick={useEmail}>{text("Continue")}</Button>
         </div>
       ) : (
         <>
@@ -208,15 +208,15 @@ function VerifyEmail() {
               {!error && info && <p className="text-muted-foreground">{info}</p>}
             </div>
             <Button type="submit" className="h-12 w-full" disabled={busy || code.length !== 4}>
-              {busy ? <Loader2 className="size-4 animate-spin" /> : t("Verify Email")}
+              {busy ? <Loader2 className="size-4 animate-spin" /> : text("Verify Email")}
             </Button>
           </form>
 
           <div className="mt-6 flex flex-col items-center gap-3 text-sm">
             <Button variant="ghost" onClick={doResend} disabled={busy || left > 0}>
-              {left > 0 ? `Resend code in ${left >= 60 ? `${Math.ceil(left / 60)} min` : `${left}s`}` : t("Resend code")}
+              {left > 0 ? `Resend code in ${left >= 60 ? `${Math.ceil(left / 60)} min` : `${left}s`}` : text("Resend code")}
             </Button>
-            <Link to="/join" onClick={() => clearVerify()} className="text-primary underline">{t("Wrong email? Register again")}</Link>
+            <Link to="/join" onClick={() => clearVerify()} className="text-primary underline">{text("Wrong email? Register again")}</Link>
           </div>
         </>
       )}
@@ -225,7 +225,7 @@ function VerifyEmail() {
 }
 
 function Shell({ children }: { children: React.ReactNode }) {
-  const t = useSiteText("verify-email");
+  const text = useSiteTextext("verify-email");
   return (
     <section className="py-12 sm:py-20">
       <Container className="max-w-md">
