@@ -47,7 +47,7 @@ function messageFor(r: Exclude<VerifyResult, { ok: true }>): { text: string; exp
 }
 
 function VerifyEmail() {
-  const text = useSiteTextext("verify-email");
+  const text = useSiteText("verify-email");
   const { t } = Route.useSearch();
   const navigate = useNavigate();
   const verifyCode = useServerFn(verifyEmailCode);
@@ -225,7 +225,7 @@ function VerifyEmail() {
 }
 
 function Shell({ children }: { children: React.ReactNode }) {
-  const text = useSiteTextext("verify-email");
+  const text = useSiteText("verify-email");
   return (
     <section className="py-12 sm:py-20">
       <Container className="max-w-md">
