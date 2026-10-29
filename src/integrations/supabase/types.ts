@@ -319,6 +319,54 @@ export type Database = {
         }
         Relationships: []
       }
+      site_text: {
+        Row: {
+          current_value: string
+          default_value: string
+          key: string
+          label: string
+          last_edited_at: string | null
+          last_edited_by: string | null
+          last_editor_name: string | null
+          max_length: number
+          page: string
+          previous_value: string | null
+          route: string
+          section: string
+          visibility: string
+        }
+        Insert: {
+          current_value: string
+          default_value: string
+          key: string
+          label: string
+          last_edited_at?: string | null
+          last_edited_by?: string | null
+          last_editor_name?: string | null
+          max_length?: number
+          page: string
+          previous_value?: string | null
+          route: string
+          section?: string
+          visibility?: string
+        }
+        Update: {
+          current_value?: string
+          default_value?: string
+          key?: string
+          label?: string
+          last_edited_at?: string | null
+          last_edited_by?: string | null
+          last_editor_name?: string | null
+          max_length?: number
+          page?: string
+          previous_value?: string | null
+          route?: string
+          section?: string
+          visibility?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -400,6 +448,10 @@ export type Database = {
       complete_registration: {
         Args: { _dev_mode: boolean; _user_id: string }
         Returns: string
+      }
+      edit_site_text: {
+        Args: { _expected: string; _key: string; _value: string }
+        Returns: undefined
       }
       has_role: {
         Args: {
