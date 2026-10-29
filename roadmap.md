@@ -1,3 +1,8 @@
+# Phase 3B
+- [ ] Inventory original text and capture desktop/mobile comparisons.
+- [ ] Add protected text storage, cached fallback helper and administrator editor.
+- [ ] Verify edits, resets, audit, access rules and preservation; write final report.
+
 # Phase 3
 - [x] Add private published content, storage access and audited administrator actions.
 - [x] Replace member placeholders and add administrator Content tabs and WhatsApp visibility setting.
