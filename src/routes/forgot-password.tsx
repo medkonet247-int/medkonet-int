@@ -1,3 +1,4 @@
+import { useSiteText } from "@/lib/site-text-context";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState, type FormEvent } from "react";
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/forgot-password")({
 });
 
 function Forgot() {
+  const t = useSiteText("forgot-password");
   const reset = useServerFn(requestPasswordReset);
   const [email, setEmail] = useState("");
   const [err, setErr] = useState<string>();
@@ -39,7 +41,7 @@ function Forgot() {
     <section className="py-12 sm:py-20">
       <Container className="max-w-md">
         <Card className="p-6 sm:p-8">
-          <h1 className="text-2xl font-bold">Forgot your password?</h1>
+          <h1 className="text-2xl font-bold">{t("Forgot your password?")}</h1>
           {done ? (
             <div role="status" className="mt-4 space-y-3 text-sm">
               {!done.configured ? (
@@ -49,17 +51,17 @@ function Forgot() {
               ) : (
                 <p>If an account exists for that email, a password reset link has been sent. Check your inbox and spam folder.</p>
               )}
-              <Link to="/login" className="text-primary underline">Back to login</Link>
+              <Link to="/login" className="text-primary underline">{t("Back to login")}</Link>
             </div>
           ) : (
             <form noValidate onSubmit={onSubmit} className="mt-6 space-y-5">
-              <Field id="email" label="Email address" error={err}>
+              <Field id="email" label={t("Email address")} error={err}>
                 <input id="email" type="email" inputMode="email" autoComplete="email" value={email} onChange={(e) => { setEmail(e.target.value); setErr(undefined); }} className={inputCls} disabled={busy} />
               </Field>
               <Button type="submit" className="h-12 w-full" disabled={busy}>
-                {busy ? <Loader2 className="size-4 animate-spin" /> : "Send reset link"}
+                {busy ? <Loader2 className="size-4 animate-spin" /> : t("Send reset link")}
               </Button>
-              <Link to="/login" className="block text-sm text-primary underline">Back to login</Link>
+              <Link to="/login" className="block text-sm text-primary underline">{t("Back to login")}</Link>
             </form>
           )}
         </Card>

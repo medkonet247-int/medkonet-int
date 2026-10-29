@@ -1,3 +1,4 @@
+import { useSiteText } from "@/lib/site-text-context";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Users, BookOpen, GraduationCap, Compass, HeartHandshake, CalendarDays, Check, ArrowRight,
@@ -43,22 +44,21 @@ const VISION = [
 ];
 
 function Home() {
+  const t = useSiteText("home");
   return (
     <>
       <section className="bg-hero text-navy-foreground">
         <Container className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.2fr_1fr]">
           <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan">Connecting Medical Minds, Building Better Futures.</p>
-            <h1 className="mt-4 text-4xl font-bold leading-[1.1] sm:text-6xl">Your Medical Journey, Stronger Together.</h1>
-            <p className="mt-6 max-w-xl text-base text-navy-foreground/80 sm:text-lg">
-              Connect with Medicine and Surgery students across Nigerian universities, exchange knowledge, discover opportunities, and grow alongside people who understand your journey.
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan">{t("Connecting Medical Minds, Building Better Futures.")}</p>
+            <h1 className="mt-4 text-4xl font-bold leading-[1.1] sm:text-6xl">{t("Your Medical Journey, Stronger Together.")}</h1>
+            <p className="mt-6 max-w-xl text-base text-navy-foreground/80 sm:text-lg">{t("Connect with Medicine and Surgery students across Nigerian universities, exchange knowledge, discover opportunities, and grow alongside people who understand your journey.")}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button size="lg" asChild className="h-12 px-6">
-                <Link to="/join">Become a Member <ArrowRight className="size-4" /></Link>
+                <Link to="/join">{t("Become a Member ")}<ArrowRight className="size-4" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="h-12 border-navy-foreground/30 bg-transparent px-6 text-navy-foreground hover:bg-navy-foreground/10 hover:text-navy-foreground">
-                <Link to="/community">Explore Our Community</Link>
+                <Link to="/community">{t("Explore Our Community")}</Link>
               </Button>
             </div>
           </div>
@@ -70,29 +70,25 @@ function Home() {
 
       <section className="py-16 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <SectionHeading eyebrow="Our mission" title="Different Universities. One Medical Family." />
+          <SectionHeading eyebrow={t("Our mission")} title={t("Different Universities. One Medical Family.")} />
           <div className="space-y-4 text-muted-foreground sm:text-lg">
-            <p>
-              Medical school can feel isolating, but students across Nigeria are facing the same questions, the same exams and the same doubts. MedKonet brings them together.
-            </p>
-            <p>
-              We connect students so they can share resources, discuss difficult concepts, find study partners, support one another and build meaningful academic relationships that last beyond graduation.
-            </p>
+            <p>{t("Medical school can feel isolating, but students across Nigeria are facing the same questions, the same exams and the same doubts. MedKonet brings them together.")}</p>
+            <p>{t("We connect students so they can share resources, discuss difficult concepts, find study partners, support one another and build meaningful academic relationships that last beyond graduation.")}</p>
           </div>
         </Container>
       </section>
 
       <section className="bg-secondary/60 py-16 sm:py-24">
         <Container>
-          <SectionHeading eyebrow="What we offer" title="Built around collaboration" center />
+          <SectionHeading eyebrow={t("What we offer")} title={t("Built around collaboration")} center />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {OFFERS.map(({ icon: Icon, title, body }) => (
-              <Card key={title} className="transition-transform duration-200 hover:-translate-y-0.5">
+              <Card key={t(title)} className="transition-transform duration-200 hover:-translate-y-0.5">
                 <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent text-primary">
                   <Icon className="size-5" aria-hidden />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{body}</p>
+                <h3 className="mt-5 text-lg font-semibold">{t(title)}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t(body)}</p>
               </Card>
             ))}
           </div>
@@ -101,12 +97,12 @@ function Home() {
 
       <section className="py-16 sm:py-24">
         <Container className="grid gap-12 lg:grid-cols-2">
-          <SectionHeading eyebrow="Community benefits" title="What members gain" intro="MedKonet is a place to grow, not to compete." />
+          <SectionHeading eyebrow={t("Community benefits")} title={t("What members gain")} intro={t("MedKonet is a place to grow, not to compete.")} />
           <ul className="grid gap-3">
             {BENEFITS.map((b) => (
-              <li key={b} className="flex items-start gap-3 rounded-xl border bg-card px-4 py-3">
+              <li key={t(b)} className="flex items-start gap-3 rounded-xl border bg-card px-4 py-3">
                 <Check className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
-                <span>{b}</span>
+                <span>{t(b)}</span>
               </li>
             ))}
           </ul>
@@ -115,26 +111,24 @@ function Home() {
 
       <section className="bg-navy py-16 text-navy-foreground sm:py-24">
         <Container className="max-w-4xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">You Don't Have to Figure It All Out Alone.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-navy-foreground/80 sm:text-lg">
-            Whether you feel uncertain, overwhelmed or unsure how to reach your medical dreams, you belong here. Find encouragement, ask questions, share your challenges and learn alongside peers without fear of unhealthy competition.
-          </p>
+          <h2 className="text-3xl font-bold sm:text-4xl">{t("You Don't Have to Figure It All Out Alone.")}</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-navy-foreground/80 sm:text-lg">{t("Whether you feel uncertain, overwhelmed or unsure how to reach your medical dreams, you belong here. Find encouragement, ask questions, share your challenges and learn alongside peers without fear of unhealthy competition.")}</p>
         </Container>
       </section>
 
       <section className="py-16 sm:py-24">
         <Container>
           <SectionHeading
-            eyebrow="Where we're heading"
-            title="Our growth vision"
-            intro="These are ambitions we are working towards as the community grows. They are not yet in place."
+            eyebrow={t("Where we're heading")}
+            title={t("Our growth vision")}
+            intro={t("These are ambitions we are working towards as the community grows. They are not yet in place.")}
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {VISION.map((v) => (
-              <div key={v.title} className="rounded-2xl border border-dashed p-6">
+              <div key={t(v.title)} className="rounded-2xl border border-dashed p-6">
                 <span className="block h-1 w-10 rounded-full bg-accent-line" />
-                <h3 className="mt-4 font-semibold">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{v.body}</p>
+                <h3 className="mt-4 font-semibold">{t(v.title)}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t(v.body)}</p>
               </div>
             ))}
           </div>
@@ -144,9 +138,9 @@ function Home() {
       <section className="pb-20">
         <Container>
           <div className="rounded-3xl bg-hero px-6 py-14 text-center text-navy-foreground sm:px-12">
-            <h2 className="text-3xl font-bold sm:text-4xl">Your Journey Matters. Let's Grow Together.</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">{t("Your Journey Matters. Let's Grow Together.")}</h2>
             <Button size="lg" asChild className="mt-8 h-12 px-6">
-              <Link to="/join">Apply to Join MedKonet</Link>
+              <Link to="/join">{t("Apply to Join MedKonet")}</Link>
             </Button>
           </div>
         </Container>

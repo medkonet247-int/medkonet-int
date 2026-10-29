@@ -1,3 +1,4 @@
+import { useSiteText } from "@/lib/site-text-context";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useRef, useState, type FormEvent } from "react";
@@ -19,6 +20,7 @@ export const Route = createFileRoute("/login")({
 });
 
 function Login() {
+  const t = useSiteText("login");
   const navigate = useNavigate();
   const login = useServerFn(loginWithPassword);
   const [email, setEmail] = useState("");
@@ -62,28 +64,28 @@ function Login() {
     <section className="py-12 sm:py-20">
       <Container className="max-w-md">
         <Card className="p-6 sm:p-8">
-          <h1 className="text-2xl font-bold">Welcome back</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Log in to your MedKonet account.</p>
+          <h1 className="text-2xl font-bold">{t("Welcome back")}</h1>
+          <p className="mt-1 text-sm text-muted-foreground">{t("Log in to your MedKonet account.")}</p>
           <form noValidate onSubmit={onSubmit} className="mt-6 space-y-5">
-            <Field id="email" label="Email address" error={fieldErr.email}>
+            <Field id="email" label={t("Email address")} error={fieldErr.email}>
               <input id="email" type="email" inputMode="email" autoComplete="email" autoCapitalize="none" value={email} onChange={(e) => setEmail(e.target.value)} aria-invalid={!!fieldErr.email} disabled={busy} className={inputCls} />
             </Field>
-            <Field id="password" label="Password" error={fieldErr.password}>
+            <Field id="password" label={t("Password")} error={fieldErr.password}>
               <div className="relative">
                 <input id="password" type={show ? "text" : "password"} autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} aria-invalid={!!fieldErr.password} disabled={busy} className={cn(inputCls, "pr-11")} />
-                <button type="button" onClick={() => setShow((s) => !s)} className="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-muted-foreground" aria-label={show ? "Hide password" : "Show password"}>
+                <button type="button" onClick={() => setShow((s) => !s)} className="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-muted-foreground" aria-label={show ? t("Hide password") : t("Show password")}>
                   {show ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
                 </button>
               </div>
             </Field>
             {err && <p role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">{err}</p>}
             <Button type="submit" className="h-12 w-full" disabled={busy}>
-              {busy ? <><Loader2 className="size-4 animate-spin" /> Logging in…</> : "Log in"}
+              {busy ? <><Loader2 className="size-4 animate-spin" />{t(" Logging in…")}</> : t("Log in")}
             </Button>
           </form>
           <div className="mt-6 flex flex-col gap-2 text-sm">
-            <Link to="/forgot-password" className="text-primary underline">Forgot password?</Link>
-            <p className="text-muted-foreground">New here? <Link to="/join" className="font-semibold text-primary underline">Join MedKonet</Link></p>
+            <Link to="/forgot-password" className="text-primary underline">{t("Forgot password?")}</Link>
+            <p className="text-muted-foreground">{t("New here? ")}<Link to="/join" className="font-semibold text-primary underline">{t("Join MedKonet")}</Link></p>
           </div>
         </Card>
       </Container>

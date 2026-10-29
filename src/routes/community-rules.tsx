@@ -1,3 +1,4 @@
+import { useSiteText } from "@/lib/site-text-context";
 import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader } from "@/components/site/Page";
 import { seo } from "@/lib/seo";
@@ -19,13 +20,14 @@ const RULES = [
 ];
 
 function Rules() {
+  const t = useSiteText("community-rules");
   return (
     <>
-      <PageHeader eyebrow="Community" title="Community Rules" />
+      <PageHeader eyebrow={t("Community")} title={t("Community Rules")} />
       <section className="py-14">
         <Container className="max-w-3xl">
           <ol className="list-decimal space-y-4 pl-5 marker:font-semibold marker:text-primary">
-            {RULES.map((r) => <li key={r} className="pl-2">{r}</li>)}
+            {RULES.map((r) => <li key={t(r)} className="pl-2">{t(r)}</li>)}
           </ol>
         </Container>
       </section>

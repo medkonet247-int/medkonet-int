@@ -1,3 +1,4 @@
+import { useSiteText } from "@/lib/site-text-context";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Container, PageHeader, SectionHeading, Card } from "@/components/site/Page";
@@ -18,37 +19,38 @@ const VALUES = [
 ];
 
 function About() {
+  const t = useSiteText("about");
   return (
     <>
-      <PageHeader eyebrow="About MedKonet" title="Different Universities. One Medical Family." intro="MedKonet Nigeria is a growing community connecting Medicine and Surgery students across federal, state and private universities in Nigeria." />
+      <PageHeader eyebrow={t("About MedKonet")} title={t("Different Universities. One Medical Family.")} intro={t("MedKonet Nigeria is a growing community connecting Medicine and Surgery students across federal, state and private universities in Nigeria.")} />
       <section className="py-16 sm:py-20">
         <Container className="grid gap-6 md:grid-cols-2">
           <Card>
-            <h2 className="text-xl font-semibold">Who we are</h2>
-            <p className="mt-3 text-muted-foreground">We are medical students who believe the journey through medical school is better shared. MedKonet brings students together for academic collaboration, peer learning, resource sharing, mentorship and friendship.</p>
+            <h2 className="text-xl font-semibold">{t("Who we are")}</h2>
+            <p className="mt-3 text-muted-foreground">{t("We are medical students who believe the journey through medical school is better shared. MedKonet brings students together for academic collaboration, peer learning, resource sharing, mentorship and friendship.")}</p>
           </Card>
           <Card>
-            <h2 className="text-xl font-semibold">Our mission</h2>
-            <p className="mt-3 text-muted-foreground">To connect medical students across Nigeria so they can learn together, support one another and grow into compassionate, competent doctors.</p>
+            <h2 className="text-xl font-semibold">{t("Our mission")}</h2>
+            <p className="mt-3 text-muted-foreground">{t("To connect medical students across Nigeria so they can learn together, support one another and grow into compassionate, competent doctors.")}</p>
           </Card>
           <Card>
-            <h2 className="text-xl font-semibold">Our vision</h2>
-            <p className="mt-3 text-muted-foreground">A nationwide medical student network where no student feels alone and every student has access to peers, guidance and opportunities.</p>
+            <h2 className="text-xl font-semibold">{t("Our vision")}</h2>
+            <p className="mt-3 text-muted-foreground">{t("A nationwide medical student network where no student feels alone and every student has access to peers, guidance and opportunities.")}</p>
           </Card>
           <Card>
-            <h2 className="text-xl font-semibold">Why MedKonet exists</h2>
-            <p className="mt-3 text-muted-foreground">Many students feel uncertain, overwhelmed or afraid of how to achieve their medical dreams. Too often, the environment rewards competition over cooperation. We exist to offer a different path: one built on encouragement and shared effort.</p>
+            <h2 className="text-xl font-semibold">{t("Why MedKonet exists")}</h2>
+            <p className="mt-3 text-muted-foreground">{t("Many students feel uncertain, overwhelmed or afraid of how to achieve their medical dreams. Too often, the environment rewards competition over cooperation. We exist to offer a different path: one built on encouragement and shared effort.")}</p>
           </Card>
         </Container>
       </section>
       <section className="bg-secondary/60 py-16 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Core values" title="What guides us" />
+          <SectionHeading eyebrow={t("Core values")} title={t("What guides us")} />
           <dl className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {VALUES.map((v) => (
-              <div key={v.t} className="rounded-2xl border bg-card p-6">
-                <dt className="font-semibold text-primary">{v.t}</dt>
-                <dd className="mt-2 text-sm text-muted-foreground">{v.d}</dd>
+              <div key={t(v.t)} className="rounded-2xl border bg-card p-6">
+                <dt className="font-semibold text-primary">{t(v.t)}</dt>
+                <dd className="mt-2 text-sm text-muted-foreground">{t(v.d)}</dd>
               </div>
             ))}
           </dl>
@@ -56,9 +58,9 @@ function About() {
       </section>
       <section className="py-16 sm:py-20">
         <Container className="max-w-3xl text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl">Our commitment to collaboration and belonging</h2>
-          <p className="mt-4 text-muted-foreground">We commit to keeping MedKonet a respectful, welcoming and supportive space where members share generously, ask freely and celebrate each other's progress.</p>
-          <Button asChild size="lg" className="mt-8"><Link to="/join">Apply to Join MedKonet</Link></Button>
+          <h2 className="text-2xl font-bold sm:text-3xl">{t("Our commitment to collaboration and belonging")}</h2>
+          <p className="mt-4 text-muted-foreground">{t("We commit to keeping MedKonet a respectful, welcoming and supportive space where members share generously, ask freely and celebrate each other's progress.")}</p>
+          <Button asChild size="lg" className="mt-8"><Link to="/join">{t("Apply to Join MedKonet")}</Link></Button>
         </Container>
       </section>
     </>
