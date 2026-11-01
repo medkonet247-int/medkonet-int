@@ -1,3 +1,8 @@
+# Phase 4
+- [ ] Add empty protected directory, optional application links, audited matching and private aggregate reports.
+- [ ] Add member/admin pages, inactive representative preparation and editable new wording.
+- [ ] Verify database rules, real administrator flows, member access and 360px layouts; provide phase-four-report.md.
+
 # Phase 3B
 - [x] Inventory 254 catalog texts; add protected storage, cached fallback helper and administrator editor.
 - [x] Verify administrator save/reset, fallback, markup, audit, length rules, visitor privacy and current desktop/360px pages; write phase-three-b-report.md.
