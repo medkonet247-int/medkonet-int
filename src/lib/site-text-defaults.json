@@ -2162,11 +2162,11 @@
   {
     "key": "members.wording.6",
     "page": "members",
-    "section": "community",
+    "section": "resources",
     "label": "Preparing…",
     "default_value": "Preparing…",
     "visibility": "members",
-    "route": "/community",
+    "route": "/resources",
     "max_length": 300
   },
   {
@@ -2312,11 +2312,11 @@
   {
     "key": "members.wording.21",
     "page": "members",
-    "section": "community",
+    "section": "resources",
     "label": "Search titles…",
     "default_value": "Search titles…",
     "visibility": "members",
-    "route": "/community",
+    "route": "/resources",
     "max_length": 300
   },
   {
@@ -2342,31 +2342,31 @@
   {
     "key": "members.wording.24",
     "page": "members",
-    "section": "community",
+    "section": "resources",
     "label": "Type",
     "default_value": "Type",
     "visibility": "members",
-    "route": "/community",
+    "route": "/resources",
     "max_length": 300
   },
   {
     "key": "members.wording.25",
     "page": "members",
-    "section": "community",
+    "section": "resources",
     "label": "All types",
     "default_value": "All types",
     "visibility": "members",
-    "route": "/community",
+    "route": "/resources",
     "max_length": 300
   },
   {
     "key": "members.wording.26",
     "page": "members",
-    "section": "community",
+    "section": "resources",
     "label": "No matching items. Try another search or filter.",
     "default_value": "No matching items. Try another search or filter.",
     "visibility": "members",
-    "route": "/community",
+    "route": "/resources",
     "max_length": 300
   },
   {
@@ -2492,21 +2492,21 @@
   {
     "key": "members.wording.39",
     "page": "members",
-    "section": "resources",
+    "section": "community",
     "label": "Collaborate honestly: exchange explanations, ask questions and ackn…",
     "default_value": "Collaborate honestly: exchange explanations, ask questions and acknowledge contributors.",
     "visibility": "members",
-    "route": "/resources",
+    "route": "/community",
     "max_length": 300
   },
   {
     "key": "members.wording.40",
     "page": "members",
-    "section": "resources",
+    "section": "community",
     "label": "Share resources you have permission to distribute. Respect copyrigh…",
     "default_value": "Share resources you have permission to distribute. Respect copyright, patient confidentiality and academic integrity.",
     "visibility": "members",
-    "route": "/resources",
+    "route": "/community",
     "max_length": 300
   },
   {
