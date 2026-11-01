@@ -49,6 +49,7 @@ export type Database = {
           state: string
           submitted_at: string
           university: string
+          university_id: string | null
           university_type: Database["public"]["Enums"]["university_type"]
           user_id: string
           whatsapp_number: string
@@ -66,6 +67,7 @@ export type Database = {
           state: string
           submitted_at?: string
           university: string
+          university_id?: string | null
           university_type: Database["public"]["Enums"]["university_type"]
           user_id: string
           whatsapp_number: string
@@ -83,11 +85,20 @@ export type Database = {
           state?: string
           submitted_at?: string
           university?: string
+          university_id?: string | null
           university_type?: Database["public"]["Enums"]["university_type"]
           user_id?: string
           whatsapp_number?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "applications_university_id_fkey"
+            columns: ["university_id"]
+            isOneToOne: false
+            referencedRelation: "universities"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       audit_log: {
         Row: {
@@ -307,6 +318,57 @@ export type Database = {
         }
         Relationships: []
       }
+      representative_assignments: {
+        Row: {
+          application_id: string
+          assigned_at: string | null
+          created_at: string
+          id: string
+          notes: string
+          status: string
+          university_id: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          application_id: string
+          assigned_at?: string | null
+          created_at?: string
+          id?: string
+          notes?: string
+          status?: string
+          university_id: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          application_id?: string
+          assigned_at?: string | null
+          created_at?: string
+          id?: string
+          notes?: string
+          status?: string
+          university_id?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "representative_assignments_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "applications"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "representative_assignments_university_id_fkey"
+            columns: ["university_id"]
+            isOneToOne: false
+            referencedRelation: "universities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       resource_categories: {
         Row: {
           name: string
@@ -364,6 +426,48 @@ export type Database = {
           route?: string
           section?: string
           visibility?: string
+        }
+        Relationships: []
+      }
+      universities: {
+        Row: {
+          active: boolean
+          created_at: string
+          created_by: string | null
+          id: string
+          location: string
+          name: string
+          state: string
+          university_type: Database["public"]["Enums"]["university_type"]
+          updated_at: string
+          updated_by: string | null
+          verification_status: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          location: string
+          name: string
+          state: string
+          university_type: Database["public"]["Enums"]["university_type"]
+          updated_at?: string
+          updated_by?: string | null
+          verification_status?: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          location?: string
+          name?: string
+          state?: string
+          university_type?: Database["public"]["Enums"]["university_type"]
+          updated_at?: string
+          updated_by?: string | null
+          verification_status?: string
         }
         Relationships: []
       }
@@ -449,6 +553,17 @@ export type Database = {
         Args: { _dev_mode: boolean; _user_id: string }
         Returns: string
       }
+      directory_universities: {
+        Args: {
+          _active?: string
+          _page?: number
+          _q?: string
+          _state?: string
+          _type?: string
+          _verification?: string
+        }
+        Returns: Json
+      }
       edit_site_text: {
         Args: { _expected: string; _key: string; _value: string }
         Returns: undefined
@@ -465,7 +580,15 @@ export type Database = {
         Args: { _action: string; _data?: Json; _target?: string }
         Returns: undefined
       }
+      match_university: {
+        Args: { _new?: Json; _typed: string; _university_id?: string }
+        Returns: number
+      }
       member_onboarding_status: { Args: never; Returns: boolean }
+      membership_reports: {
+        Args: { _from?: string; _period?: string; _to?: string }
+        Returns: Json
+      }
       registration_is_open: { Args: never; Returns: boolean }
       set_member_whatsapp_visibility: {
         Args: { _show: boolean }
@@ -473,6 +596,10 @@ export type Database = {
       }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
+      university_matching_queue: {
+        Args: { _page?: number; _q?: string }
+        Returns: Json
+      }
     }
     Enums: {
       app_role: "admin" | "member"
