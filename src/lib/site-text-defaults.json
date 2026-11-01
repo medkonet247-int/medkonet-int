@@ -2538,5 +2538,1025 @@
     "visibility": "members",
     "route": "/community",
     "max_length": 300
+  },
+  {
+    "key": "phase4.wording.1",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Page",
+    "default_value": "Page",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.2",
+    "page": "phase4",
+    "section": "directory",
+    "label": "results",
+    "default_value": "results",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.3",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Previous page",
+    "default_value": "Previous page",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.4",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Next page",
+    "default_value": "Next page",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.5",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Approved members are applications with status Approved. Onboarded members are…",
+    "default_value": "Approved members are applications with status Approved. Onboarded members are approved applicants whose onboarding has been confirmed by an administrator. Directory member counts include onboarded members only.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.6",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Search universities",
+    "default_value": "Search universities",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.7",
+    "page": "phase4",
+    "section": "directory",
+    "label": "University type",
+    "default_value": "University type",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.8",
+    "page": "phase4",
+    "section": "directory",
+    "label": "All types",
+    "default_value": "All types",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.9",
+    "page": "phase4",
+    "section": "directory",
+    "label": "State",
+    "default_value": "State",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.10",
+    "page": "phase4",
+    "section": "directory",
+    "label": "All states",
+    "default_value": "All states",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.11",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Verification status",
+    "default_value": "Verification status",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.12",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Active status",
+    "default_value": "Active status",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.13",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Add university",
+    "default_value": "Add university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.14",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Loading universities…",
+    "default_value": "Loading universities…",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.15",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Could not load universities.",
+    "default_value": "Could not load universities.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.16",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Try again",
+    "default_value": "Try again",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.17",
+    "page": "phase4",
+    "section": "directory",
+    "label": "No universities have been added to the directory yet. Check back soon.",
+    "default_value": "No universities have been added to the directory yet. Check back soon.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.18",
+    "page": "phase4",
+    "section": "directory",
+    "label": "No universities match these filters.",
+    "default_value": "No universities match these filters.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.19",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Onboarded members",
+    "default_value": "Onboarded members",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.20",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Approved members",
+    "default_value": "Approved members",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.21",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Active",
+    "default_value": "Active",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.22",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Deactivated",
+    "default_value": "Deactivated",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.23",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Edit",
+    "default_value": "Edit",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.24",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Unverify",
+    "default_value": "Unverify",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.25",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Verify",
+    "default_value": "Verify",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.26",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Deactivate",
+    "default_value": "Deactivate",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.27",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Reactivate",
+    "default_value": "Reactivate",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.28",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Edit university",
+    "default_value": "Edit university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.29",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Name",
+    "default_value": "Name",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.30",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Location",
+    "default_value": "Location",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.31",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Cancel",
+    "default_value": "Cancel",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.32",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Save university",
+    "default_value": "Save university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.33",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Confirm university change",
+    "default_value": "Confirm university change",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.34",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Confirm",
+    "default_value": "Confirm",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.35",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "Members",
+    "default_value": "Members",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.36",
+    "page": "phase4",
+    "section": "directory",
+    "label": "University Directory",
+    "default_value": "University Directory",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.37",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Verified universities across the MedKonet community.",
+    "default_value": "Verified universities across the MedKonet community.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.38",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Needs matching",
+    "default_value": "Needs matching",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.39",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Applications are grouped by the university name the student typed. No matches…",
+    "default_value": "Applications are grouped by the university name the student typed. No matches are automatic. Confirming a match links all currently unmatched applications in that group and preserves the original name.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.40",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Search typed university names",
+    "default_value": "Search typed university names",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.41",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Loading matching queue…",
+    "default_value": "Loading matching queue…",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.42",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Could not load matching queue.",
+    "default_value": "Could not load matching queue.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.43",
+    "page": "phase4",
+    "section": "directory",
+    "label": "No applications need matching.",
+    "default_value": "No applications need matching.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.44",
+    "page": "phase4",
+    "section": "directory",
+    "label": "unmatched applications",
+    "default_value": "unmatched applications",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.45",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Match university",
+    "default_value": "Match university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.46",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Confirm university matching",
+    "default_value": "Confirm university matching",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.47",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Matching option",
+    "default_value": "Matching option",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.48",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Link to existing university",
+    "default_value": "Link to existing university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.49",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Create new Unverified university",
+    "default_value": "Create new Unverified university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.50",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Find existing university",
+    "default_value": "Find existing university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.51",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Choose university",
+    "default_value": "Choose university",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.52",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Confirm this match for every currently unmatched application in this group? N…",
+    "default_value": "Confirm this match for every currently unmatched application in this group? New universities remain Unverified until reviewed separately.",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.53",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Confirm match",
+    "default_value": "Confirm match",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.54",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Reports contain aggregate figures only. University totals use applications su…",
+    "default_value": "Reports contain aggregate figures only. University totals use applications submitted in the selected Nigerian date range and their current status. States represented are distinct states recorded on those applications. Growth shows new applications and first recorded approvals by week or month; approval dates use audit history, with review dates as a fallback for older records.",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 2000
+  },
+  {
+    "key": "phase4.wording.55",
+    "page": "phase4",
+    "section": "reports",
+    "label": "From date",
+    "default_value": "From date",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.56",
+    "page": "phase4",
+    "section": "reports",
+    "label": "To date",
+    "default_value": "To date",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.57",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Growth interval",
+    "default_value": "Growth interval",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.58",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Monthly",
+    "default_value": "Monthly",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.59",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Weekly",
+    "default_value": "Weekly",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.60",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Download CSV",
+    "default_value": "Download CSV",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.61",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Choose a start date before the end date.",
+    "default_value": "Choose a start date before the end date.",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.62",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Loading reports…",
+    "default_value": "Loading reports…",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.63",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Could not load reports.",
+    "default_value": "Could not load reports.",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.64",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Applications",
+    "default_value": "Applications",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.65",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Universities represented",
+    "default_value": "Universities represented",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.66",
+    "page": "phase4",
+    "section": "reports",
+    "label": "States represented",
+    "default_value": "States represented",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.67",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Unmatched applications",
+    "default_value": "Unmatched applications",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.68",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Applications by university",
+    "default_value": "Applications by university",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.69",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Approved members have status Approved. Onboarded members are approved applica…",
+    "default_value": "Approved members have status Approved. Onboarded members are approved applicants with administrator-confirmed onboarding. Pending applicants are never counted as members.",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.70",
+    "page": "phase4",
+    "section": "reports",
+    "label": "No linked university data for this date range.",
+    "default_value": "No linked university data for this date range.",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.71",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Total",
+    "default_value": "Total",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.72",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Pending",
+    "default_value": "Pending",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.73",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Rejected",
+    "default_value": "Rejected",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.74",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Membership growth",
+    "default_value": "Membership growth",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.75",
+    "page": "phase4",
+    "section": "reports",
+    "label": "No applications or approvals for this date range.",
+    "default_value": "No applications or approvals for this date range.",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.76",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Period starting",
+    "default_value": "Period starting",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.77",
+    "page": "phase4",
+    "section": "reports",
+    "label": "New applications",
+    "default_value": "New applications",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.78",
+    "page": "phase4",
+    "section": "reports",
+    "label": "First approvals",
+    "default_value": "First approvals",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.79",
+    "page": "phase4",
+    "section": "reports",
+    "label": "Applications not yet matched",
+    "default_value": "Applications not yet matched",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.80",
+    "page": "phase4",
+    "section": "reports",
+    "label": "No unmatched applications for this date range.",
+    "default_value": "No unmatched applications for this date range.",
+    "visibility": "member",
+    "route": "/admin/reports",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.81",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "The university representative programme is proposed. No representatives have …",
+    "default_value": "The university representative programme is proposed. No representatives have been appointed.",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.82",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "Representative permissions are not active. A secure role system and the found…",
+    "default_value": "Representative permissions are not active. A secure role system and the founder's explicit approval are required before appointing representatives.",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.83",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "Planned future responsibilities",
+    "default_value": "Planned future responsibilities",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.84",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "Preparation structure",
+    "default_value": "Preparation structure",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.85",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "Reserved fields: university, member application reference, proposed or inacti…",
+    "default_value": "Reserved fields: university, member application reference, proposed or inactive status, assigned date and notes. This preparation does not grant access, and no appointment controls are active.",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.86",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "Before appointments",
+    "default_value": "Before appointments",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.87",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "A separate secure representative role system, university-scoped policies, pri…",
+    "default_value": "A separate secure representative role system, university-scoped policies, privacy testing and explicit founder approval are required. Administrator permissions will remain separate.",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.88",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "University Representatives",
+    "default_value": "University Representatives",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.89",
+    "page": "phase4",
+    "section": "representatives",
+    "label": "A proposed programme for university collaboration.",
+    "default_value": "A proposed programme for university collaboration.",
+    "visibility": "member",
+    "route": "/representatives",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.90",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Federal",
+    "default_value": "Federal",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.91",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Private",
+    "default_value": "Private",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.92",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Verified",
+    "default_value": "Verified",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.93",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Unverified",
+    "default_value": "Unverified",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.94",
+    "page": "phase4",
+    "section": "directory",
+    "label": "View relevant university-specific information",
+    "default_value": "View relevant university-specific information",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.95",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Help welcome new members",
+    "default_value": "Help welcome new members",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.96",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Share approved announcements",
+    "default_value": "Share approved announcements",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.97",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Report community needs",
+    "default_value": "Report community needs",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.98",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Support engagement with the national community",
+    "default_value": "Support engagement with the national community",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.99",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Universities",
+    "default_value": "Universities",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.100",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Reports",
+    "default_value": "Reports",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "phase4.wording.101",
+    "page": "phase4",
+    "section": "directory",
+    "label": "Representatives",
+    "default_value": "Representatives",
+    "visibility": "member",
+    "route": "/admin/universities",
+    "max_length": 300
+  },
+  {
+    "key": "header.university_directory",
+    "page": "header",
+    "section": "navigation",
+    "label": "University Directory",
+    "default_value": "University Directory",
+    "visibility": "public",
+    "route": "/universities",
+    "max_length": 100
   }
 ]

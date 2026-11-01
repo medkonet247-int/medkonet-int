@@ -1,0 +1,1 @@
+export const phase4ExtraText = ['All verification statuses', 'All active statuses'].map((value, index) => ({ key: `phase4.filters.${index + 1}`, page: 'phase4', section: 'directory', label: value, default_value: value, visibility: 'member', route: '/admin/universities', max_length: 300 }));

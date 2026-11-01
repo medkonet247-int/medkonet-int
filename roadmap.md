@@ -1,3 +1,9 @@
+# Phase 4
+- [x] Add empty protected directory, optional application links, audited matching and private aggregate reports.
+- [x] Add member/admin pages, inactive representative preparation and editable new wording.
+- [x] Verify administrator university lifecycle, duplicate rejection, audits, visitor redirects, CSV and 360px layouts; provide phase-four-report.md.
+- [ ] Complete non-admin account-state matrix, real application matching/count lifecycle and live authentication/email regressions. Blocker: authorized non-admin test sessions and consent to alter live application matching/onboarding are unavailable.
+
 # Phase 3B
 - [x] Inventory 254 catalog texts; add protected storage, cached fallback helper and administrator editor.
 - [x] Verify administrator save/reset, fallback, markup, audit, length rules, visitor privacy and current desktop/360px pages; write phase-three-b-report.md.
