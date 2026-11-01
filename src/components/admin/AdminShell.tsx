@@ -7,6 +7,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { getAdminData, manageMembership } from "@/lib/admin.functions";
 import { toast } from "sonner";
+import { useSiteText } from "@/lib/site-text-context";
 
 const links = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard },
@@ -14,13 +15,17 @@ const links = [
   { to: "/admin/members", label: "Members", icon: Users },
   { to: "/admin/content", label: "Content", icon: BookOpen },
   { to: "/admin/site-text", label: "Site Text", icon: Type },
+  { to: "/admin/universities", label: "Universities", icon: BookOpen },
+  { to: "/admin/reports", label: "Reports", icon: ClipboardList },
+  { to: "/admin/representatives", label: "Representatives", icon: Users },
   { to: "/admin/settings", label: "Settings", icon: Settings },
   { to: "/admin/administrators", label: "Administrators", icon: ShieldCheck },
   { to: "/admin/audit", label: "Audit log", icon: History },
 ] as const;
 export function AdminShell({ title, children }: { title: string; children: ReactNode }) {
+  const t = useSiteText("phase4");
   return <Container className="py-8 sm:py-12"><div className="mb-6 flex flex-wrap items-end justify-between gap-3"><div><p className="text-xs font-semibold uppercase tracking-widest text-primary">MedKonet · Administration</p><h1 className="mt-2 text-2xl font-bold sm:text-3xl">{title}</h1></div><span className="flex items-center gap-1.5 text-xs text-muted-foreground"><ShieldCheck className="size-4" /> Private administrator area</span></div>
-    <nav aria-label="Administrator" className="mb-8 grid grid-cols-2 gap-2 border-b pb-5 sm:flex sm:flex-wrap">{links.map(({ to, label, icon: Icon }) => <Button asChild variant="ghost" key={to} className="justify-start"><Link to={to} activeOptions={{ exact: true }} activeProps={{ className: "bg-accent text-primary" }}><Icon className="size-4" />{label}</Link></Button>)}</nav>{children}</Container>;
+    <nav aria-label="Administrator" className="mb-8 grid grid-cols-2 gap-2 border-b pb-5 sm:flex sm:flex-wrap">{links.map(({ to, label, icon: Icon }) => <Button asChild variant="ghost" key={to} className="justify-start"><Link to={to} activeOptions={{ exact: true }} activeProps={{ className: "bg-accent text-primary" }}><Icon className="size-4" />{t(label)}</Link></Button>)}</nav>{children}</Container>;
 }
 export function useAdminOverview() {
   const fetch = useServerFn(getAdminData);

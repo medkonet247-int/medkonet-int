@@ -29,13 +29,17 @@ import { Route as MembersEventsRouteImport } from './routes/_members/events'
 import { Route as MembersMentorshipRouteImport } from './routes/_members/mentorship'
 import { Route as MembersRepresentativesRouteImport } from './routes/_members/representatives'
 import { Route as MembersResourcesRouteImport } from './routes/_members/resources'
+import { Route as MembersUniversitiesRouteImport } from './routes/_members/universities'
 import { Route as AdminAdminAdministratorsRouteImport } from './routes/_admin/admin.administrators'
 import { Route as AdminAdminApplicationsRouteImport } from './routes/_admin/admin.applications'
 import { Route as AdminAdminAuditRouteImport } from './routes/_admin/admin.audit'
 import { Route as AdminAdminContentRouteImport } from './routes/_admin/admin.content'
 import { Route as AdminAdminMembersRouteImport } from './routes/_admin/admin.members'
+import { Route as AdminAdminReportsRouteImport } from './routes/_admin/admin.reports'
+import { Route as AdminAdminRepresentativesRouteImport } from './routes/_admin/admin.representatives'
 import { Route as AdminAdminSettingsRouteImport } from './routes/_admin/admin.settings'
 import { Route as AdminAdminSiteTextRouteImport } from './routes/_admin/admin.site-text'
+import { Route as AdminAdminUniversitiesRouteImport } from './routes/_admin/admin.universities'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -135,6 +139,11 @@ const MembersResourcesRoute = MembersResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => MembersRouteRoute,
 } as any)
+const MembersUniversitiesRoute = MembersUniversitiesRouteImport.update({
+  id: '/universities',
+  path: '/universities',
+  getParentRoute: () => MembersRouteRoute,
+} as any)
 const AdminAdminAdministratorsRoute =
   AdminAdminAdministratorsRouteImport.update({
     id: '/administrators',
@@ -161,6 +170,17 @@ const AdminAdminMembersRoute = AdminAdminMembersRouteImport.update({
   path: '/members',
   getParentRoute: () => AdminAdminRoute,
 } as any)
+const AdminAdminReportsRoute = AdminAdminReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminRepresentativesRoute =
+  AdminAdminRepresentativesRouteImport.update({
+    id: '/representatives',
+    path: '/representatives',
+    getParentRoute: () => AdminAdminRoute,
+  } as any)
 const AdminAdminSettingsRoute = AdminAdminSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -169,6 +189,11 @@ const AdminAdminSettingsRoute = AdminAdminSettingsRouteImport.update({
 const AdminAdminSiteTextRoute = AdminAdminSiteTextRouteImport.update({
   id: '/site-text',
   path: '/site-text',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminUniversitiesRoute = AdminAdminUniversitiesRouteImport.update({
+  id: '/universities',
+  path: '/universities',
   getParentRoute: () => AdminAdminRoute,
 } as any)
 
@@ -191,13 +216,17 @@ export interface FileRoutesByFullPath {
   '/mentorship': typeof MembersMentorshipRoute
   '/representatives': typeof MembersRepresentativesRoute
   '/resources': typeof MembersResourcesRoute
+  '/universities': typeof MembersUniversitiesRoute
   '/admin/administrators': typeof AdminAdminAdministratorsRoute
   '/admin/applications': typeof AdminAdminApplicationsRoute
   '/admin/audit': typeof AdminAdminAuditRoute
   '/admin/content': typeof AdminAdminContentRoute
   '/admin/members': typeof AdminAdminMembersRoute
+  '/admin/reports': typeof AdminAdminReportsRoute
+  '/admin/representatives': typeof AdminAdminRepresentativesRoute
   '/admin/settings': typeof AdminAdminSettingsRoute
   '/admin/site-text': typeof AdminAdminSiteTextRoute
+  '/admin/universities': typeof AdminAdminUniversitiesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -218,13 +247,17 @@ export interface FileRoutesByTo {
   '/mentorship': typeof MembersMentorshipRoute
   '/representatives': typeof MembersRepresentativesRoute
   '/resources': typeof MembersResourcesRoute
+  '/universities': typeof MembersUniversitiesRoute
   '/admin/administrators': typeof AdminAdminAdministratorsRoute
   '/admin/applications': typeof AdminAdminApplicationsRoute
   '/admin/audit': typeof AdminAdminAuditRoute
   '/admin/content': typeof AdminAdminContentRoute
   '/admin/members': typeof AdminAdminMembersRoute
+  '/admin/reports': typeof AdminAdminReportsRoute
+  '/admin/representatives': typeof AdminAdminRepresentativesRoute
   '/admin/settings': typeof AdminAdminSettingsRoute
   '/admin/site-text': typeof AdminAdminSiteTextRoute
+  '/admin/universities': typeof AdminAdminUniversitiesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -248,13 +281,17 @@ export interface FileRoutesById {
   '/_members/mentorship': typeof MembersMentorshipRoute
   '/_members/representatives': typeof MembersRepresentativesRoute
   '/_members/resources': typeof MembersResourcesRoute
+  '/_members/universities': typeof MembersUniversitiesRoute
   '/_admin/admin/administrators': typeof AdminAdminAdministratorsRoute
   '/_admin/admin/applications': typeof AdminAdminApplicationsRoute
   '/_admin/admin/audit': typeof AdminAdminAuditRoute
   '/_admin/admin/content': typeof AdminAdminContentRoute
   '/_admin/admin/members': typeof AdminAdminMembersRoute
+  '/_admin/admin/reports': typeof AdminAdminReportsRoute
+  '/_admin/admin/representatives': typeof AdminAdminRepresentativesRoute
   '/_admin/admin/settings': typeof AdminAdminSettingsRoute
   '/_admin/admin/site-text': typeof AdminAdminSiteTextRoute
+  '/_admin/admin/universities': typeof AdminAdminUniversitiesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -277,13 +314,17 @@ export interface FileRouteTypes {
     | '/mentorship'
     | '/representatives'
     | '/resources'
+    | '/universities'
     | '/admin/administrators'
     | '/admin/applications'
     | '/admin/audit'
     | '/admin/content'
     | '/admin/members'
+    | '/admin/reports'
+    | '/admin/representatives'
     | '/admin/settings'
     | '/admin/site-text'
+    | '/admin/universities'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -304,13 +345,17 @@ export interface FileRouteTypes {
     | '/mentorship'
     | '/representatives'
     | '/resources'
+    | '/universities'
     | '/admin/administrators'
     | '/admin/applications'
     | '/admin/audit'
     | '/admin/content'
     | '/admin/members'
+    | '/admin/reports'
+    | '/admin/representatives'
     | '/admin/settings'
     | '/admin/site-text'
+    | '/admin/universities'
   id:
     | '__root__'
     | '/'
@@ -333,13 +378,17 @@ export interface FileRouteTypes {
     | '/_members/mentorship'
     | '/_members/representatives'
     | '/_members/resources'
+    | '/_members/universities'
     | '/_admin/admin/administrators'
     | '/_admin/admin/applications'
     | '/_admin/admin/audit'
     | '/_admin/admin/content'
     | '/_admin/admin/members'
+    | '/_admin/admin/reports'
+    | '/_admin/admin/representatives'
     | '/_admin/admin/settings'
     | '/_admin/admin/site-text'
+    | '/_admin/admin/universities'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -501,6 +550,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MembersResourcesRouteImport
       parentRoute: typeof MembersRouteRoute
     }
+    '/_members/universities': {
+      id: '/_members/universities'
+      path: '/universities'
+      fullPath: '/universities'
+      preLoaderRoute: typeof MembersUniversitiesRouteImport
+      parentRoute: typeof MembersRouteRoute
+    }
     '/_admin/admin/administrators': {
       id: '/_admin/admin/administrators'
       path: '/administrators'
@@ -536,6 +592,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminAdminMembersRouteImport
       parentRoute: typeof AdminAdminRoute
     }
+    '/_admin/admin/reports': {
+      id: '/_admin/admin/reports'
+      path: '/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminAdminReportsRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/representatives': {
+      id: '/_admin/admin/representatives'
+      path: '/representatives'
+      fullPath: '/admin/representatives'
+      preLoaderRoute: typeof AdminAdminRepresentativesRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
     '/_admin/admin/settings': {
       id: '/_admin/admin/settings'
       path: '/settings'
@@ -550,6 +620,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminAdminSiteTextRouteImport
       parentRoute: typeof AdminAdminRoute
     }
+    '/_admin/admin/universities': {
+      id: '/_admin/admin/universities'
+      path: '/universities'
+      fullPath: '/admin/universities'
+      preLoaderRoute: typeof AdminAdminUniversitiesRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
   }
 }
 
@@ -559,8 +636,11 @@ interface AdminAdminRouteChildren {
   AdminAdminAuditRoute: typeof AdminAdminAuditRoute
   AdminAdminContentRoute: typeof AdminAdminContentRoute
   AdminAdminMembersRoute: typeof AdminAdminMembersRoute
+  AdminAdminReportsRoute: typeof AdminAdminReportsRoute
+  AdminAdminRepresentativesRoute: typeof AdminAdminRepresentativesRoute
   AdminAdminSettingsRoute: typeof AdminAdminSettingsRoute
   AdminAdminSiteTextRoute: typeof AdminAdminSiteTextRoute
+  AdminAdminUniversitiesRoute: typeof AdminAdminUniversitiesRoute
 }
 
 const AdminAdminRouteChildren: AdminAdminRouteChildren = {
@@ -569,8 +649,11 @@ const AdminAdminRouteChildren: AdminAdminRouteChildren = {
   AdminAdminAuditRoute: AdminAdminAuditRoute,
   AdminAdminContentRoute: AdminAdminContentRoute,
   AdminAdminMembersRoute: AdminAdminMembersRoute,
+  AdminAdminReportsRoute: AdminAdminReportsRoute,
+  AdminAdminRepresentativesRoute: AdminAdminRepresentativesRoute,
   AdminAdminSettingsRoute: AdminAdminSettingsRoute,
   AdminAdminSiteTextRoute: AdminAdminSiteTextRoute,
+  AdminAdminUniversitiesRoute: AdminAdminUniversitiesRoute,
 }
 
 const AdminAdminRouteWithChildren = AdminAdminRoute._addFileChildren(
@@ -595,6 +678,7 @@ interface MembersRouteRouteChildren {
   MembersMentorshipRoute: typeof MembersMentorshipRoute
   MembersRepresentativesRoute: typeof MembersRepresentativesRoute
   MembersResourcesRoute: typeof MembersResourcesRoute
+  MembersUniversitiesRoute: typeof MembersUniversitiesRoute
 }
 
 const MembersRouteRouteChildren: MembersRouteRouteChildren = {
@@ -603,6 +687,7 @@ const MembersRouteRouteChildren: MembersRouteRouteChildren = {
   MembersMentorshipRoute: MembersMentorshipRoute,
   MembersRepresentativesRoute: MembersRepresentativesRoute,
   MembersResourcesRoute: MembersResourcesRoute,
+  MembersUniversitiesRoute: MembersUniversitiesRoute,
 }
 
 const MembersRouteRouteWithChildren = MembersRouteRoute._addFileChildren(

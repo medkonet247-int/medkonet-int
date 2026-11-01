@@ -19,6 +19,7 @@ export const NAV = [
   { to: "/resources", label: "Resources" },
   { to: "/mentorship", label: "Mentorship" },
   { to: "/events", label: "Events" },
+  { to: "/universities", label: "University Directory" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -41,7 +42,7 @@ export function SiteHeader() {
   const signedIn = !!user;
   const isAdmin = state === "admin";
 
-  const linkCls = "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground";
+  const linkCls = "rounded-md px-2 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground";
   const activeCls = { className: "text-foreground" };
 
   return (
