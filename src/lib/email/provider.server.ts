@@ -3,12 +3,37 @@
  * email service. To change providers, rewrite `deliver()` and keep the
  * `sendEmail` signature.
  *
- * Current provider: Brevo transactional email (https://api.brevo.com/v3/smtp/email).
+ * Current provider: Brevo transactional email, reachable two ways:
+ *   1. Connector gateway (used when the Brevo connector is linked):
+ *      POST https://connector-gateway.lovable.dev/brevo/smtp/email with
+ *      `Authorization: Bearer <LOVABLE_API_KEY>` and
+ *      `X-Connection-Api-Key: <BREVO_API_KEY>`.
+ *   2. Direct Brevo API: POST https://api.brevo.com/v3/smtp/email with the
+ *      `api-key` header.
  *
- * Secrets (server-side only):
- *   EMAIL_PROVIDER_API_KEY  – Brevo API key (sent as the `api-key` header)
- *   EMAIL_FROM              – verified sender, e.g. "MedKonet Nigeria <noreply@yourdomain>"
+ * Secrets (server-side only, checked in this order):
+ *   BREVO_API_KEY + LOVABLE_API_KEY – connector-gateway credentials
+ *   EMAIL_PROVIDER_API_KEY          – direct Brevo API key (sent as `api-key`)
+ *   API_KEY                         – fallback direct Brevo API key
+ *   EMAIL_FROM                      – verified sender, e.g. "MedKonet Nigeria <noreply@yourdomain>"
  */
+export const BREVO_GATEWAY_URL = "https://connector-gateway.lovable.dev/brevo";
+const BREVO_DIRECT_URL = "https://api.brevo.com/v3/smtp/email";
+
+export type BrevoSendMode =
+  | { kind: "gateway"; gatewayKey: string; connectionKey: string }
+  | { kind: "direct"; apiKey: string };
+
+/** Gateway wins when both connector credentials exist; otherwise direct key. */
+export function resolveBrevoSendMode(): BrevoSendMode | null {
+  const gatewayKey = process.env["LOVABLE_API_KEY"];
+  const connectionKey = process.env["BREVO_API_KEY"];
+  if (gatewayKey && connectionKey) return { kind: "gateway", gatewayKey, connectionKey };
+  const apiKey = process.env["EMAIL_PROVIDER_API_KEY"] || process.env["API_KEY"];
+  if (apiKey) return { kind: "direct", apiKey };
+  return null;
+}
+
 export type EmailMessage = { to: string; subject: string; html: string; text: string };
 export type EmailResult =
   | { configured: false }
@@ -16,7 +41,7 @@ export type EmailResult =
   | { configured: true; sent: false; error: string };
 
 export function isEmailConfigured(): boolean {
-  return Boolean(process.env["EMAIL_PROVIDER_API_KEY"] && process.env["EMAIL_FROM"]);
+  return Boolean(resolveBrevoSendMode() && process.env["EMAIL_FROM"]);
 }
 
 function parseSender(from: string): { email: string; name?: string } {
@@ -29,10 +54,20 @@ function parseSender(from: string): { email: string; name?: string } {
 
 type DeliverOutcome = { sent: true } | { sent: false; error: string };
 
-async function deliver(msg: EmailMessage, apiKey: string, from: string): Promise<DeliverOutcome> {
-  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+async function deliver(msg: EmailMessage, from: string, mode: BrevoSendMode): Promise<DeliverOutcome> {
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  let url: string;
+  if (mode.kind === "gateway") {
+    url = `${BREVO_GATEWAY_URL}/smtp/email`;
+    headers["Authorization"] = `Bearer ${mode.gatewayKey}`;
+    headers["X-Connection-Api-Key"] = mode.connectionKey;
+  } else {
+    url = BREVO_DIRECT_URL;
+    headers["api-key"] = mode.apiKey;
+  }
+  const res = await fetch(url, {
     method: "POST",
-    headers: { "api-key": apiKey, "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify({
       sender: parseSender(from),
       to: [{ email: msg.to }],
@@ -51,11 +86,11 @@ async function deliver(msg: EmailMessage, apiKey: string, from: string): Promise
 }
 
 export async function sendEmail(msg: EmailMessage): Promise<EmailResult> {
-  const apiKey = process.env["EMAIL_PROVIDER_API_KEY"];
+  const mode = resolveBrevoSendMode();
   const from = process.env["EMAIL_FROM"];
-  if (!apiKey || !from) return { configured: false };
+  if (!mode || !from) return { configured: false };
   try {
-    const out = await deliver(msg, apiKey, from);
+    const out = await deliver(msg, from, mode);
     return out.sent ? { configured: true, sent: true } : { configured: true, sent: false, error: out.error };
   } catch (e) {
     const detail = e instanceof Error ? e.message : "request failed";
