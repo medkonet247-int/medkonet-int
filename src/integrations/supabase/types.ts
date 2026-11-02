@@ -230,6 +230,7 @@ export type Database = {
           id: boolean
           invitation_template: string
           registration_open: boolean
+          representative_programme_active: boolean
           show_whatsapp_to_members: boolean
           updated_at: string
           updated_by: string | null
@@ -239,6 +240,7 @@ export type Database = {
           id?: boolean
           invitation_template?: string
           registration_open?: boolean
+          representative_programme_active?: boolean
           show_whatsapp_to_members?: boolean
           updated_at?: string
           updated_by?: string | null
@@ -248,6 +250,7 @@ export type Database = {
           id?: boolean
           invitation_template?: string
           registration_open?: boolean
+          representative_programme_active?: boolean
           show_whatsapp_to_members?: boolean
           updated_at?: string
           updated_by?: string | null
@@ -318,6 +321,112 @@ export type Database = {
         }
         Relationships: []
       }
+      representative_allowlist: {
+        Row: {
+          created_at: string
+          email: string
+          granted_at: string
+          granted_by: string | null
+          id: string
+          notes: string
+          show_on_directory: boolean
+          status: string
+          status_changed_at: string
+          university_id: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          granted_at?: string
+          granted_by?: string | null
+          id?: string
+          notes?: string
+          show_on_directory?: boolean
+          status?: string
+          status_changed_at?: string
+          university_id: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          granted_at?: string
+          granted_by?: string | null
+          id?: string
+          notes?: string
+          show_on_directory?: boolean
+          status?: string
+          status_changed_at?: string
+          university_id?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "representative_allowlist_university_id_fkey"
+            columns: ["university_id"]
+            isOneToOne: false
+            referencedRelation: "universities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      representative_announcements: {
+        Row: {
+          admin_note: string
+          created_at: string
+          created_by: string
+          id: string
+          message: string
+          published_item_id: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          title: string
+          university_id: string
+          updated_at: string
+        }
+        Insert: {
+          admin_note?: string
+          created_at?: string
+          created_by: string
+          id?: string
+          message: string
+          published_item_id?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          title: string
+          university_id: string
+          updated_at?: string
+        }
+        Update: {
+          admin_note?: string
+          created_at?: string
+          created_by?: string
+          id?: string
+          message?: string
+          published_item_id?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          title?: string
+          university_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "representative_announcements_university_id_fkey"
+            columns: ["university_id"]
+            isOneToOne: false
+            referencedRelation: "universities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       representative_assignments: {
         Row: {
           application_id: string
@@ -362,6 +471,56 @@ export type Database = {
           },
           {
             foreignKeyName: "representative_assignments_university_id_fkey"
+            columns: ["university_id"]
+            isOneToOne: false
+            referencedRelation: "universities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      representative_reports: {
+        Row: {
+          admin_note: string
+          category: string
+          created_at: string
+          created_by: string
+          id: string
+          message: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          university_id: string
+          updated_at: string
+        }
+        Insert: {
+          admin_note?: string
+          category: string
+          created_at?: string
+          created_by: string
+          id?: string
+          message: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          university_id: string
+          updated_at?: string
+        }
+        Update: {
+          admin_note?: string
+          category?: string
+          created_at?: string
+          created_by?: string
+          id?: string
+          message?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          university_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "representative_reports_university_id_fkey"
             columns: ["university_id"]
             isOneToOne: false
             referencedRelation: "universities"
@@ -575,6 +734,11 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_active_representative: { Args: { _user_id: string }; Returns: boolean }
+      is_active_representative_of: {
+        Args: { _university_id: string; _user_id: string }
+        Returns: boolean
+      }
       is_approved_member: { Args: { _user_id: string }; Returns: boolean }
       manage_membership: {
         Args: { _action: string; _data?: Json; _target?: string }
@@ -590,6 +754,26 @@ export type Database = {
         Returns: Json
       }
       registration_is_open: { Args: never; Returns: boolean }
+      representative_allowlist_admin: { Args: never; Returns: Json }
+      representative_context: { Args: never; Returns: Json }
+      representative_directory: { Args: never; Returns: Json }
+      representative_programme_on: { Args: never; Returns: boolean }
+      representative_review_proposal: {
+        Args: {
+          _action: string
+          _id: string
+          _message?: string
+          _national?: boolean
+          _note?: string
+          _title?: string
+        }
+        Returns: string
+      }
+      representative_update_report: {
+        Args: { _id: string; _note?: string; _status: string }
+        Returns: undefined
+      }
+      representative_welcome_list: { Args: never; Returns: Json }
       set_member_whatsapp_visibility: {
         Args: { _show: boolean }
         Returns: undefined
