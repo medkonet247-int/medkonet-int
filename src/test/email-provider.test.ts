@@ -11,21 +11,19 @@ const MSG: EmailMessage = { to: "student@example.com", subject: "Test", html: "<
 
 const ENV_KEYS = ["LOVABLE_API_KEY", "BREVO_API_KEY", "EMAIL_PROVIDER_API_KEY", "API_KEY", "EMAIL_FROM"] as const;
 const saved = new Map<string, string | undefined>();
-beforeEachSnapshot();
 
-function beforeEachSnapshot() {
-  afterEach(() => {
-    for (const key of ENV_KEYS) {
-      const value = saved.get(key);
-      if (value === undefined) delete process.env[key];
-      else process.env[key] = value;
-    }
-    vi.unstubAllGlobals();
-    saved.clear();
-  });
-}
+afterEach(() => {
+  for (const key of ENV_KEYS) {
+    const value = saved.get(key);
+    if (value === undefined) delete process.env[key];
+    else process.env[key] = value;
+  }
+  saved.clear();
+  vi.unstubAllGlobals();
+});
 
-function stage(key: string, value: string | undefined) {
+// Stage an env value for one test, restoring it afterwards.
+function env(key: (typeof ENV_KEYS)[number], value: string | undefined) {
   saved.set(key, process.env[key]);
   if (value === undefined) delete process.env[key];
   else process.env[key] = value;
@@ -33,49 +31,49 @@ function stage(key: string, value: string | undefined) {
 
 describe("Brevo email provider send mode", () => {
   it("prefers the connector gateway when both connector credentials exist", () => {
-    stage("LOVABLE_API_KEY", "lovable-key");
-    stage("BREVO_API_KEY", "lovc-connection-key");
-    stage("EMAIL_PROVIDER_API_KEY", "direct-key");
+    env("LOVABLE_API_KEY", "lovable-key");
+    env("BREVO_API_KEY", "lovc-connection-key");
+    env("EMAIL_PROVIDER_API_KEY", "direct-key");
     expect(resolveBrevoSendMode()).toEqual({ kind: "gateway", gatewayKey: "lovable-key", connectionKey: "lovc-connection-key" });
   });
 
   it("falls back to the direct Brevo key when no connector is linked", () => {
-    stage("LOVABLE_API_KEY", "lovable-key");
-    stage("BREVO_API_KEY", undefined);
-    stage("EMAIL_PROVIDER_API_KEY", "direct-key");
+    env("LOVABLE_API_KEY", "lovable-key");
+    env("BREVO_API_KEY", undefined);
+    env("EMAIL_PROVIDER_API_KEY", "direct-key");
     expect(resolveBrevoSendMode()).toEqual({ kind: "direct", apiKey: "direct-key" });
   });
 
   it("accepts API_KEY as the direct-key fallback", () => {
-    stage("LOVABLE_API_KEY", undefined);
-    stage("BREVO_API_KEY", undefined);
-    stage("EMAIL_PROVIDER_API_KEY", undefined);
-    stage("API_KEY", "fallback-key");
+    env("LOVABLE_API_KEY", undefined);
+    env("BREVO_API_KEY", undefined);
+    env("EMAIL_PROVIDER_API_KEY", undefined);
+    env("API_KEY", "fallback-key");
     expect(resolveBrevoSendMode()).toEqual({ kind: "direct", apiKey: "fallback-key" });
   });
 
   it("is unconfigured without credentials or sender", () => {
-    stage("LOVABLE_API_KEY", undefined);
-    stage("BREVO_API_KEY", undefined);
-    stage("EMAIL_PROVIDER_API_KEY", undefined);
-    stage("API_KEY", undefined);
-    stage("EMAIL_FROM", undefined);
+    env("LOVABLE_API_KEY", undefined);
+    env("BREVO_API_KEY", undefined);
+    env("EMAIL_PROVIDER_API_KEY", undefined);
+    env("API_KEY", undefined);
+    env("EMAIL_FROM", undefined);
     expect(resolveBrevoSendMode()).toBeNull();
     expect(isEmailConfigured()).toBe(false);
   });
 
   it("still requires EMAIL_FROM when a send mode exists", () => {
-    stage("EMAIL_PROVIDER_API_KEY", "direct-key");
-    stage("EMAIL_FROM", undefined);
+    env("EMAIL_PROVIDER_API_KEY", "direct-key");
+    env("EMAIL_FROM", undefined);
     expect(isEmailConfigured()).toBe(false);
-    stage("EMAIL_FROM", "MedKonet Nigeria <noreply@example.com>");
+    env("EMAIL_FROM", "MedKonet Nigeria <noreply@example.com>");
     expect(isEmailConfigured()).toBe(true);
   });
 
   it("sends through the connector gateway with gateway headers", async () => {
-    stage("LOVABLE_API_KEY", "lovable-key");
-    stage("BREVO_API_KEY", "lovc-connection-key");
-    stage("EMAIL_FROM", "MedKonet Nigeria <noreply@example.com>");
+    env("LOVABLE_API_KEY", "lovable-key");
+    env("BREVO_API_KEY", "lovc-connection-key");
+    env("EMAIL_FROM", "MedKonet Nigeria <noreply@example.com>");
     const fetchMock = vi.fn(async () => new Response("{}", { status: 201 }));
     vi.stubGlobal("fetch", fetchMock);
     await sendEmail(MSG);
@@ -91,8 +89,8 @@ describe("Brevo email provider send mode", () => {
   });
 
   it("sends direct with the api-key header and surfaces provider errors", async () => {
-    stage("EMAIL_PROVIDER_API_KEY", "direct-key");
-    stage("EMAIL_FROM", "MedKonet Nigeria <noreply@example.com>");
+    env("EMAIL_PROVIDER_API_KEY", "direct-key");
+    env("EMAIL_FROM", "MedKonet Nigeria <noreply@example.com>");
     const fetchMock = vi.fn(async () => new Response('{"code":"unauthorized","message":"Key not found"}', { status: 401 }));
     vi.stubGlobal("fetch", fetchMock);
     const result = await sendEmail(MSG);
