@@ -1,8 +1,9 @@
 import { z } from "zod";
 import catalog from "./site-text-defaults.json";
 import { phase4ExtraText } from "./phase4-text";
+import { phase4bExtraText } from "./phase4b-text";
 
-export const siteTextDefaults = [...catalog, ...phase4ExtraText];
+export const siteTextDefaults = [...catalog, ...phase4ExtraText, ...phase4bExtraText];
 export type TextDefinition = (typeof catalog)[number];
 export function resolveSiteText(defaultValue: string, value?: string | null) {
   return value?.trim() ? value : defaultValue;
