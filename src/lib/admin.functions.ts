@@ -18,7 +18,7 @@ export const getAdminData = createServerFn({ method: "GET" }).middleware([requir
     context.supabase.rpc("admin_membership_summary"), context.supabase.from("membership_settings").select("*").maybeSingle(), context.supabase.from("profiles").select("id,full_name,email"),
   ]);
   if (summary.error || settings.error || profiles.error) throw new Error("Could not load membership overview.");
-  return { counts: summary.data as unknown as Summary, settings: settings.data ?? { whatsapp_link: "", invitation_template: DEFAULT_INVITATION, registration_open: true }, profiles: profiles.data ?? [] };
+  return { counts: summary.data as unknown as Summary, settings: settings.data ?? { whatsapp_link: "", invitation_template: DEFAULT_INVITATION, registration_open: true, representative_programme_active: false }, profiles: profiles.data ?? [] };
 });
 export const listApplications = createServerFn({ method: "POST" }).middleware([requireSupabaseAuth])
   .inputValidator((d: unknown) => z.object({ q: z.string().max(200).default(""), status: z.enum(["", "Pending", "Approved", "Rejected"]).default(""), university: z.string().max(160).default(""), state: z.string().max(100).default(""), oldest: z.boolean().default(false), page: z.number().int().min(1).default(1), group: z.enum(["all", "applicants", "awaiting", "onboarded"]).default("all") }).parse(d))
