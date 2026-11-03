@@ -24,7 +24,7 @@ export function RepresentativeDashboard() {
   const fetchContext = useServerFn(readRepresentativeContext);
   const query = useQuery({ queryKey: ["rep", "context"], queryFn: () => fetchContext() });
   if (query.isLoading) return <Container className="py-16"><p className="flex items-center gap-2 text-muted-foreground" role="status"><Loader2 className="size-5 animate-spin" />Loading…</p></Container>;
-  if (query.error) return <Container className="py-16 text-center" role="alert"><p className="text-destructive">{t("This area is for authorised university representatives while the representative programme is active.")}</p><Button variant="outline" className="mt-4" onClick={() => void query.refetch()}>Try again</Button></Container>;
+  if (query.error) return <Container className="py-16 text-center"><p role="alert" className="text-destructive">{t("This area is for authorised university representatives while the representative programme is active.")}</p><Button variant="outline" className="mt-4" onClick={() => void query.refetch()}>Try again</Button></Container>;
   const ctx = query.data as RepContext | undefined;
   if (!ctx?.active) return <Container className="max-w-lg py-24 text-center"><h1 className="text-3xl font-bold">{t("Access denied")}</h1><p className="mt-3 text-muted-foreground">{t("This area is for authorised university representatives while the representative programme is active.")}</p><Button asChild className="mt-6"><Link to="/dashboard">Go to your dashboard</Link></Button></Container>;
   return <><PageHeader eyebrow={t("Members")} title={t("Representative dashboard")} intro={ctx.university ? ctx.university.name : undefined} /><Container className="py-10"><Body /></Container></>;

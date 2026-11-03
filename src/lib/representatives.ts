@@ -10,15 +10,15 @@ export type RepContext = {
   granted_at?: string | null;
 };
 export type WelcomeMember = { full_name: string; course: string; current_level: string; onboarded: boolean };
-export type ProposalRow = { id: string; university_id: string; created_by: string; title: string; message: string; status: "Awaiting approval" | "Published" | "Rejected" | "Withdrawn"; admin_note: string; created_at: string; reviewed_at: string | null };
-export type CommunityReportRow = { id: string; university_id: string; category: string; message: string; status: "Received" | "In progress" | "Resolved"; admin_note: string; created_at: string; reviewed_at: string | null };
+export type ProposalRow = { id: string; university_id: string; created_by: string; title: string; message: string; status: string; admin_note: string; created_at: string; reviewed_at: string | null };
+export type CommunityReportRow = { id: string; university_id: string; category: string; message: string; status: string; admin_note: string; created_at: string; reviewed_at: string | null };
 export type AllowlistRow = {
   id: string; email: string; status: "Active" | "Suspended" | "Revoked"; notes: string; show_on_directory: boolean;
   granted_at: string; status_changed_at: string;
   university_id: string; university_name: string; university_state: string; active: boolean; verification_status: string;
   user_id: string | null; confirmed: boolean | null; application_status: string | null;
   applicant_name: string | null; profile_name: string | null; granted_by_name: string | null;
-  display_status: "Awaiting registration" | "Awaiting approval" | "Active" | "Suspended" | "Revoked";
+  display_status: string;
 };
 export type DirectoryReps = { programme: boolean; reps: { full_name: string; university: string }[] };
 export type RepresentativeAdminData = {

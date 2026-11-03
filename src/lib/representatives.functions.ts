@@ -114,7 +114,7 @@ export const reviewProposal = createServerFn({ method: "POST" }).middleware([req
   const r = await context.supabase.rpc("representative_review_proposal", {
     _id: data.id, _action: data.action,
     ...data.title !== undefined ? { _title: data.title } : {}, ...data.message !== undefined ? { _message: data.message } : {},
-    _note: data.note ?? null, _national: data.national,
+    _note: data.note ?? undefined, _national: data.national,
   });
   if (r.error) throw new Error(r.error.message === "This proposal was already reviewed" ? "This proposal was already reviewed." : "Could not review the proposal.");
   return { ok: true };
