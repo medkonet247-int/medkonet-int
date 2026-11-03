@@ -1,8 +1,8 @@
 # Phase 4B
-- [ ] Add representative allowlist, derived active-representative checks and restricted programme switch.
-- [ ] Add representative dashboard (university info, welcome list, proposals, reports) with database-enforced access.
-- [ ] Add administrator management: allowlist actions, proposal review/publish, report status updates, audits.
-- [ ] Update members' representatives page with honest programme wording and consent-based listing.
+- [x] Add representative allowlist, derived active-representative checks and restricted programme switch.
+- [x] Add representative dashboard (university info, welcome list, proposals, reports) with database-enforced access.
+- [x] Add administrator management: allowlist actions, proposal review/publish, report status updates, audits.
+- [x] Update members' representatives page with honest programme wording and consent-based listing.
 - [ ] Test access rules, empty states, 360px layouts and earlier phases; report results and founder steps.
 
 # Phase 4
