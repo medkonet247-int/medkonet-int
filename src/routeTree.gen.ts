@@ -27,6 +27,7 @@ import { Route as AdminAdminRouteImport } from './routes/_admin/admin'
 import { Route as MembersCommunityRouteImport } from './routes/_members/community'
 import { Route as MembersEventsRouteImport } from './routes/_members/events'
 import { Route as MembersMentorshipRouteImport } from './routes/_members/mentorship'
+import { Route as MembersRepresentativeRouteImport } from './routes/_members/representative'
 import { Route as MembersRepresentativesRouteImport } from './routes/_members/representatives'
 import { Route as MembersResourcesRouteImport } from './routes/_members/resources'
 import { Route as MembersUniversitiesRouteImport } from './routes/_members/universities'
@@ -129,6 +130,11 @@ const MembersMentorshipRoute = MembersMentorshipRouteImport.update({
   path: '/mentorship',
   getParentRoute: () => MembersRouteRoute,
 } as any)
+const MembersRepresentativeRoute = MembersRepresentativeRouteImport.update({
+  id: '/representative',
+  path: '/representative',
+  getParentRoute: () => MembersRouteRoute,
+} as any)
 const MembersRepresentativesRoute = MembersRepresentativesRouteImport.update({
   id: '/representatives',
   path: '/representatives',
@@ -214,6 +220,7 @@ export interface FileRoutesByFullPath {
   '/community': typeof MembersCommunityRoute
   '/events': typeof MembersEventsRoute
   '/mentorship': typeof MembersMentorshipRoute
+  '/representative': typeof MembersRepresentativeRoute
   '/representatives': typeof MembersRepresentativesRoute
   '/resources': typeof MembersResourcesRoute
   '/universities': typeof MembersUniversitiesRoute
@@ -245,6 +252,7 @@ export interface FileRoutesByTo {
   '/community': typeof MembersCommunityRoute
   '/events': typeof MembersEventsRoute
   '/mentorship': typeof MembersMentorshipRoute
+  '/representative': typeof MembersRepresentativeRoute
   '/representatives': typeof MembersRepresentativesRoute
   '/resources': typeof MembersResourcesRoute
   '/universities': typeof MembersUniversitiesRoute
@@ -279,6 +287,7 @@ export interface FileRoutesById {
   '/_members/community': typeof MembersCommunityRoute
   '/_members/events': typeof MembersEventsRoute
   '/_members/mentorship': typeof MembersMentorshipRoute
+  '/_members/representative': typeof MembersRepresentativeRoute
   '/_members/representatives': typeof MembersRepresentativesRoute
   '/_members/resources': typeof MembersResourcesRoute
   '/_members/universities': typeof MembersUniversitiesRoute
@@ -312,6 +321,7 @@ export interface FileRouteTypes {
     | '/community'
     | '/events'
     | '/mentorship'
+    | '/representative'
     | '/representatives'
     | '/resources'
     | '/universities'
@@ -343,6 +353,7 @@ export interface FileRouteTypes {
     | '/community'
     | '/events'
     | '/mentorship'
+    | '/representative'
     | '/representatives'
     | '/resources'
     | '/universities'
@@ -376,6 +387,7 @@ export interface FileRouteTypes {
     | '/_members/community'
     | '/_members/events'
     | '/_members/mentorship'
+    | '/_members/representative'
     | '/_members/representatives'
     | '/_members/resources'
     | '/_members/universities'
@@ -536,6 +548,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MembersMentorshipRouteImport
       parentRoute: typeof MembersRouteRoute
     }
+    '/_members/representative': {
+      id: '/_members/representative'
+      path: '/representative'
+      fullPath: '/representative'
+      preLoaderRoute: typeof MembersRepresentativeRouteImport
+      parentRoute: typeof MembersRouteRoute
+    }
     '/_members/representatives': {
       id: '/_members/representatives'
       path: '/representatives'
@@ -676,6 +695,7 @@ interface MembersRouteRouteChildren {
   MembersCommunityRoute: typeof MembersCommunityRoute
   MembersEventsRoute: typeof MembersEventsRoute
   MembersMentorshipRoute: typeof MembersMentorshipRoute
+  MembersRepresentativeRoute: typeof MembersRepresentativeRoute
   MembersRepresentativesRoute: typeof MembersRepresentativesRoute
   MembersResourcesRoute: typeof MembersResourcesRoute
   MembersUniversitiesRoute: typeof MembersUniversitiesRoute
@@ -685,6 +705,7 @@ const MembersRouteRouteChildren: MembersRouteRouteChildren = {
   MembersCommunityRoute: MembersCommunityRoute,
   MembersEventsRoute: MembersEventsRoute,
   MembersMentorshipRoute: MembersMentorshipRoute,
+  MembersRepresentativeRoute: MembersRepresentativeRoute,
   MembersRepresentativesRoute: MembersRepresentativesRoute,
   MembersResourcesRoute: MembersResourcesRoute,
   MembersUniversitiesRoute: MembersUniversitiesRoute,
