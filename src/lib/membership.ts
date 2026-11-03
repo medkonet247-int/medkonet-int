@@ -17,6 +17,7 @@ export const settingsSchema = z.object({
   whatsapp_link: z.string().trim().max(2048).refine((v) => { if (!v) return true; try { const u = new URL(v); return u.protocol === "https:" && !!u.hostname && !u.username && !u.password; } catch { return false; } }, "Enter a valid HTTPS invitation URL."),
   invitation_template: z.string().min(1).max(5000).refine(v => v.includes("[Applicant Name]") && v.includes("[Insert Official WhatsApp Invitation Link]"), "Keep both invitation placeholders."),
   registration_open: z.boolean(),
+  representative_programme_active: z.boolean().default(false),
 });
 export function invitationMessage(template: string, name: string, link: string) {
   return template.replaceAll("[Applicant Name]", name).replaceAll("[Insert Official WhatsApp Invitation Link]", link);

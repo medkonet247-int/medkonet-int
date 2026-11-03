@@ -1,7 +1,8 @@
 import { useSiteText } from "@/lib/site-text-context";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
-import { Menu, LogOut, LayoutDashboard, ShieldCheck, ChevronDown } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { Menu, LogOut, LayoutDashboard, ShieldCheck, ChevronDown, Users } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
@@ -41,6 +42,11 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const signedIn = !!user;
   const isAdmin = state === "admin";
+  const isRepQuery = useQuery({
+    queryKey: ["rep-flag", user?.id], enabled: signedIn && !loading, staleTime: 60_000,
+    queryFn: async () => { const { data, error } = await supabase.rpc("is_active_representative", { _user_id: user!.id }); return !error && data === true; },
+  });
+  const isRep = isRepQuery.data === true;
 
   const linkCls = "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground";
   const activeCls = { className: "text-foreground" };
@@ -56,6 +62,9 @@ export function SiteHeader() {
               {t(n.label)}
             </Link>
           ))}
+          {isRep && (
+            <Link to="/representative" className={linkCls} activeProps={activeCls}>{t("Representative")}</Link>
+          )}
           {isAdmin && (
             <Link to="/admin" className={linkCls} activeProps={activeCls}>{t("Admin")}</Link>
           )}
@@ -77,6 +86,11 @@ export function SiteHeader() {
                 <DropdownMenuItem asChild>
                   <Link to="/dashboard"><LayoutDashboard className="size-4" />{t(" Student Dashboard")}</Link>
                 </DropdownMenuItem>
+                {isRep && (
+                  <DropdownMenuItem asChild>
+                    <Link to="/representative"><Users className="size-4" />{t(" Representative")}</Link>
+                  </DropdownMenuItem>
+                )}
                 {isAdmin && (
                   <DropdownMenuItem asChild>
                     <Link to="/admin"><ShieldCheck className="size-4" />{t(" Admin Dashboard")}</Link>
@@ -109,6 +123,7 @@ export function SiteHeader() {
                   {t(n.label)}
                 </Link>
               ))}
+              {isRep && <Link to="/representative" className="rounded-lg px-3 py-3 text-base font-medium hover:bg-muted">{t("Representative")}</Link>}
               {isAdmin && <Link to="/admin" className="rounded-lg px-3 py-3 text-base font-medium hover:bg-muted">{t("Admin")}</Link>}
               <div className="mt-4 flex flex-col gap-2 border-t pt-4">
                 {signedIn ? (
