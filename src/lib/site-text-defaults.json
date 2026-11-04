@@ -1823,8 +1823,8 @@
     "key": "footer.wording.1",
     "page": "footer",
     "section": "wording",
-    "label": "A growing community connecting Medicine and Surgery students across…",
-    "default_value": "A growing community connecting Medicine and Surgery students across Nigerian universities. Different Universities. One Medical Family.",
+    "label": "Connecting Medicine and Surgery students across Nigerian universities.",
+    "default_value": "Connecting Medicine and Surgery students across Nigerian universities.",
     "visibility": "public",
     "route": "/",
     "max_length": 300
