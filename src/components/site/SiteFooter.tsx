@@ -6,39 +6,39 @@ import { CONTACT } from "@/lib/contact";
 export function SiteFooter() {
   const t = useSiteText("footer");
   const h = "text-sm font-semibold text-navy-foreground";
-  const a = "text-sm text-navy-foreground/70 transition-colors hover:text-navy-foreground";
+  // Full-height tap targets on phones, comfortable inline links from tablet up.
+  const a =
+    "inline-flex min-h-11 items-center text-sm text-navy-foreground/70 transition-colors hover:text-navy-foreground md:min-h-0 md:py-0.5";
+  const links = [
+    { to: "/join", label: t("Join MedKonet") },
+    { to: "/login", label: t("Login") },
+    { to: "/representatives", label: t("University Representatives") },
+    { to: "/community-rules", label: t("Community Rules") },
+    { to: "/privacy", label: t("Privacy Notice") },
+  ] as const;
+
   return (
     <footer className="bg-navy text-navy-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
-        <div className="space-y-4">
-          <img src={LOGO_URL} alt="MedKonet Nigeria logo" width={72} height={72} className="size-18 rounded-full" />
-          <p className="max-w-xs text-sm text-navy-foreground/70">{t("A growing community connecting Medicine and Surgery students across Nigerian universities. Different Universities. One Medical Family.")}</p>
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-12 lg:px-8">
+        <div className="flex items-center gap-3 md:block md:space-y-3">
+          <img src={LOGO_URL} alt="MedKonet Nigeria logo" width={56} height={56} className="size-14 shrink-0 rounded-full md:size-16" />
+          <p className="max-w-xs text-sm text-navy-foreground/70 md:space-y-0">{t("Connecting Medicine and Surgery students across Nigerian universities.")}</p>
         </div>
-        <div>
+        <nav aria-label={t("Explore")}>
           <p className={h}>{t("Explore")}</p>
-          <ul className="mt-4 space-y-2">
-            <li><Link to="/" className={a}>{t("Home")}</Link></li>
-            <li><Link to="/about" className={a}>{t("About")}</Link></li>
-            <li><Link to="/contact" className={a}>{t("Contact")}</Link></li>
-            <li><Link to="/join" className={a}>{t("Join MedKonet")}</Link></li>
-            <li><Link to="/login" className={a}>{t("Login")}</Link></li>
+          <ul className="mt-1 grid grid-cols-2 gap-x-4 sm:grid-cols-3 md:mt-2 md:flex md:flex-wrap md:gap-x-6">
+            {links.map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className={a}>{l.label}</Link>
+              </li>
+            ))}
           </ul>
-        </div>
+        </nav>
         <div>
-          <p className={h}>{t("Community")}</p>
-          <ul className="mt-4 space-y-2">
-            <li><Link to="/community" className={a}>{t("Community")}</Link></li>
-            <li><Link to="/resources" className={a}>{t("Academic Resources")}</Link></li>
-            <li><Link to="/mentorship" className={a}>{t("Mentorship")}</Link></li>
-            <li><Link to="/events" className={a}>{t("Events and Programmes")}</Link></li>
-            <li><Link to="/representatives" className={a}>{t("University Representatives")}</Link></li>
-            <li><Link to="/community-rules" className={a}>{t("Community Rules")}</Link></li>
-            <li><Link to="/privacy" className={a}>{t("Privacy Notice")}</Link></li>
-          </ul>
-        </div>
-        <div>
-          <p className={h}>{t("Contact")}</p>
-          <ul className="mt-4 space-y-2">
+          <p className={h}>
+            <Link to="/contact" className="text-sm font-semibold text-navy-foreground transition-colors hover:text-navy-foreground hover:underline">{t("Contact")}</Link>
+          </p>
+          <ul className="mt-1 md:mt-2">
             <li><a href={CONTACT.whatsapp[0]} target="_blank" rel="noopener noreferrer" className={a}>{t("WhatsApp (line 1)")}</a></li>
             <li><a href={CONTACT.whatsapp[1]} target="_blank" rel="noopener noreferrer" className={a}>{t("WhatsApp (line 2)")}</a></li>
             <li><a href={`mailto:${CONTACT.email}`} className={`${a} break-all`}>{CONTACT.email}</a></li>
@@ -46,7 +46,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-navy-foreground/10">
-        <p className="mx-auto max-w-7xl px-4 py-6 text-xs text-navy-foreground/60 sm:px-6 lg:px-8">
+        <p className="mx-auto max-w-7xl px-4 py-4 text-xs text-navy-foreground/60 sm:px-6 lg:px-8">
           © {new Date().getFullYear()}{t(" MedKonet Nigeria. Connecting Medical Minds, Building Better Futures.")}
         </p>
       </div>
