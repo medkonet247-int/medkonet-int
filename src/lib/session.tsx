@@ -70,7 +70,13 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       const s = await loadMemberState();
       setValue({ loading: false, ...s });
     } catch {
-      setValue({ loading: false, user: null, state: "visitor", application: null });
+      // A transient failure must not visually sign the user out; keep the previous
+      // state when one exists and let a later refresh or auth event correct it.
+      setValue((prev) =>
+        prev.user
+          ? { ...prev, loading: false }
+          : { loading: false, user: null, state: "visitor", application: null },
+      );
     }
   }, []);
 
