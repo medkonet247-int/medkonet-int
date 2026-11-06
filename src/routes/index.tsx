@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container, SectionHeading, Card } from "@/components/site/Page";
-import { LOGO_URL } from "@/components/site/Logo";
+import homePhoto from "@/assets/medkonet-home-photo.webp.asset.json";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -62,8 +62,8 @@ function Home() {
               </Button>
             </div>
           </div>
-          <div className="mx-auto w-full max-w-sm">
-            <img src={LOGO_URL} alt="MedKonet Nigeria logo: caduceus over an open book" width={1024} height={1024} className="w-full rounded-full shadow-2xl" />
+          <div className="mx-auto w-fit max-w-full overflow-hidden rounded-xl border bg-secondary/60 shadow-card">
+            <img src={homePhoto.url} alt="Healthcare team stacking gloved hands together" width={675} height={1200} className="mx-auto h-64 w-auto max-w-full object-contain sm:h-[25rem]" />
           </div>
         </Container>
       </section>
