@@ -63,7 +63,7 @@ function Home() {
             </div>
           </div>
           <div className="mx-auto w-fit max-w-full overflow-hidden rounded-xl border bg-secondary/60 shadow-card">
-            <img src={homePhoto.url} alt="Medical students studying together" width={675} height={1200} className="mx-auto h-64 w-auto max-w-full object-contain sm:h-[25rem]" />
+            <img src={homePhoto.url} alt="Healthcare team stacking gloved hands together" width={675} height={1200} className="mx-auto h-64 w-auto max-w-full object-contain sm:h-[25rem]" />
           </div>
         </Container>
       </section>
