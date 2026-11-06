@@ -47,8 +47,10 @@ function Home() {
   const t = useSiteText("home");
   return (
     <>
-      <section className="bg-hero text-navy-foreground">
-        <Container className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.2fr_1fr]">
+      <section className="relative isolate overflow-hidden bg-hero text-navy-foreground">
+        <img src={homePhoto.url} alt="" aria-hidden="true" width={675} height={1200} fetchPriority="high" className="absolute inset-0 size-full object-cover object-center" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/90 to-navy/80 lg:bg-gradient-to-r lg:from-navy/95 lg:via-navy/85 lg:to-navy/65" />
+        <Container className="relative z-10 grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.2fr_1fr]">
           <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan">{t("Connecting Medical Minds, Building Better Futures.")}</p>
             <h1 className="mt-4 text-4xl font-bold leading-[1.1] sm:text-6xl">{t("Your Medical Journey, Stronger Together.")}</h1>
@@ -61,9 +63,6 @@ function Home() {
                 <Link to="/community">{t("Explore Our Community")}</Link>
               </Button>
             </div>
-          </div>
-          <div className="mx-auto w-fit max-w-full overflow-hidden rounded-xl border bg-secondary/60 shadow-card">
-            <img src={homePhoto.url} alt="Healthcare team stacking gloved hands together" width={675} height={1200} className="mx-auto h-64 w-auto max-w-full object-contain sm:h-[25rem]" />
           </div>
         </Container>
       </section>
